@@ -1,0 +1,10 @@
+email:
+  from: bergeronpilon@gmail.com
+  to: bergeronpilon@gmail.com
+  subject: "Résultat"
+  server: dddd
+  port: 445
+
+collections:
+  registry: requete1
+  publication: requete2
