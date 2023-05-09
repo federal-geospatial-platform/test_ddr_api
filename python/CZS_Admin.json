@@ -1,0 +1,861 @@
+{
+	"info": {
+		"_postman_id": "c6ec343d-644d-4c7a-a943-28b83671a45c",
+		"name": "Test CZS Admin API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26746003"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.token, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}\r",
+									"\r",
+									"// Store the token in the Collection variables\r",
+									"pm.collectionVariables.set(\"bearerToken\", pm.response.json().access_token);\r",
+									"pm.collectionVariables.set(\"refreshToken\", pm.response.json().access_token);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"{{username}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Collections",
+			"item": [
+				{
+					"name": "Get Collections (All)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.collection_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/collections",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"collections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Collections (One)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.collection_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/collections/{{collection_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"collections",
+								"{{collection_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "xCollection",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cov_data\": \"https://datacube-prod-data-public.s3.ca-central-1.amazonaws.com/store/eo4ce/landcover/landcover-2010-cog.tif\",\r\n  \"cov_format_name\": \"GTiff\",\r\n  \"crs\": 3978,\r\n  \"db_host\": \"10.68.130.179\",\r\n  \"db_name\": \"postgres\",\r\n  \"db_password\": \"password\",\r\n  \"db_port\": 5432,\r\n  \"db_user\": \"postgres\",\r\n  \"description_en\": \"coll_desc_en\",\r\n  \"description_fr\": \"coll_desc_fr\",\r\n  \"extent_bbox\": [\r\n    -141,\r\n    40.04,\r\n    -47.74,\r\n    86.46\r\n  ],\r\n  \"extent_crs\": \"http://www.opengis.net/def/crs/OGC/1.3/CRS84\",\r\n  \"extent_temporal_begin\": \"2022-06-14\",\r\n  \"extent_temporal_end\": \"2022-06-15\",\r\n  \"geom_crs\": 4617,\r\n  \"geom_wkt\": \"POLYGON((-113.43 53.51, -113.43 53.59, -113.22 53.59, -113.22 53.51, -113.43 53.51))\",\r\n  \"keywords_en\": [\r\n    \"Canada\",\r\n    \"National\"\r\n  ],\r\n  \"keywords_fr\": [\r\n    \"Canada\",\r\n    \"National\"\r\n  ],\r\n  \"metadata_uuid\": \"1a315e4d-76c2-4caa-951a-45d1d2051333\",\r\n  \"name\": \"coll_name\",\r\n  \"parent_uuid\": \"4e42c1bf-45b4-4526-a70c-e1bc931d80f1\",\r\n  \"table_id_field\": \"OBJECTID\",\r\n  \"table_name\": \"900a__coal-mines\",\r\n  \"table_queryables\": [\r\n    \"attribute_name_1\",\r\n    \"attribute_name_2\"\r\n  ],\r\n  \"table_schema\": \"nrcan\",\r\n  \"title_en\": \"coll_title_en\",\r\n  \"title_fr\": \"coll_title_fr\",\r\n  \"type\": \"feature\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get Parents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"pm.response.to.have.jsonSchema(Schemas.parents_list);\r",
+									"//if (Utils.validateStatusAndSchema(pm, Schemas.parents_list, 200)) {\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.parents_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/parents",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Themes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.theme_czs_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/themes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"themes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Metadata",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/metadata/{{get_metadata_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"metadata",
+								"{{get_metadata_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Parents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 201)) {\r",
+									"    \r",
+									"    // Extract the UUID of the Parent\r",
+									"    pm.collectionVariables.set(\"parent_uuid_added\", pm.response.text());\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"theme_uuid\": \"e7087e59-a57f-432b-81db-065f4d40e797\",\r\n  \"title_en\": \"Title\",\r\n  \"title_fr\": \"Titre\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parents",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Parent",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parents",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Parent",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"theme_uuid\": \"e7087e59-a57f-432b-81db-065f4d40e797\",\r\n  \"title_en\": \"Title\",\r\n  \"title_fr\": \"Titre\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parents/{{parent_uuid_added}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parents",
+								"{{parent_uuid_added}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "xPost Extent ()mettre une note",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "Coment - {{baseUrlCzs}}/extent/nrcan/900a__coal-mines/4326",
+							"host": [
+								"Coment - {{baseUrlCzs}}"
+							],
+							"path": [
+								"extent",
+								"nrcan",
+								"900a__coal-mines",
+								"4326"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Get Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.user_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 201)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"{{user_post}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/CocoLeClown",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"CocoLeClown"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// npm install ajv",
+					"var Ajv = require(\"ajv\");",
+					"",
+					"SchemaToken = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        token_type: { type: \"string\" },",
+					"        access_token: { type: \"string\" },",
+					"        expires_in: { type: \"number\" },",
+					"        refresh_token: { type: \"string\" },",
+					"        refresh_expires_in: { type: \"number\" },",
+					"    },",
+					"    required: [\"token_type\", \"access_token\", \"expires_in\", \"refresh_token\", \"refresh_expires_in\"],",
+					"};",
+					"",
+					"SchemaCollection = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        collection_name: { type: \"string\" },",
+					"        collection_title_en: { type: \"string\" },",
+					"        collection_title_fr: { type: \"string\" },",
+					"        metadata_identifier: { type: \"string\" },",
+					"        parent_uuid: { type: \"string\" }",
+					"    },",
+					"    required: [\"collection_name\", \"collection_title_en\", \"collection_title_fr\", \"metadata_identifier\", \"parent_uuid\"],",
+					"};",
+					"",
+					"SchemaCollections = {",
+					"    type: \"array\",",
+					"    item: SchemaCollection",
+					"}",
+					"",
+					"SchemaLanguage = {",
+					"    type: \"object\",",
+					"    required: [\"en\", \"fr\"],",
+					"    properties: {",
+					"        en: { type: \"string\"},",
+					"        fr: { type: \"string\"}",
+					"    }",
+					"};",
+					"",
+					"ShemaParent = {",
+					"  type: 'array',",
+					"  items: {",
+					"    type: 'object',",
+					"    properties: {",
+					"      parent_uuid: {type: 'string'},",
+					"      title: SchemaLanguage",
+					"    },",
+					"    required: ['parent_uuid', 'title']",
+					"  }",
+					"};",
+					"",
+					"SchemaParents = {",
+					"    type: 'array',",
+					"    items: {",
+					"        type: 'object',",
+					"        properties:{",
+					"            parents: ShemaParent,",
+					"            theme_uuid: {type: 'string'},",
+					"            title: SchemaLanguage",
+					"        },",
+					"        required: ['parents', 'theme_uuid', 'title']",
+					"    }",
+					"};",
+					"",
+					"SchemaThemeCzs = {",
+					"    type: 'array',",
+					"    items: {",
+					"        type: 'object',",
+					"        properties:{",
+					"            theme_uuid: { type: \"string\"},",
+					"            title: SchemaLanguage",
+					"        }",
+					"    }",
+					"};",
+					"",
+					"SchemaUser = {",
+					"  type: \"object\",",
+					"  properties: {",
+					"      role: {\"type\": \"integer\",},",
+					"      username: {\"type\": \"string\",",
+					"    }",
+					"  },",
+					"  required: [\"role\", \"username\"]",
+					"};",
+					"",
+					"SchemaUserList = {",
+					"    type: \"array\",",
+					"    items: SchemaUser",
+					"}",
+					"",
+					"Schemas = {",
+					"    token: SchemaToken,",
+					"    collection: SchemaCollection,",
+					"    collection_list: SchemaCollections,",
+					"    theme_czs_list: SchemaThemeCzs,",
+					"    parents_list: SchemaParents,",
+					"    user_list: SchemaUserList",
+					"};",
+					"",
+					"Utils = {",
+					"    // Loads Ajv which is used to enhance schema validations",
+					"    ajv: new Ajv({logger: console}),",
+					"",
+					"",
+					"    /**",
+					"     * Generic function to check for a 200 response with a given schema format",
+					"     */",
+					"    validateStatusAndSchema: function(pm, schema, status_code=200) {",
+					"        var res = false;",
+					"        pm.test(\"Status code is valid\", () => {",
+					"            pm.response.to.have.status(status_code);",
+					"",
+					"            // All Valid",
+					"            res = true",
+					"            if (schema !== null) { ",
+					"            ",
+					"                pm.test(\"Schema is valid\", () => {",
+					"                    pm.response.to.have.jsonSchema(schema)",
+					"//                    pm.expect(Utils.ajv.validate(schema, pm.response.json())).to.be.true;",
+					"                ",
+					"                });",
+					"            };",
+					"        });",
+					"        return res;",
+					"    }",
+					"    ",
+					"};",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "get_metadata_id",
+			"value": "62de5952-a5eb-4859-b086-22a8ba8024b8",
+			"type": "string"
+		},
+		{
+			"key": "parent_uuid_added",
+			"value": ""
+		},
+		{
+			"key": "user_post",
+			"value": "CocoLeClown",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "{{environment}}/api",
+			"type": "string"
+		},
+		{
+			"key": "environment",
+			"value": "https://czs-api.ddr-stage.services.geo.ca",
+			"type": "string"
+		},
+		{
+			"key": "bearerToken",
+			"value": ""
+		},
+		{
+			"key": "refreshToken",
+			"value": ""
+		},
+		{
+			"key": "collection_id",
+			"value": "cdem_mpi__major_projects_inventory_point",
+			"type": "string"
+		}
+	]
+}

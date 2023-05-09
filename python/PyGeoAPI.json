@@ -1,0 +1,938 @@
+{
+	"info": {
+		"_postman_id": "937e73a2-8071-46c9-9638-7b3772568b14",
+		"name": "Test PyGeoAPI for NRCan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26746003"
+	},
+	"item": [
+		{
+			"name": "Server",
+			"item": [
+				{
+					"name": "Landing page",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/?f=json&lang=en-US",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "f",
+									"value": "json"
+								},
+								{
+									"key": "lang",
+									"value": "en-US"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Conformance",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/conformance?f=json&lang=en-US",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"conformance"
+							],
+							"query": [
+								{
+									"key": "f",
+									"value": "json"
+								},
+								{
+									"key": "lang",
+									"value": "en-US"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OpenApi",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/openapi",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"openapi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reload_resources",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.reloaded, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/reload_resources",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"reload_resources"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reload Stac",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/reload_stac",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"reload_stac"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Collections",
+			"item": [
+				{
+					"name": "Get Collections",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/collections",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"collections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Collection",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bbox\": [\r\n    -113.43,\r\n    53.51,\r\n    -113.22,\r\n    53.59\r\n  ],\r\n  \"bboxcrs\": 4617,\r\n  \"geom\": \"POLYGON ((-113.43 53.51, -113.43 53.59, -113.22 53.59, -113.22 53.51, -113.43 53.51))\",\r\n  \"geomcrs\": 4617\r\n}"
+						},
+						"url": {
+							"raw": "{{urlPyGeoApi}}/collections?f=json&lang=en-US",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"collections"
+							],
+							"query": [
+								{
+									"key": "f",
+									"value": "json"
+								},
+								{
+									"key": "lang",
+									"value": "en-US"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Collections Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.collection_id, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/collections/{{id_feature}}",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"collections",
+								"{{id_feature}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Collections Id Item",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.collections_id_item, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/collections/major_projects___major_projects_inventory_line/items?f=json&lang=en-US&bbox=-113.43,53.51,-113.22,53.59&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617&limit=10&skipGeometry=false&offset=0",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"collections",
+								"major_projects___major_projects_inventory_line",
+								"items"
+							],
+							"query": [
+								{
+									"key": "f",
+									"value": "json"
+								},
+								{
+									"key": "lang",
+									"value": "en-US"
+								},
+								{
+									"key": "bbox",
+									"value": "-113.43,53.51,-113.22,53.59"
+								},
+								{
+									"key": "geom",
+									"value": "POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29"
+								},
+								{
+									"key": "geom-crs",
+									"value": "4617"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skipGeometry",
+									"value": "false"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Collections Id Item FeatureId",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/collections/{{id_feature}}/items/1?f=json&lang=en-US&bbox=-113.43,53.51,-113.22,53.59&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617&limit=10&skipGeometry=false&offset=0",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"collections",
+								"{{id_feature}}",
+								"items",
+								"1"
+							],
+							"query": [
+								{
+									"key": "f",
+									"value": "json"
+								},
+								{
+									"key": "lang",
+									"value": "en-US"
+								},
+								{
+									"key": "bbox",
+									"value": "-113.43,53.51,-113.22,53.59"
+								},
+								{
+									"key": "geom",
+									"value": "POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29"
+								},
+								{
+									"key": "geom-crs",
+									"value": "4617"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "skipGeometry",
+									"value": "false"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Collections Id querables",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/collections/{{id_feature}}/queryables?f=json&lang=en-US",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"collections",
+								"{{id_feature}}",
+								"queryables"
+							],
+							"query": [
+								{
+									"key": "f",
+									"value": "json"
+								},
+								{
+									"key": "lang",
+									"value": "en-US"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Collections Id Coverage",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, SchemasCollectionIdCoverage, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/collections/{{id_coverage}}/coverage?f=json&lang=en-US&bbox=-113.43,53.51,-113.22,53.59&bbox-crs=4617&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"collections",
+								"{{id_coverage}}",
+								"coverage"
+							],
+							"query": [
+								{
+									"key": "f",
+									"value": "json"
+								},
+								{
+									"key": "lang",
+									"value": "en-US"
+								},
+								{
+									"key": "bbox",
+									"value": "-113.43,53.51,-113.22,53.59"
+								},
+								{
+									"key": "bbox-crs",
+									"value": "4617"
+								},
+								{
+									"key": "geom",
+									"value": "POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29"
+								},
+								{
+									"key": "geom-crs",
+									"value": "4617"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Collections Id Domainset",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/collections/{{id_coverage}}/coverage/domainset",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"collections",
+								"{{id_coverage}}",
+								"coverage",
+								"domainset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Collections Id RangeType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlPyGeoApi}}/collections/{{id_coverage}}/coverage/rangetype",
+							"host": [
+								"{{urlPyGeoApi}}"
+							],
+							"path": [
+								"collections",
+								"{{id_coverage}}",
+								"coverage",
+								"rangetype"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Set the URL of the API Registry in the global environment variable",
+					"pm.globals.set(\"environment\", pm.globals.get(\"urlRegistry\"));",
+					"",
+					"// npm install ajv",
+					"var Ajv = require(\"ajv\");",
+					"",
+					"SchemaReloaded = {",
+					"  type: \"object\",",
+					"  properties: {",
+					"    reloaded: {\"type\": \"boolean\"}",
+					"  },",
+					"  required: [\"reloaded\"]",
+					"},",
+					"",
+					"SchemaInfo = {",
+					"  type: \"object\",",
+					"  properties: {",
+					"    type: {\"type\": \"string\"},",
+					"    rel:  {\"type\": \"string\"},",
+					"    title: {\"type\": \"string\"},",
+					"    href: {\"type\": \"string\"},",
+					"    hreflang: {\"type\": \"string\"}",
+					"  },",
+					"  required: [\"type\", \"rel\", \"title\", \"href\"]",
+					"},",
+					"",
+					"SchemaSpatial = {",
+					"  type: \"object\",",
+					"  properties: {",
+					"    spatial: {",
+					"      type: \"object\",",
+					"      properties: {",
+					"        bbox: { type: \"array\" },",
+					"        crs: {\"type\": \"string\"}",
+					"      },",
+					"      required: [\"bbox\", \"crs\"]",
+					"    },",
+					"    temporal: {",
+					"      type: \"object\",",
+					"      properties: {",
+					"        interval: {\"type\": \"array\"}",
+					"      },",
+					"      required: [\"interval\"]",
+					"    }",
+					"  },",
+					"  required: [\"spatial\", \"temporal\"]",
+					"};",
+					"",
+					"SchemaCollectionId = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        id: {type: \"string\"},",
+					"        title: {type: \"string\"},",
+					"        description: {type: \"string\"},",
+					"        keywords: {type: \"array\"},",
+					"        links: {",
+					"            type: \"array\",",
+					"            items: SchemaInfo",
+					"        },",
+					"        extent: SchemaSpatial,",
+					"        item_type: {type: \"string\"},",
+					"        crs: {type: \"array\"},",
+					"        strorageCRS: {type: \"string\"},",
+					"        theme: {type: \"string\"},",
+					"        parent: {type: \"string\"}",
+					"    },",
+					"    required: [\"id\", \"title\", \"description\", \"keywords\", \"links\", \"extent\", \"itemType\", \"storageCRS\", \"theme\", \"parent\"]",
+					"};",
+					"",
+					"SchemaCollectionsIdItem = {",
+					"  type: 'object',",
+					"  properties: {",
+					"    type: {type: 'string'},",
+					"    features: {type: 'array'},",
+					"    numberMatched: {type: 'integer'},",
+					"    numberReturned: {type: 'integer'},",
+					"    links: {",
+					"      type: 'array',",
+					"      items: {",
+					"        type: 'object',",
+					"        required: ['rel', 'href'],",
+					"        properties: {",
+					"          type: {type: 'string'},",
+					"          rel: {type: 'string'},",
+					"          title: {type: 'string'},",
+					"          href: {type: 'string'}",
+					"        }",
+					"      }",
+					"    },",
+					"    timeStamp: {type: 'string'}",
+					"  },",
+					"   required: ['type', 'features', 'numberMatched', 'numberReturned', 'links', 'timeStamp']",
+					"};",
+					"",
+					"SchemaAxe = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"    start: {\"type\": \"number\"},",
+					"    stop: {\"type\": \"number\"},",
+					"    num: {\"type\": \"integer\"}",
+					"    },",
+					"    required: [\"start\",\"stop\",\"num\"]",
+					"};",
+					"",
+					"SchemaReferencing = {",
+					"    type: \"array\",",
+					"    items: [",
+					"    {",
+					"        type: \"object\",",
+					"        properties: {",
+					"        coordinates: {\"type\": \"array\"},",
+					"        system: {",
+					"            type: \"object\",",
+					"            properties: {",
+					"            type: {\"type\": \"string\"},",
+					"            id: {\"type\": \"string\"}",
+					"            },",
+					"            required: [\"type\",\"id\"]",
+					"        }",
+					"        },",
+					"        required: [\"coordinates\",\"system\"]",
+					"    }",
+					"    ]",
+					"};",
+					"",
+					"SchemaDomain = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"    type: {\"type\": \"string\"},",
+					"    domainType: {\"type\": \"string\"},",
+					"    axes: {",
+					"        type: \"object\",",
+					"        properties: {",
+					"        x: SchemaAxe,",
+					"        y: SchemaAxe",
+					"        },",
+					"        required: [\"x\",\"y\"]",
+					"    },",
+					"    referencing: SchemaReferencing",
+					"    },",
+					"    required: [\"type\",\"domainType\",\"axes\",\"referencing\"]",
+					"};",
+					"",
+					"SchemaParameters = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"    null: {",
+					"        type: \"object\",",
+					"        properties: {\"type\": {\"type\": \"string\"},",
+					"        description: {\"type\": [\"string\",\"null\"]},",
+					"        unit: {",
+					"            type: \"object\",",
+					"            properties: {",
+					"            symbol: {\"type\": [\"string\",\"null\"]}",
+					"            },",
+					"            required: [\"symbol\"]",
+					"        },",
+					"        observedProperty: {",
+					"            type: \"object\",",
+					"            properties: {",
+					"            id: {\"type\": [\"string\",\"null\"]},",
+					"            label: {",
+					"                type: \"object\",",
+					"                properties: {",
+					"                en: {\"type\": [\"string\",\"null\"]}",
+					"                },",
+					"                required: [\"en\"]",
+					"            }",
+					"            },",
+					"            required: [\"id\",\"label\"]",
+					"        }",
+					"        },",
+					"        required: [\"type\", \"description\", \"unit\", \"observedProperty\"]",
+					"    }",
+					"    },",
+					"    \"required\": [\"null\"]",
+					"};",
+					"",
+					"SchemaRange =  {",
+					"    type: \"object\",",
+					"    properties: {",
+					"    null: {",
+					"        type: \"object\",",
+					"        properties: {",
+					"        type: {\"type\": \"string\"},",
+					"        dataType: {\"type\": \"string\"},",
+					"        axisNames: {\"type\": \"array\"},",
+					"        shape: {\"type\": \"array\"},",
+					"        values: {\"type\": \"array\"}",
+					"        },",
+					"        required: [\"type\", \"dataType\", \"axisNames\", \"shape\", \"values\"]",
+					"    }",
+					"    },",
+					"    required: [\"null\"]",
+					"};",
+					"",
+					"SchemasCollectionIdCoverage = {",
+					"  \"type\": \"object\",",
+					"  \"properties\": {",
+					"    \"type\": {\"type\": \"string\"},",
+					"    \"domain\": SchemaDomain,",
+					"    \"parameters\": SchemaParameters,",
+					"    \"ranges\": SchemaRange",
+					"  },",
+					"  \"required\": [\"type\", \"domain\", \"parameters\", \"ranges\"]",
+					"}",
+					"",
+					"Schemas = {",
+					"    reloaded:  SchemaReloaded,",
+					"    collection_id: SchemaCollectionId,",
+					"    collections_id_item: SchemaCollectionsIdItem,",
+					"    collection_id_coverage: SchemasCollectionIdCoverage",
+					"",
+					"};",
+					"",
+					"Utils = {",
+					"    // Loads Ajv which is used to enhance schema validations",
+					"    ajv: new Ajv({logger: console}),",
+					"    ",
+					"   ",
+					"        /**",
+					"     * Generic function to check for a 200 response with a given schema format",
+					"     */",
+					"    validateStatusAndSchema: function(pm, schema, status_code=200) {",
+					"        var res = false;",
+					"        pm.test(\"Status code is valid\", () => {",
+					"            pm.response.to.have.status(status_code);",
+					"            ",
+					"            // All valid",
+					"            res = true;",
+					"            if (schema !== null) { ",
+					"            ",
+					"                pm.test(\"Schema is valid\", () => {",
+					"                     pm.response.to.have.jsonSchema(schema);",
+					"                ",
+					"                    ",
+					"                });",
+					"            };",
+					"        });",
+					"        return res;",
+					"    }",
+					"  ",
+					"};"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "urlPyGeoApi",
+			"value": "https://czs-pygeoapi.ddr-stage.services.geo.ca",
+			"type": "string"
+		},
+		{
+			"key": "id_feature",
+			"value": "major_projects___major_projects_inventory_point",
+			"type": "string"
+		},
+		{
+			"key": "id_coverage",
+			"value": "cdem_mpi__cdem",
+			"type": "string"
+		}
+	]
+}
