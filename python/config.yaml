@@ -6,5 +6,11 @@ email:
   port: 445
 
 collections:
-  registry: requete1
-  publication: requete2
+  PyGeoAPI:
+    requete: newman run PyGeoAPI.json -k
+    var_coll: urlPyGeoApi
+    internal: http://10.68.130.138:5000/openapi
+    external: https://czs-pygeoapi.ddr-stage.services.geo.ca
+
+logger:
+  file: log_collection.log
