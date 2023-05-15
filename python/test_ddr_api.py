@@ -43,13 +43,22 @@ class Requests:
 
         return
 
-    def execute_api_call(self, collection, request):
+    def execute_api_call(self, collection_name, mode):
 
-        
+        # Extract the collection to process
+        collection = self.config_yaml["collections"][collection_name]
 
-        export_files =  f"--reporter-json-export {collection}_file.json --reporter-html-export {collection}_file.html "
-        command = request + " " + export_files
-        print (command)
+        # Extract the request
+        request = collection["request"]
+
+        # Extract
+        var_url = collection["var_url"]
+        url_internal = collection["url_internal"]
+
+        export_files = f"--reporter-json-export {collection_name}_file.json --reporter-html-export {collection_name}_file.html "
+        var_collection = f"--env-var {var_url}={url_internal} "
+        command = request + " " + export_files + var_collection
+        print(command)
         ret = os.system(command)
         print ("retour =", ret)
 
@@ -93,29 +102,28 @@ class Requests:
         result = Result(req_total, req_failed, assert_total, assert_failed, collection)
         return result
 
-    def manage_api_testing(self):
+    def manage_api_testing(self, mode):
+
         # Read the YAML configuration file
         self.__read_yaml_file()
 
         collections = self.config_yaml["collections"]
         self.results = []  # Initialize the array of results
-        for collection in collections:
-            request = self.config_yaml["collections"][collection]
-            self.execute_api_call(collection, request)
-            result = self.extract_stats(collection)
+        for collection_name in collections:
+            # Execute the API call using the newman application
+            self.execute_api_call(collection_name, mode)
+
+            # Extract the statistics of the files
+            result = self.extract_stats(collection_name)
             self.results.append(result)
 
+        # Send
         self.email_result()
-
-
-
-
 
 
 requests = Requests()
 
-requests.manage_api_testing()
+mode = "internal"
+requests.manage_api_testing(mode)
 
 
-
-print

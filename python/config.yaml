@@ -7,10 +7,14 @@ email:
 
 collections:
   PyGeoAPI:
-    requete: newman run PyGeoAPI.json -k
-    var_coll: urlPyGeoApi
-    internal: http://10.68.130.138:5000/openapi
-    external: https://czs-pygeoapi.ddr-stage.services.geo.ca
+    request: newman run PyGeoAPI.json -k -r html,json
+    var_url: urlPyGeoApi
+    url_internal: http://10.68.130.138:5000/openapi
+  CZS_Admin:
+    request: newman run CZS_Admin.json -g Globals.json -k
+    var_url: environment
+    url_internal: http://10.68.130.138:5001
+
 
 logger:
   file: log_collection.log
