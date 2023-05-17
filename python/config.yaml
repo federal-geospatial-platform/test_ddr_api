@@ -1,20 +1,29 @@
 email:
   from: bergeronpilon@gmail.com
-  to: bergeronpilon@gmail.com
-  subject: "Résultat"
-  server: dddd
-  port: 445
-
+  to: [bergeronpilon@gmail.com]
+  host: email-smtp.ca-central-1.amazonaws.com
+  user: AKIARHK2ZDWAX5LTKCJH
+  password: BCpDDYnkVsrj8gvCTu7LliMq8+ie4C/JB6QZAEByLuVK
+  port: 587
+  timeout: 10
+  tls: True
+log: ../log/API_test.log
 collections:
   PyGeoAPI:
-    request: newman run PyGeoAPI.json -k -r html,json
+    request: newman run ../newman/PyGeoAPI.json -k -r html,json
     var_url: urlPyGeoApi
     url_internal: http://10.68.130.138:5000/openapi
   CZS_Admin:
-    request: newman run CZS_Admin.json -g Globals.json -k
+    request: newman run ../newman/CZS_Admin.json -g ../newman/Globals.json -k -r html,json
     var_url: environment
     url_internal: http://10.68.130.138:5001
-
-
+  DDR_Registry:
+    request: newman run ../newman/DDR_Registry.json -g ../newman/Globals.json -k -r html,json
+    var_url: environment
+    url_internal:  http://10.68.130.138:5021
+  DDR_Puplisher:
+    request: newman run ../newman/DDR_Publisher.json -g ../newman/Globals.json --env-var "publish_file_zip=../newman/ddr_publish.zip" -k -r html,json
+    var_url: environment
+    url_internal:  http://10.68.130.138:5031
 logger:
   file: log_collection.log
