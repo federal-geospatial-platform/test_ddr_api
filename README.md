@@ -13,10 +13,10 @@ Le programme test_ddr_api est configurable via un YAML. Cette section décrit le
 
 `mode: internal 
 email: 
-  from: bergeronpilon@gmail.com
-  to: [bergeronpilon@gmail.com]
-  host: email-smtp.ca-central-1.amazonaws.com
-  user: AKIARHK2ZDWAX5LTKCJH
+  from: bergeronpilon@gmail.com 
+  to: [bergeronpilon@gmail.com] 
+  host: email-smtp.ca-central-1.amazonaws.com 
+  user: AKIARHK2ZDWAX5LTKCJH 
   password: BCpDDYnkVsrj8gvCTu7LliMq8+ie4C/JB6QZAEByLuVK
   port: 587
   timeout: 10
