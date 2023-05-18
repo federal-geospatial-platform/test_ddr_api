@@ -1,6 +1,6 @@
 mode: internal
 email:
-  from: bergeronpilon@gmail.com
+  from: ddr.fgpservices-servicespgf.rdd@aws.nrcan-rncan.cloud
   to: [bergeronpilon@gmail.com]
   host: email-smtp.ca-central-1.amazonaws.com
   user: AKIARHK2ZDWAX5LTKCJH

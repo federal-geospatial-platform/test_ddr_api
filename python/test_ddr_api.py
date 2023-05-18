@@ -162,7 +162,7 @@ class TestApi:
         self.__build_email_body_text()
 
         # Prepare the email
-        message = emails.html(html=self.body, subject=self.subject, mail_from="ddr.fgpservices-servicespgf.rdd@aws.nrcan-rncan.cloud")
+        message = emails.html(html=self.body, subject=self.subject, mail_from=self.config_yaml["email"]["from"])
 
         for html_file in self.html_files:
             message.attach(data=open(html_file, "rb"), filename=html_file)
