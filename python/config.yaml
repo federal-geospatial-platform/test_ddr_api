@@ -1,3 +1,4 @@
+mode: internal
 email:
   from: bergeronpilon@gmail.com
   to: [bergeronpilon@gmail.com]
@@ -17,13 +18,11 @@ collections:
     request: newman run ../newman/CZS_Admin.json -g ../newman/Globals.json -k -r html,json
     var_url: environment
     url_internal: http://10.68.130.138:5001
-  DDR_Registry:
-    request: newman run ../newman/DDR_Registry.json -g ../newman/Globals.json -k -r html,json
-    var_url: environment
-    url_internal:  http://10.68.130.138:5021
-  DDR_Puplisher:
-    request: newman run ../newman/DDR_Publisher.json -g ../newman/Globals.json --env-var "publish_file_zip=../newman/ddr_publish.zip" -k -r html,json
-    var_url: environment
-    url_internal:  http://10.68.130.138:5031
-logger:
-  file: log_collection.log
+#  DDR_Registry:
+#    request: newman run ../newman/DDR_Registry.json -g ../newman/Globals.json -k -r html,json
+#    var_url: environment
+#    url_internal:  http://10.68.130.138:5021
+#  DDR_Puplisher:
+#    request: newman run ../newman/DDR_Publisher.json -g ../newman/Globals.json --env-var "publish_file_zip=../newman/ddr_publish.zip" -k -r html,json
+#    var_url: environment
+#    url_internal:  http://10.68.130.138:5031
