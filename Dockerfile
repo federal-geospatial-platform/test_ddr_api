@@ -16,7 +16,7 @@ RUN npm config set strict-ssl false
 RUN npm install -g newman
 
 # Install Neman Reporter
-RUN npm install newman-reporter-html
+RUN npm install -g newman-reporter-html
 
 # Copy Python requirements and install dependencies
 COPY /python/requirements.txt /app/requirements.txt
