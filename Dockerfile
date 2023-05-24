@@ -5,7 +5,9 @@ RUN apt update && apt install -y net-tools
 
 # Install Node.js
 #RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-RUN apt install -y nodejs
+RUN apt-get update && apt-get upgrade -y && \
+    apt-get install -y nodejs \
+    npm 
 
 # Install Newman
 RUN npm install newman
