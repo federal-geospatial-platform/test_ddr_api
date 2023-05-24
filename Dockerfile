@@ -4,7 +4,7 @@ FROM python:3.9
 RUN apt update && apt install -y net-tools
 
 # Install Node.js
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+#RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt install -y nodejs
 
 # Install Newman
