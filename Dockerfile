@@ -9,6 +9,8 @@ RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y nodejs \
     npm
 
+RUN npm config set registry http://registry.npmjs.org/  
+
 # Install Newman
 RUN npm install -g newman
 
