@@ -7,10 +7,10 @@ RUN apt update && apt install -y net-tools
 #RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y nodejs \
-    npm 
+    npm
 
 # Install Newman
-RUN npm install newman
+RUN npm install -g newman
 
 COPY /python/requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip
