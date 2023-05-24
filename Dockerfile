@@ -7,6 +7,7 @@ RUN pip install -r /app/requirements.txt
 COPY /python /app/python
 COPY /files /app/files
 COPY /newman /app/newman
+RUN mkdir -p /app/log
 WORKDIR /app/python
 CMD ["ls -l"]
 CMD ["ls -l /app/python"]
