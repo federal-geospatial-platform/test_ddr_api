@@ -26,7 +26,8 @@ RUN pip install -r /app/requirements.txt
 # Copy files
 COPY /python /app/python
 COPY /files /app/files
-COPY /newman/* /app/newman
+#COPY /newman/*.json /app/newman/*.json
+COPY /newman/*.json /etc/app/newman/*.json
 RUN mkdir -p /app/log
 WORKDIR /app/python
 
