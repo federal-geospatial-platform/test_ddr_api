@@ -10,7 +10,6 @@ RUN apt install -y nodejs
 # Install Newman
 RUN npm install -g newman
 
-RUN apt install net-tools
 COPY /python/requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r /app/requirements.txt
