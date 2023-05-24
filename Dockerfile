@@ -1,5 +1,12 @@
 FROM python:3.9
-RUN apt update
+
+# Install system dependencies
+RUN apt update && apt install -y net-tools
+
+# Install Node.js
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt install -y nodejs
+
 RUN apt install net-tools
 COPY /python/requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip
