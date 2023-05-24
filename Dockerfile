@@ -8,7 +8,7 @@ RUN apt update && apt install -y net-tools
 RUN apt install -y nodejs
 
 # Install Newman
-RUN npm install -g newman
+RUN npm install newman
 
 COPY /python/requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip
