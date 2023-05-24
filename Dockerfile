@@ -8,4 +8,4 @@ COPY /python /app/python
 COPY /files /app/files
 COPY /newman /app/newman
 WORKDIR /app/python
-CMD ["python3" "test_ddr_api.py"]
+CMD ["python3", "test_ddr_api.py"]
