@@ -105,13 +105,19 @@ class TestApi:
         url_internal = collection["url_internal"]
 
         export_files = f"--reporter-json-export ../files/{json_file} --reporter-html-export ../files/{html_file} "
-        var_collection = f"--env-var {var_url}={url_internal} "
+
+        if self.config_yaml["mode"] == "url_internal":  # IP address
+            # Change the URL for URL of th ip address
+            var_collection = f"--env-var {var_url}={url_internal} "
+        else:
+            var_collection = ""
 
         command = request + " " + export_files + var_collection
 
         # Adjust the the file paths
         command = command.replace("newman_path::", self.newman_path)
         logging.info(command)
+        print (command)
         ret = os.system(command)
 
         # Store the name of the html and json files

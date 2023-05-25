@@ -1,4 +1,4 @@
-mode: internal
+mode: url_internal
 email:
   from: ddr.fgpservices-servicespgf.rdd@aws.nrcan-rncan.cloud
   to: [bergeronpilon@gmail.com]
