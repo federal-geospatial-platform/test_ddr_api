@@ -1,31 +1,31 @@
 # test_ddr_api
 
-Ce programme a pour but d'exécuter les tests de fonctionnalités des appels des différents API qui sont un des éléments de base de la 
+Ce programme a pour but d'exécuter les tests de fonctionnalités des appels aux différents API qui sont un des éléments de base de la 
 [Stratégie de tests logiciels de l'équipe du DDR.](https://github.com/federal-geospatial-platform/project_management/tree/main/testing_strategy)
 
-Lorsqu'un logiciel contient avec des point d'entrées original pour une ou plusieurs interfaces de proggramation d'application, 
-il est impératif de créer des tester ces points d'entrées en utilisant la plateforme de tests 
+Lorsqu'un logiciel contient des point d'entrées originals pour une ou plusieurs interfaces de programmation d'application, 
+il est impératif de tester ces points d'entrées en utilisant la plateforme de tests 
 [Postman.](https://www.postman.com/).  Une fois la ou les collections terminées et opérationnelles dans Postman vous devez exporter 
 ces collections (*.json) et les copier dans le répertoire /newman. Vous devez par la suite mettre à jour
-le fichier de configuration YMAL et republier dans le fichier docker.
+le fichier de configuration YAML et republier dans le fichier docker.
 
-# Le fichier YMAL
+# Le fichier YAML
 
 Le programme test_ddr_api est configurable via un YAML. Cette section décrit le contenu de ce fichier.
 
  - mode: **internal** or **external** : Utilisation des adresses internes ou externes pour les appels http.
  - email:
     - from: L'adresse courriel de la personne qui envoie le courriel
-    - to: Liste des adresses couriels qui vont recevoir le courriel
+    - to: Liste des adresses courriels qui vont recevoir le courriel
     - host: Le nom du host qui gère le serveur de courrriel
     - user: Le nom de l'usager
     - password: Le mot de passe de l'usager
     - port: Le numéro de port
     - timeout: Le nombre de secondes pour le timeout
     - tsl: Fanion True/False pour le protocole de sécurité
-  - log: Le nom di fichier log (adresse relative ou absolue)
+  - log: Le nom du fichier log (adresse relative ou absolue)
   - collection
-      - *nom de la collection*: Le nom du fichier JSON de la collection Post (sans l'extension .json)
+      - *nom de la collection*: Le nom du fichier JSON de la collection Postman (sans l'extension .json)
         - request: Requête newman qui sera exécutée
         - var_url: Nom de la variable de collection contenant url des requêtes (défini dans la partie collection)
         - url_internal: Url de la requête interne
