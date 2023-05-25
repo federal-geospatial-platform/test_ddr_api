@@ -8,10 +8,10 @@ email:
   port: 587
   timeout: 10
   tls: True
-log: ../log/API_test.log
+log: log_path::API_test.log
 collections:
   PyGeoAPI:
-    request: newman run {newman_path}PyGeoAPI.json -k -r html,json
+    request: newman run newman_path::PyGeoAPI.json -k -r html,json
     var_url: urlPyGeoApi
     url_internal: http://10.68.130.138:5000/openapi
 #  CZS_Admin:

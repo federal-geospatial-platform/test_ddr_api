@@ -50,9 +50,11 @@ class TestApi:
             self.docker_run = False
 
         if self.docker_run:
-            self.newman_path = "/etc/app/newman"
+            self.newman_path = "/etc/app/newman/"
+            self.log_path = "/etc/app/log/"
         else:
-            self.newman_path = "../newman"
+            self.newman_path = "../newman/"
+            self.log_path = "../log/"
 
         return
 
@@ -106,6 +108,9 @@ class TestApi:
         var_collection = f"--env-var {var_url}={url_internal} "
 
         command = request + " " + export_files + var_collection
+
+        # Adjust the the file paths
+        command = command.replace("newman_path::", self.newman_path)
         logging.info(command)
         ret = os.system(command)
 
@@ -237,7 +242,10 @@ class TestApi:
         self.__read_yaml_file()
 
         # Create the logger
-        logging.basicConfig(filename=self.config_yaml["log"], filemode='a',
+        log_file = self.config_yaml["log"]
+        # Adjust file path
+        log_file = log_file.replace("log_path::", self.log_path)
+        logging.basicConfig(filename=log_file, filemode='a',
                             level=logging.INFO,
                             format='%(asctime)s - %(levelname)s - %(message)s',
                             datefmt="%Y-%m-%d %H:%M:%S", )
