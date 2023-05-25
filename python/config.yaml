@@ -11,7 +11,7 @@ email:
 log: ../log/API_test.log
 collections:
   PyGeoAPI:
-    request: newman run /etc/app/newman/PyGeoAPI.json -k -r html,json
+    request: newman run {newman_path}PyGeoAPI.json -k -r html,json
     var_url: urlPyGeoApi
     url_internal: http://10.68.130.138:5000/openapi
 #  CZS_Admin:

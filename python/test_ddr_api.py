@@ -43,6 +43,17 @@ class TestApi:
         self.html_files = []  # Initialise the list of attached/html files
         self.json_files = []  # Initialise the list of stats/json files
 
+        # Test if the program is run in a docker environment or not
+        if os.environ.get('DOCKER_RUN') is not None:
+            self.docker_run = True
+        else:
+            self.docker_run = False
+
+        if self.docker_run:
+            self.newman_path = "/etc/app/newman"
+        else:
+            self.newman_path = "../newman"
+
         return
 
     def __copy_json_documents(self):
@@ -93,6 +104,7 @@ class TestApi:
 
         export_files = f"--reporter-json-export ../files/{json_file} --reporter-html-export ../files/{html_file} "
         var_collection = f"--env-var {var_url}={url_internal} "
+
         command = request + " " + export_files + var_collection
         logging.info(command)
         ret = os.system(command)
