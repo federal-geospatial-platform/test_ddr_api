@@ -143,11 +143,15 @@ class TestApi:
             if result.req_failed == 0 and result.assert_failed == 0:
                 status_fr = "Succès"
                 status_en = "Success"
+                color = "green"
             else:
                 status_fr = "Échec"
                 status_en = "Failure"
+                color = "red"
             self.tilte = f"{status_fr} - Résultat des tests de l'API / {status_en} - Result from API test <br>"
-            detailed_stats += f"{HS}- {result.collection}: {status_fr} <br>"
+            detailed_stats += f'<body style="color: {color}">'
+            detailed_stats += f"{HS}- {result.collection}: {status_fr}:<br>"
+            detailed_stats += '<body style="color: black">'  # Reset color to black
             detailed_stats += f"{HS}{HS}- Requête: succès: {result.req_total - result.req_failed} <br>"
             detailed_stats += f"{HS}{HS}- Requête: échec: {result.req_failed} <br>"
             detailed_stats += f"{HS}{HS}- Assertion: succès: {result.assert_total - result.assert_failed} <br>"
@@ -157,25 +161,25 @@ class TestApi:
         if self.test_success:
             status_fr = "Succès"
             status_en = "Success"
-            color = "green"  # Color of the Welcome message in the email body
+#            color = "green"  # Color of the Welcome message in the email body
         else:
             status_fr = "Échec"
             status_en = "Failure"
-            color = "red"  # Color of the Welcome message in the email body
+#            color = "red"  # Color of the Welcome message in the email body
 
         # Build the email body
         self.body = ""
         self.body += "<b>DDR API Test</b> <br><br>"
         self.body += "(English message follows) <br><br>"
-        self.body += "Bonjour,  <br>"
-        self.body += f'<p style="color: {color}"><b><font size="+2">'  # Set the color of the title according to Success or Failure
-        self.body += f"{status_fr} des tests de fonctionnalités de l'API / {status_en} of the API fonctionality TEST <br>"
-        self.body += '<p style="color: black"></b>'  # Reset color to black
-        self.body += "Voici les résultats détaillés du tests: <br>"
+        self.body += "Bonjour,<br><br>"
+#        self.body += f'<p style="color: {color}"><b><font size="+2">'  # Set the color of the title according to Success or Failure
+#        self.body += f"{status_fr} des tests de fonctionnalités de l'API / {status_en} of the API fonctionality TEST <br>"
+#        self.body += '<p style="color: black"></b>'  # Reset color to black
+        self.body += "Voici les résultats détaillés des tests: <br>"
         self.body += detailed_stats
 
         # Build the email subject
-        self.subject = f"{status_fr} des tests fonctionalité de l'API / {status_en} of the API functionality test"
+        self.subject = f"{status_fr} des tests de fonctionalité de l'API / {status_en} of the API functionality test"
 
     def __email_results(self):
         """
