@@ -58,14 +58,23 @@ Voici les étapes nécessaires pour exécuter interactivement les tests de fonct
 
  - se connecter sur une machine Windows AWS (il est possible d'exécuter le programme sur un ordinateur
 de RNCan mais aucun courriel ne pourra être envoyé)
- - cloner l'environnement de tests: git clone https://github.com/federal-geospatial-platform/test_ddr_api.git
+ - cloner l'environnement github: `git clone https://github.com/federal-geospatial-platform/test_ddr_api.git`
  - installer les environnemnts Javascript et Newman nécessaires à l'exécution:
    - télécharger et installer [Node.js](https://nodejs.org/en/download)
-   - installer Newman: `npm install -g newman`
-   - Installer Newman Reporter HTML: `npm install -g newman-reporter-html`
-   - installer Newman Reporter Summary: `npm install -g newman-reporter-json-summary`
+   - installer [Newman](https://github.com/postmanlabs/newman): `npm install -g newman`
+   - Installer [Newman Reporter HTML](https://www.npmjs.com/package/newman-reporter-html): `npm install -g newman-reporter-html`
+   - installer [Newman Reporter Summary](https://www.npmjs.com/package/newman-reporter-json-summary): `npm install -g newman-reporter-json-summary`
    - se placer dans le répertoire `./python`
    - exécuter la commande `python test_ddr_api.py`
 
 ## Exécution Docker
+
+Voici les étapes nécessaires pour créer les fichier docker des tests de fonctionnalités de l'API dans l'environnement Windows:
+
+  - cloner l'environnement github: `git clone https://github.com/federal-geospatial-platform/test_ddr_api.git`
+  - 
+
+
+
+
 
