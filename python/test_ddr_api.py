@@ -44,7 +44,7 @@ class TestApi:
         self.json_files = []  # Initialise the list of stats/json files
 
         # Test if the program is run in a docker environment or not
-        if os.environ.get('DOCKER_RUN') is not None:
+        if os.environ.get('RUN_DOCKER') is not None:
             self.docker_run = True
         else:
             self.docker_run = False
@@ -52,9 +52,12 @@ class TestApi:
         if self.docker_run:
             self.newman_path = "/etc/app/newman/"
             self.log_path = "/etc/app/log/"
+
         else:
             self.newman_path = "../newman/"
             self.log_path = "../log/"
+
+        print ("path: ", self.newman_path)
 
         return
 
@@ -104,7 +107,7 @@ class TestApi:
         var_url = collection["var_url"]
         url_internal = collection["url_internal"]
 
-        export_files = f"--reporter-json-export ../files/{json_file} --reporter-html-export ../files/{html_file} "
+        export_files = f"--reporter-summary-json-export ../files/{json_file} --reporter-html-export ../files/{html_file} "
 
         if self.config_yaml["mode"] == "url_internal":  # IP address
             # Change the URL for URL of th ip address
@@ -222,12 +225,13 @@ class TestApi:
         json_report = json.load(handle)  # Load the JSON file
 
         # Extract the content
-        stats = json_report['run']['stats']
-        req_total = stats['requests']['total']
-        req_failed = stats['requests']['failed']
-        assert_total = stats['assertions']['total']
-        assert_failed = stats['assertions']['failed']
+        stats = json_report['Run']['Stats']
+        req_total = stats['Requests']['total']
+        req_failed = stats['Requests']['failed']
+        assert_total = stats['Assertions']['total']
+        assert_failed = stats['Assertions']['failed']
 
+        print (f"Total request: {req_total}; Request failed: {req_failed}; Total assertion: {assert_total}; Assertion failed: {assert_failed}")
         logging.info(f"Total request: {req_total}; Request failed: {req_failed}; Total assertion: {assert_total}; Assertion failed: {assert_failed}")
         result = Result(req_total, req_failed, assert_total, assert_failed, collection)
 
