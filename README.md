@@ -13,7 +13,7 @@ le fichier de configuration YAML et republier dans le fichier docker.
 
 Le programme test_ddr_api est configurable via un YAML. Cette section décrit le contenu de ce fichier.
 
- - mode: **internal** or **external** : Utilisation des adresses internes ou externes pour les appels http.
+ - mode: **url_internal** or **url_external** : Utilisation des adresses internes (adresses IP ex.: 10.192.124.185) ou externes pour les appels http.
  - email:
     - from: L'adresse courriel de la personne qui envoie le courriel
     - to: Liste des adresses courriels qui vont recevoir le courriel
@@ -33,7 +33,7 @@ Le programme test_ddr_api est configurable via un YAML. Cette section décrit le
 Vous trouverez ci-dessous un exemple de fichier de configuration YAML
 
 ```
-mode: internal 
+mode: url_internal 
 email: 
   from: bergeronpilon@gmail.com 
   to: [bergeronpilon@gmail.com] 
@@ -44,9 +44,28 @@ email:
   timeout: 10
   tls: True
 log: ../log/API_test.log
-collections:
-  PyGeoAPI:
-    request: newman run ../newman/PyGeoAPI.json -k -r html,json
+  clip_zip_ship_api:
+    request: newman run newman_path::clip_zip_ship_api.json -k -r html,json-summary
     var_url: urlPyGeoApi
     url_internal: http://10.68.130.138:5000/openapi
 ```
+
+# Exécution des tests de fonctionnalités de l'API
+
+## Exécution interactive
+
+Voici les étapes nécessaires pour exécuter interactivement les tests de fonctionnalités de l'API dans l'environnement Windows:
+
+ - se connecter sur une machine Windows AWS (il est possible d'exécuter le programme sur un ordinateur
+de RNCan mais aucun courriel ne pourra être envoyé)
+ - cloner l'environnement de tests: git clone https://github.com/federal-geospatial-platform/test_ddr_api.git
+ - installer les environnemnts Javascript et Newman nécessaires à l'exécution:
+   - télécharger et installer [Node.js](https://nodejs.org/en/download)
+   - installer Newman: `npm install -g newman`
+   - Installer Newman Reporter HTML: `npm install -g newman-reporter-html`
+   - installer Newman Reporter Summary: `npm install -g newman-reporter-json-summary`
+   - se placer dans le répertoire `./python`
+   - exécuter la commande `python test_ddr_api.py`
+
+## Exécution Docker
+
