@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "adf11e00-511e-4b21-8ba9-c36e4d218149",
-		"name": "Test DDR Registry",
+		"name": "ddr_registry",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26746003"
 	},

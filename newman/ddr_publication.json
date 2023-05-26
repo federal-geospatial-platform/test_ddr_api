@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "e7ac9e5f-0169-4ead-b204-f738b214defa",
-		"name": "Test DDR Publisher",
+		"name": "ddr_publication",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26746003"
 	},
@@ -620,7 +620,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "{{publish_file_zip}}"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
 								}
 							]
 						},
@@ -696,7 +696,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "{{publish_file_zip}}"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
 								}
 							]
 						},
@@ -772,7 +772,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "{{publish_file_zip}}"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
 								}
 							]
 						},
@@ -848,7 +848,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "{{publish_file_zip}}"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
 								}
 							]
 						},
@@ -908,7 +908,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "{{publish_file_zip}}"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
 								}
 							]
 						},
@@ -1033,7 +1033,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "{{publish_file_zip}}"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
 								}
 							]
 						},
@@ -1093,7 +1093,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "{{publish_file_zip}}"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
 								}
 							]
 						},

@@ -10,19 +10,19 @@ email:
   tls: True
 log: log_path::API_test.log
 collections:
-#  PyGeoAPI:
-#    request: newman run newman_path::PyGeoAPI.json -k -r html,json-summary
+#  clip_zip_ship_api:
+#    request: newman run newman_path::clip_zip_ship_api.json -k -r html,json-summary
 #    var_url: urlPyGeoApi
 #    url_internal: http://10.68.130.138:5000/openapi
-  CZS_Admin:
-    request: newman run newman_path::CZS_Admin.json -g newman_path::globals.json -k -r html,json-summary
+  clip_zip_ship_registry:
+    request: newman run newman_path::clip_zip_ship_registry.json -g newman_path::globals.json -k -r html,json-summary
     var_url: environment
     url_internal: http://10.68.130.138:5001
-#  DDR_Registry:
-#    request: newman run newman_path::DDR_Registry.json -g newman_path::globals.json -k -r html,json-summary
+#  ddr_registry:
+#    request: newman run newman_path::ddr_registry.json -g newman_path::globals.json -k -r html,json-summary
 #    var_url: environment
 #    url_internal:  http://10.68.130.138:5021
-#  DDR_Puplisher:
-#    request: newman run newman_path::DDR_Publisher.json -g newman_path::globals.json --env-var "publish_file_zip=newman_path::ddr_publish.zip" -k -r html,json-summary
+#  ddr_publication:
+#    request: newman run newman_path::ddr_publication.json -g newman_path::globals.json --env-var "publish_file_zip=newman_path::ddr_publish.zip" -k -r html,json-summary
 #    var_url: environment
 #    url_internal:  http://10.68.130.138:5031

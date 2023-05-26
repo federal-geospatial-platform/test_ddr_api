@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "c6ec343d-644d-4c7a-a943-28b83671a45c",
-		"name": "Test CZS Admin API",
+		"name": "clip_zip_ship_registry",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26746003"
 	},
