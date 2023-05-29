@@ -72,7 +72,7 @@ de RNCan mais aucun courriel ne pourra être envoyé)
 Voici les étapes nécessaires pour créer les fichier docker des tests de fonctionnalités de l'API dans l'environnement Windows:
 
   - cloner l'environnement github: `git clone https://github.com/federal-geospatial-platform/test_ddr_api.git`
-  - 
+cd
 
 
 
