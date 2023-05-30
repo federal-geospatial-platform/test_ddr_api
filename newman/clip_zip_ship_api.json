@@ -540,7 +540,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/collections/{{id_coverage}}/coverage?f=json&lang=en-US&bbox=-113.43,53.51,-113.22,53.59&bbox-crs=4617&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617",
+							"raw": "{{urlPyGeoApi}}/collections/{{id_coverage}}/coverage?f=json&lang=en-US&bbox=-113.423,53.515,-113.42,53.52&bbox-crs=4617&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617",
 							"host": [
 								"{{urlPyGeoApi}}"
 							],
@@ -560,7 +560,7 @@
 								},
 								{
 									"key": "bbox",
-									"value": "-113.43,53.51,-113.22,53.59"
+									"value": "-113.423,53.515,-113.42,53.52"
 								},
 								{
 									"key": "bbox-crs",
@@ -3652,7 +3652,7 @@
 		},
 		{
 			"key": "id_coverage",
-			"value": "cdem_mpi__cdem",
+			"value": "cdem__cdem",
 			"type": "string"
 		}
 	]
