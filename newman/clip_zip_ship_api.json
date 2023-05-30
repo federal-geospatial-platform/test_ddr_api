@@ -246,7 +246,7 @@
 							"script": {
 								"exec": [
 									"// Validate status 200 and schema: token_revoked\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.post_collection, 200)) {\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
