@@ -1,7 +1,12 @@
-# test_ddr_api
+
+
+
+# Introduction
 
 Ce programme a pour but d'exécuter les tests de fonctionnalités des appels aux différents API qui sont un des éléments de base de la 
 [Stratégie de tests logiciels de l'équipe du DDR.](https://github.com/federal-geospatial-platform/project_management/tree/main/testing_strategy)
+
+# Postman
 
 Lorsqu'un logiciel contient des point d'entrées pour une ou plusieurs interfaces de programmation d'application, 
 il est impératif de tester ces points d'entrées en utilisant la plateforme de tests 
