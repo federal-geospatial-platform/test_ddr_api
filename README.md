@@ -3,15 +3,15 @@
 Ce programme a pour but d'exécuter les tests de fonctionnalités des appels aux différents API qui sont un des éléments de base de la 
 [Stratégie de tests logiciels de l'équipe du DDR.](https://github.com/federal-geospatial-platform/project_management/tree/main/testing_strategy)
 
-Lorsqu'un logiciel contient des point d'entrées originals pour une ou plusieurs interfaces de programmation d'application, 
+Lorsqu'un logiciel contient des point d'entrées pour une ou plusieurs interfaces de programmation d'application, 
 il est impératif de tester ces points d'entrées en utilisant la plateforme de tests 
 [Postman.](https://www.postman.com/).  Une fois la ou les collections terminées et opérationnelles dans Postman vous devez exporter 
 ces collections (*.json) et les copier dans le répertoire /newman. Vous devez par la suite mettre à jour
-le fichier de configuration YAML et republier dans le fichier docker.
+le fichier de configuration YAML /python/config.yaml et recréer le fichier docker.
 
-# Le fichier YAML
+# Le fichier de configuration YAML
 
-Le programme test_ddr_api est configurable via un YAML. Cette section décrit le contenu de ce fichier.
+Le programme /python/test_ddr_api.py est configurable via un fichier YAML. Cette section décrit le contenu de ce fichier.
 
  - mode: **url_internal** or **url_external** : Utilisation des adresses internes (adresses IP ex.: 10.192.124.185) ou externes pour les appels http.
  - email:
@@ -69,10 +69,19 @@ de RNCan mais aucun courriel ne pourra être envoyé)
 
 ## Exécution Docker
 
-Voici les étapes nécessaires pour créer les fichier docker des tests de fonctionnalités de l'API dans l'environnement Windows:
+Voici les étapes nécessaires pour créer le fichier docker des tests de fonctionnalités de l'API dans l'environnement Windows et ou Linux:
 
   - cloner l'environnement github: `git clone https://github.com/federal-geospatial-platform/test_ddr_api.git`
-cd
+  - se déplacer dans le répertoire /test_drdr_api
+  - créer l'image docker: `docker build -t test_ddr_api .`
+  - exécuter l'image docker: `docker run test_ddr_api`
+
+Note: 
+  - Dans l'environnement Windows, l'outil: [Docker Desktop](https://www.docker.com/products/docker-desktop/) doit être installer
+avant de tenter de créer des images dockers;
+  - Dans l'environnement Linux, l'outil [Docker Engine](https://docs.docker.com/engine/install/ubuntu/) doit être installer 
+avant de tenter de créer des images dockers; 
+
 
 
 
