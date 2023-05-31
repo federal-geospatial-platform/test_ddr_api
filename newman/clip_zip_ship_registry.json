@@ -361,7 +361,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"theme_uuid\": \"e7087e59-a57f-432b-81db-065f4d40e797\",\r\n  \"title_en\": \"Title\",\r\n  \"title_fr\": \"Titre\"\r\n}",
+							"raw": "{\r\n  \"org_schema\": \"nrcan\",\r\n  \"theme_uuid\": \"e7087e59-a57f-432b-81db-065f4d40e797\",\r\n  \"title_en\": \"Title\",\r\n  \"title_fr\": \"Titre\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
