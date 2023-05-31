@@ -1,63 +1,13 @@
 {
 	"info": {
-		"_postman_id": "adf11e00-511e-4b21-8ba9-c36e4d218149",
-		"name": "ddr_registry",
+		"_postman_id": "c6ec343d-644d-4c7a-a943-28b83671a45c",
+		"name": "clip_zip_ship_registry",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26746003"
 	},
 	"item": [
 		{
-			"name": "Test No Login",
-			"item": [
-				{
-					"name": "List the Departements",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test 401 was returned (Login not done)\r",
-									"Utils.validateStatusAndSchema(pm, null, 401)"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/departments",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Login",
+			"name": "Authentication",
 			"item": [
 				{
 					"name": "Login",
@@ -66,7 +16,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"// Validate status 200 and schema: Token\r",
+									"// Validate status 200 and schema: token_revoked\r",
 									"if (Utils.validateStatusAndSchema(pm, Schemas.token, 200)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
@@ -76,82 +26,7 @@
 									"\r",
 									"// Store the token in the Collection variables\r",
 									"pm.collectionVariables.set(\"bearerToken\", pm.response.json().access_token);\r",
-									"pm.collectionVariables.set(\"refreshToken\", pm.response.json().refresh_token);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/login",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"login"
-							],
-							"variable": [
-								{
-									"key": "environment",
-									"value": "{{environment}}",
-									"description": " (This can only be one of https://registry-api.ddr-stage.services.geo.ca,https://localhost:5021)"
-								}
-							]
-						},
-						"description": "Generates a JWT for a given User"
-					},
-					"response": []
-				},
-				{
-					"name": "Refresh Login",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Token\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.token, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									"\r",
-									"// Store the token in the Collection variables\r",
-									"pm.collectionVariables.set(\"bearerToken\", pm.response.json().access_token);\r",
-									"pm.collectionVariables.set(\"refreshToken\", pm.response.json().refresh_token);\r",
-									"\r",
+									"pm.collectionVariables.set(\"refreshToken\", pm.response.json().access_token);\r",
 									""
 								],
 								"type": "text/javascript"
@@ -159,168 +34,11 @@
 						}
 					],
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/login",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"login"
-							],
-							"variable": [
-								{
-									"key": "environment",
-									"value": "{{environment}}",
-									"description": " (This can only be one of https://registry-api.ddr-stage.services.geo.ca,https://localhost:5021)"
-								}
-							]
-						},
-						"description": "Generates a JWT for a given User"
-					},
-					"response": []
-				},
-				{
-					"name": "Login (Reset Bearer Token)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Token\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.token, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"refresh_token\": \"{{refreshToken}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/refresh",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"refresh"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login (Check token renamed)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Token\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.token, 200)) {\r",
-									"\r",
-									"    pm.test(\"Login is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"        \r",
-									"        // Validate that the token value has changed between 2 login\r",
-									"          pm.expect(pm.collectionVariables.get(\"bearerToken\")).to.not.equals(pm.response.json().access_token);\r",
-									"    });\r",
-									"\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									"\r",
-									"// Store the token in the Collection variables\r",
-									"pm.collectionVariables.set(\"bearerToken\", pm.response.json().access_token);\r",
-									"pm.collectionVariables.set(\"refreshToken\", pm.response.json().refresh_token);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}",
+							"raw": "{\r\n  \"username\": \"{{username}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -334,33 +52,25 @@
 							],
 							"path": [
 								"login"
-							],
-							"variable": [
-								{
-									"key": "environment",
-									"value": "{{environment}}",
-									"description": " (This can only be one of https://registry-api.ddr-stage.services.geo.ca,https://localhost:5021)"
-								}
 							]
-						},
-						"description": "Generates a JWT for a given User"
+						}
 					},
 					"response": []
 				}
 			]
 		},
 		{
-			"name": "Test Datasets (Simple)",
+			"name": "Collections",
 			"item": [
 				{
-					"name": "Get Datasets (All)",
+					"name": "Get Collections (All)",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"// Validate status 200 and schema: Dataset\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.dataset_list, 200)) {\r",
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.collection_list, 200)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
@@ -385,26 +95,26 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/datasets",
+							"raw": "{{baseUrl}}/collections",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"datasets"
+								"collections"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Datasets (One)",
+					"name": "Get Collections (One)",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"// Validate status 200 and schema: Dataset\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.dataset, 200)) {\r",
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.collection_list, 200)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
@@ -429,56 +139,172 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/datasets/dataset/{{get_dataset_id}}",
+							"raw": "{{baseUrl}}/collections/{{collection_id}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"datasets",
-								"dataset",
-								"{{get_dataset_id}}"
+								"collections",
+								"{{collection_id}}"
 							]
 						}
 					},
 					"response": []
 				}
-			],
-			"auth": {
-				"type": "bearer"
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
 			]
 		},
 		{
-			"name": "Test Datasets (Put/Patch/Delete)",
+			"name": "Admin",
 			"item": [
 				{
-					"name": "Create New Dataset",
+					"name": "Get Parents",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"// Test the insert worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"// Validate status 200 and schema: token_revoked\r",
+									"pm.response.to.have.jsonSchema(Schemas.parents_list);\r",
+									"//if (Utils.validateStatusAndSchema(pm, Schemas.parents_list, 200)) {\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.parents_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/parents",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Themes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.theme_czs_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/themes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"themes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Metadata",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/metadata/{{get_metadata_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"metadata",
+								"{{get_metadata_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Parents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 201)) {\r",
+									"    \r",
+									"    // Extract the UUID of the Parent\r",
+									"    pm.collectionVariables.set(\"parent_uuid_added\", pm.response.text());\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
@@ -505,7 +331,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"core_subject_term\": \"core_subject\",\r\n  \"department_acrn_en\": \"{{patch_dataset_dept_1}}\",\r\n  \"download_folder_name\": \"folder_name\",\r\n  \"download_folder_path\": \"folder_path\",\r\n  \"download_id\": \"DDR_DOWNLOAD1\",\r\n  \"metadata_id\": \"{{patch_dataset_meta_id}}\",\r\n  \"thumbnail_image_file\": \"thumbnail_image\"\r\n}",
+							"raw": "{\r\n  \"org_schema\": \"nrcan\",\r\n  \"theme_uuid\": \"e7087e59-a57f-432b-81db-065f4d40e797\",\r\n  \"title_en\": \"Title\",\r\n  \"title_fr\": \"Titre\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -513,677 +339,31 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/datasets",
+							"raw": "{{baseUrl}}/parents",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"datasets"
+								"parents"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Validate New Dataset",
+					"name": "Get Parent",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"// Validate status 200 and schema: Dataset\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.dataset, 200)) {\r",
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
 									"    console.log(\"BAD\");\r",
 									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/datasets/{{patch_dataset_meta_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"datasets",
-								"{{patch_dataset_meta_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Edit New dataset (One Field)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the update worked\r",
-									"Utils.validateStatusAndSchema(pm, null, 204)"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/download_folder_path\",\r\n    \"value\": \"folder_path_1\"\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/datasets/{{patch_dataset_meta_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"datasets",
-								"{{patch_dataset_meta_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Validate Edited New Dataset",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Dataset\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.dataset, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"\r",
-									"        // Validate the response against the expected values\r",
-									"        pm.expect(responseJson.core_subject_term).to.equal(\"core_subject\");\r",
-									"        pm.expect(responseJson.department_id).to.equal(\"2c4ecfff-4649-4e9c-a899-a8e7891cb9a6\");\r",
-									"        pm.expect(responseJson.download_folder_name).to.equal(\"folder_name\");\r",
-									"        pm.expect(responseJson.download_folder_path).to.equal(\"folder_path_1\");\r",
-									"        pm.expect(responseJson.download_id).to.equal(\"DDR_DOWNLOAD1\");\r",
-									"        pm.expect(responseJson.metadata_id).to.equal(\"0b393581-c249-480f-919a-e9f5f12c9ed7\");\r",
-									"        pm.expect(responseJson.thumbnail_image_file).to.equal(\"thumbnail_image\");\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/datasets/{{patch_dataset_meta_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"datasets",
-								"{{patch_dataset_meta_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Edit New Dataset (All Fields)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the update worked\r",
-									"Utils.validateStatusAndSchema(pm, null, 204);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/download_folder_path\",\r\n    \"value\": \"folder_path_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/thumbnail_image_file\",\r\n    \"value\": \"thumbnail_image_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/core_subject_term\",\r\n    \"value\": \"core_subject_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/download_folder_name\",\r\n    \"value\": \"folder_name_2\"\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/datasets/{{patch_dataset_meta_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"datasets",
-								"{{patch_dataset_meta_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Validate Edited New Dataset",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Dataset\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.dataset, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"\r",
-									"        // Validate the response against the expected values\r",
-									"        pm.expect(responseJson.core_subject_term).to.equal(\"core_subject_2\");\r",
-									"        pm.expect(responseJson.department_id).to.equal(\"2c4ecfff-4649-4e9c-a899-a8e7891cb9a6\");\r",
-									"        pm.expect(responseJson.download_folder_name).to.equal(\"folder_name_2\");\r",
-									"        pm.expect(responseJson.download_folder_path).to.equal(\"folder_path_2\");\r",
-									"        pm.expect(responseJson.download_id).to.equal(\"DDR_DOWNLOAD1\");\r",
-									"        pm.expect(responseJson.metadata_id).to.equal(\"0b393581-c249-480f-919a-e9f5f12c9ed7\");\r",
-									"        pm.expect(responseJson.thumbnail_image_file).to.equal(\"thumbnail_image_2\");\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/datasets/{{patch_dataset_meta_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"datasets",
-								"{{patch_dataset_meta_id}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete New Dataset",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the delete worked\r",
-									"Utils.validateStatusAndSchema(pm, null, 204);"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/datasets/{{patch_dataset_meta_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"datasets",
-								"{{patch_dataset_meta_id}}"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Test Department (Simple)",
-			"item": [
-				{
-					"name": "Get Departments (All)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Department\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.department_list, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/departments",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Departments (One)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Department\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.department, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/departments/{{get_id_department}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments",
-								"{{get_id_department}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Departments (One) Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Department\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.department, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/departments/default_qgis_server_id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments",
-								"default_qgis_server_id"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Test Departments (Put/Patch/Detele)",
-			"item": [
-				{
-					"name": "Create Dummy Department",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the insert worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"default_download_id\": \"DDR_DOWNLOAD1\",\r\n  \"default_qgis_server_id\": \"DDR_QGS1\",\r\n  \"download_root_subpath\": \"download\\\\root\\\\path\\\\\",\r\n  \"downloads\": [\r\n    \"DDR_DOWNLOAD1\"\r\n  ],\r\n  \"name_en\": \"Dummy Department Canada\",\r\n  \"name_fr\": \"Ministère fantôche du Canada\",\r\n  \"publishers\": [\r\n    \"john.doe@nrcan-rncan.gc.ca\"\r\n  ],\r\n  \"qgis_data_store_root_subpath\": \"root\\\\path\\\\\",\r\n  \"servers\": [\r\n    \"DDR_QGS1\"\r\n  ],\r\n  \"tbs_acron_en\": \"{{patch_dept_dummy}}\",\r\n  \"tbs_acron_fr\": \"DUMMY_FR\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/departments",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Dummy Department",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Department\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.department, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/departments/{{patch_dept_dummy}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments",
-								"{{patch_dept_dummy}}"
-							]
-						},
-						"description": "Deletes a Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Patch Dummy Department Edit one field",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the update worked\r",
-									"Utils.validateStatusAndSchema(pm, null, 204)"
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/name_en\",\r\n    \"value\": \"name_en_val_1\"\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/departments/{{patch_dept_dummy}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments",
-								"{{patch_dept_dummy}}"
-							]
-						},
-						"description": "Deletes a Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Dummy Department Edit One filed",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Department\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.department, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"        \r",
-									"        // Validate the response against the expected values\r",
-									"        pm.expect(responseJson.tbs_dept_acrn_en).to.equal(\"DEPT_DUMMY\");\r",
-									"        pm.expect(responseJson.tbs_dept_acrn_fr).to.equal(\"DUMMY_FR\");\r",
-									"        pm.expect(responseJson.default_qgis_server_id).to.equal(\"DDR_QGS1\");\r",
-									"        pm.expect(responseJson.default_download_id).to.equal(\"DDR_DOWNLOAD1\");\r",
-									"        pm.expect(responseJson.download_root_subpath).to.equal(\"download\\\\root\\\\path\\\\\");\r",
-									"        pm.expect(responseJson.name_en).to.equal(\"name_en_val_1\");\r",
-									"        pm.expect(responseJson.name_fr).to.equal(\"Ministère fantôche du Canada\");\r",
-									"        pm.expect(responseJson.qgis_data_store_root_subpath).to.equal(\"root\\\\path\\\\\");\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
 								],
 								"type": "text/javascript"
 							}
@@ -1204,12 +384,7 @@
 							]
 						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -1220,1651 +395,25 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/departments/{{patch_dept_dummy}}",
+							"raw": "{{baseUrl}}/parents",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"departments",
-								"{{patch_dept_dummy}}"
-							]
-						},
-						"description": "Deletes a Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Patch Dummy Department Edit one field Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the update worked\r",
-									"Utils.validateStatusAndSchema(pm, null, 204)"
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/name_en\",\r\n    \"value\": \"name_en_val_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/name_fr\",\r\n    \"value\": \"name_fr_val\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/tbs_dept_acrn_fr\",\r\n    \"value\": \"acrn_fr_val\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/default_qgis_server_id\",\r\n    \"value\": \"{{patch_dept_server_id_2}}\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/default_download_id\",\r\n    \"value\": \"{{patch_dept_download_id_2}}\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/qgis_data_store_root_subpath\",\r\n    \"value\": \"subpath_val\"\r\n  },\r\n    {\r\n    \"op\": \"update\",\r\n    \"path\": \"/download_root_subpath\",\r\n    \"value\": \"download_root_val\"\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/departments/{{patch_dept_dummy}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments",
-								"{{patch_dept_dummy}}"
-							]
-						},
-						"description": "Deletes a Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Dummy Department Edit One filed Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Department\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.department, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"        \r",
-									"        // Validate the response against the expected values\r",
-									"        pm.expect(responseJson.tbs_dept_acrn_en).to.equal(\"DEPT_DUMMY\");\r",
-									"        pm.expect(responseJson.tbs_dept_acrn_fr).to.equal(\"acrn_fr_val\");\r",
-									"        pm.expect(responseJson.default_qgis_server_id).to.equal(\"DDR_QGS_Internal\");\r",
-									"        pm.expect(responseJson.default_download_id).to.equal(\"DDR_DOWNLOAD_Internal\");\r",
-									"        pm.expect(responseJson.download_root_subpath).to.equal(\"download_root_val\");\r",
-									"        pm.expect(responseJson.name_en).to.equal(\"name_en_val_2\");\r",
-									"        pm.expect(responseJson.name_fr).to.equal(\"name_fr_val\");\r",
-									"\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/departments/{{patch_dept_dummy}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments",
-								"{{patch_dept_dummy}}"
-							]
-						},
-						"description": "Deletes a Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Deletes Dummy department",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the delete worked\r",
-									"Utils.validateStatusAndSchema(pm, null, 204)\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/departments/{{patch_dept_dummy}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments",
-								"{{patch_dept_dummy}}"
-							]
-						},
-						"description": "Deletes a Server Info"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Test Downloads (simple)",
-			"item": [
-				{
-					"name": "Downloads (All)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Download Infos List\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.download_list, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/downloads",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"downloads"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				},
-				{
-					"name": "Downloads (One)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Download Infos\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.download, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/downloads/{{patch_dept_download_id_1}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"downloads",
-								"{{patch_dept_download_id_1}}"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Test Download Infos (Put/Patch/Delete))",
-			"item": [
-				{
-					"name": "Create Dummy Download Infos",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the insert worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"download_id\": \"{{patch_id_download}}\",\r\n  \"download_root_path\": \"download_root_path\",\r\n  \"online_resource_root_download_en\": \"online_resource_root_download_en\",\r\n  \"online_resource_root_download_fr\": \"online_resource_root_download_fr\",\r\n  \"owner_username\": \"owner_username\",\r\n  \"departments\": [\"NRCan\"]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/downloads",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"downloads"
+								"parents"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Dummy Download Infos",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Download Infos\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.download, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/downloads/{{patch_id_download}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"downloads",
-								"{{patch_id_download}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Patch Dummy Download Infos (One Field))",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the update worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/download_root_path\",\r\n    \"value\": \"download_root_1\"\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/downloads/{{patch_id_download}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"downloads",
-								"{{patch_id_download}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Dummy Download Infos",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Download Infos\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.download, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"\r",
-									"        // Validate the response against the expected values\r",
-									"\r",
-									"        \r",
-									"        pm.expect(responseJson.download_root_path).to.equal(\"download_root_1\");\r",
-									"        pm.expect(responseJson.id).to.equal(pm.collectionVariables.get(\"patch_id_download\"));\r",
-									"        pm.expect(responseJson.online_resource_root_download_en).to.equal(\"online_resource_root_download_en\");\r",
-									"        pm.expect(responseJson.online_resource_root_download_fr).to.equal(\"online_resource_root_download_fr\");\r",
-									"        pm.expect(responseJson.owner_username).to.equal(\"owner_username\");\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/downloads/{{patch_id_download}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"downloads",
-								"{{patch_id_download}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Patch Dummy Download Infos (All Field))",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the update worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/download_root_path\",\r\n    \"value\": \"download_root_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/online_resource_root_download_en\",\r\n    \"value\": \"online_resource_en_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/online_resource_root_download_fr\",\r\n    \"value\": \"online_resource_fr_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/owner_username\",\r\n    \"value\": \"owner_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/departments\",\r\n    \"value\": []\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/downloads/{{patch_id_download}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"downloads",
-								"{{patch_id_download}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Dummy Download Infos",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Download Infos\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.download, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"\r",
-									"        // Validate the response against the expected values\r",
-									"\r",
-									"\r",
-									"        pm.expect(responseJson.download_root_path).to.equal(\"download_root_2\");\r",
-									"        pm.expect(responseJson.id).to.equal(pm.collectionVariables.get(\"patch_id_download\"));\r",
-									"        pm.expect(responseJson.online_resource_root_download_en).to.equal(\"online_resource_en_2\");\r",
-									"        pm.expect(responseJson.online_resource_root_download_fr).to.equal(\"online_resource_fr_2\");\r",
-									"        pm.expect(responseJson.owner_username).to.equal(\"owner_2\");\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/downloads/{{patch_id_download}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"downloads",
-								"{{patch_id_download}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Dummy Download Infos",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the delete worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/downloads/{{patch_id_download}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"downloads",
-								"{{patch_id_download}}"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Test Publishers (simple)",
-			"item": [
-				{
-					"name": "Get Publishers (All)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Publisher List\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.publisher_list, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/publishers",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers"
-							],
-							"variable": [
-								{
-									"key": "environment",
-									"value": "{{environment}}",
-									"description": " (This can only be one of https://registry-api.ddr-stage.services.geo.ca,https://localhost:5021)"
-								}
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Publishers (one)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Publisher\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.publisher, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/publishers/{{get_publisher_email}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers",
-								"{{get_publisher_email}}"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Publishers - Department",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Download Infos\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.list, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/publishers/{{get_publisher_email}}/departments",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers",
-								"{{get_publisher_email}}",
-								"departments"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Test Publishers (Put/Patch/Delete))",
-			"item": [
-				{
-					"name": "Create Dummy Request",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the insert worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"ad_user_name\": \"{{patch_publisher_user_name}}\",\r\n  \"admin_flag\": false,\r\n  \"email\": \"{{patch_publisher_email}}\",\r\n  \"departments\": [\"{{patch_publisher_dept_1}}\"],\r\n  \"name\": \"Prenom Nom\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/publishers",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Dummy Request",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Publisher\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.publisher, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/publishers/{{patch_publisher_email}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers",
-								"{{patch_publisher_email}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Patch Dummy Request - Edit One Field",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the insert worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/name\",\r\n    \"value\": \"John Smith\"\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/publishers/{{patch_publisher_email}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers",
-								"{{patch_publisher_email}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Dummy Edited Request",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Publisher\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.publisher, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"        \r",
-									"        // Validate the response against the expected values\r",
-									"        pm.expect(responseJson.ad_user_name).to.equal(pm.collectionVariables.get(\"patch_publisher_user_name\"));\r",
-									"        pm.expect(responseJson.admin).to.equal(false);\r",
-									"        pm.expect(responseJson.email).to.equal(pm.collectionVariables.get(\"patch_publisher_email\"));\r",
-									"        pm.expect(responseJson.name).to.equal(\"John Smith\");\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/publishers/{{patch_publisher_email}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers",
-								"{{patch_publisher_email}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Patch Dummy Request - Edit All Fields",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the update worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/name\",\r\n    \"value\": \"Foo Bar\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/admin_flag\",\r\n    \"value\": true\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/departments\",\r\n    \"value\": [\"STATCan\"]\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/publishers/{{patch_publisher_email}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers",
-								"{{patch_publisher_email}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Dummy Edited Request",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Publisher\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.publisher, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"\r",
-									"        // Validate the response against the expected values\r",
-									"        pm.expect(responseJson.ad_user_name).to.equal(\"geoffroy-houle\");\r",
-									"        pm.expect(responseJson.admin).to.equal(true);\r",
-									"        pm.expect(responseJson.email).to.equal(\"foo.bar@nrcan-rncan.gc.ca\");\r",
-									"        pm.expect(responseJson.name).to.equal(\"Foo Bar\");\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/publishers/{{patch_publisher_email}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers",
-								"{{patch_publisher_email}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Dummy Request",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the delete worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/publishers/{{patch_publisher_email}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers",
-								"{{patch_publisher_email}}"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Test Map Services (simple)",
-			"item": [
-				{
-					"name": "Lists the Map Services",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate the status and schema: MapService\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.map_service_list, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/map_services",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"map_services"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				},
-				{
-					"name": "Lists the Map Services On Dataset",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate the status and schema Map Service\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.map_service_list, 200)) {\r",
-									"    // Response is good, continue...\r",
-									"    const body = pm.response.json();\r",
-									"\r",
-									"    // Check actual results\r",
-									"    for (let i = 0; i < body.length; i++) {\r",
-									"        pm.test(\"Test Dataset ID indeed\", () => {\r",
-									"            // Check indeed all map services have the given dataset_id\r",
-									"            pm.expect(body[i].dataset_id).to.eql(pm.collectionVariables.get(\"get_dataset_id\"));\r",
-									"        });\r",
-									"    }\r",
-									"}\r",
-									"\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/map_services/dataset/{{get_dataset_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"map_services",
-								"dataset",
-								"{{get_dataset_id}}"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Test Map Services (Put/Patch/Delete)",
-			"item": [
-				{
-					"name": "Create New Map Service",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the insert worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"dataset_id\": \"8897f0f0-87a3-473a-b7a7-664fb2b2f6de\",\r\n  \"qgis_project_filename\": \"qgis_project_filename\",\r\n  \"qgis_server_id\": \"DDR_QGS1\",\r\n  \"service_data_path\": \"service_data_path\",\r\n  \"service_folder\": \"service_folder\",\r\n  \"service_language\": \"EN\",\r\n  \"service_name\": \"{{patch_id_map_service}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/map_services",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"map_services"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get New Map Service",
+					"name": "Delete Parent",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
 									"// Validate status 200 and schema: token_revoked\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.map_service, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/map_services/service_folder/{{patch_id_map_service}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"map_services",
-								"service_folder",
-								"{{patch_id_map_service}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Patch Map Service (Edit One Field)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the update worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/service_language\",\r\n    \"value\": \"French\"\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/map_services/service_folder/{{patch_id_map_service}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"map_services",
-								"service_folder",
-								"{{patch_id_map_service}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Edited Service",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: token_revoked\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.map_service, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"    \r",
-									"        // Validate the response against the expected values\r",
-									"        pm.expect(responseJson.qgis_project_filename).to.equal(\"qgis_project_filename\");\r",
-									"        pm.expect(responseJson.qgis_server_id).to.equal(\"DDR_QGS1\");\r",
-									"        pm.expect(responseJson.service_data_path).to.equal(\"service_data_path\");\r",
-									"        pm.expect(responseJson.service_folder).to.equal(\"service_folder\");\r",
-									"        pm.expect(responseJson.service_language).to.equal(\"French\");\r",
-									"        pm.expect(responseJson.service_name).to.equal(pm.collectionVariables.get(\"patch_id_map_service\"));\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/map_services/service_folder/{{patch_id_map_service}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"map_services",
-								"service_folder",
-								"{{patch_id_map_service}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Patch New Map Service (Edit all Fields))",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the update worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/service_language\",\r\n    \"value\": \"English\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/qgis_project_filename\",\r\n    \"value\": \"qgis_project_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/service_data_path\",\r\n    \"value\": \"service_data_2\"\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/map_services/service_folder/{{patch_id_map_service}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"map_services",
-								"service_folder",
-								"{{patch_id_map_service}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Edited Service",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: token_revoked\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.map_service, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"    \r",
-									"        // Validate the response against the expected values\r",
-									"        pm.expect(responseJson.qgis_project_filename).to.equal(\"qgis_project_2\");\r",
-									"        pm.expect(responseJson.qgis_server_id).to.equal(\"DDR_QGS1\");\r",
-									"        pm.expect(responseJson.service_data_path).to.equal(\"service_data_2\");\r",
-									"        pm.expect(responseJson.service_folder).to.equal(\"service_folder\");\r",
-									"        pm.expect(responseJson.service_language).to.equal(\"English\");\r",
-									"        pm.expect(responseJson.service_name).to.equal(pm.collectionVariables.get(\"patch_id_map_service\"));\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/map_services/service_folder/{{patch_id_map_service}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"map_services",
-								"service_folder",
-								"{{patch_id_map_service}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete New Service",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the delete worked\r",
 									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
@@ -2889,15 +438,23 @@
 						},
 						"method": "DELETE",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"theme_uuid\": \"e7087e59-a57f-432b-81db-065f4d40e797\",\r\n  \"title_en\": \"Title\",\r\n  \"title_fr\": \"Titre\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{baseUrl}}/map_services/service_folder/{{patch_id_map_service}}",
+							"raw": "{{baseUrl}}/parents/{{parent_uuid_added}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"map_services",
-								"service_folder",
-								"{{patch_id_map_service}}"
+								"parents",
+								"{{parent_uuid_added}}"
 							]
 						}
 					},
@@ -2906,385 +463,22 @@
 			]
 		},
 		{
-			"name": "Test Servers (simple)",
+			"name": "user",
 			"item": [
 				{
-					"name": "Servers (All)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate the status and schema: MapService\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.server_list, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/servers",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"servers"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				},
-				{
-					"name": "Servers (One)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate the status and schema: Server\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.server, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/servers/{{patch_dept__server_id_1}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"servers",
-								"{{patch_dept__server_id_1}}"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Test Server(Put/Patch/Delete)",
-			"item": [
-				{
-					"name": "Check Server Info 1 doesn't exist start",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate the status and schema: no schema\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 404)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/servers/{{put_delete_server_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"servers",
-								"{{put_delete_server_id}}"
-							]
-						},
-						"description": "Gets a specific Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Adds a new Server Info 1",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the insert worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									"\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"server_id\": \"{{put_delete_server_id}}\",\n    \"admin_server_url\": \"admin_server_url\",\n    \"online_resource_root_qgs_en\": \"online_resource_root_qgs_en\",\n    \"online_resource_root_qgs_fr\": \"online_resource_root_qgs_fr\",\n    \"qgis_data_store_root_path\": \"qgis_data_store_root_path\",\n    \"admin_username\": \"admin_username\",\n    \"departments\": [\n        \"nrcan\"\n    ]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/servers",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"servers"
-							],
-							"variable": [
-								{
-									"key": "environment",
-									"value": "{{environment}}",
-									"description": " (This can only be one of https://registry-api.ddr-stage.services.geo.ca,https://localhost:5021)"
-								}
-							]
-						},
-						"description": "Adds a new Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Check Server Info 1 does exist",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate the status and schema: Server\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.server, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/servers/{{put_delete_server_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"servers",
-								"{{put_delete_server_id}}"
-							]
-						},
-						"description": "Gets a specific Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Patch Server Info (one field)",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the update worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/admin_server_url\",\r\n    \"value\": \"admin_server_1\"\r\n  }\r\n]",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/servers/{{put_delete_server_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"servers",
-								"{{put_delete_server_id}}"
-							]
-						},
-						"description": "Gets a specific Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Edited Server (one field)",
+					"name": "Get Users",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
 									"// Validate status 200 and schema: token_revoked\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.server, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"\r",
-									"        // Validate the response against the expected values\r",
-									"        pm.expect(responseJson.admin_server_url).to.equal(\"admin_server_1\");\r",
-									"        pm.expect(responseJson.admin_username).to.equal(\"admin_username\");\r",
-									"        pm.expect(responseJson.id).to.equal(pm.collectionVariables.get(\"put_delete_server_id\"));\r",
-									"        pm.expect(responseJson.online_resource_root_qgs_en).to.equal(\"online_resource_root_qgs_en\");\r",
-									"        pm.expect(responseJson.online_resource_root_qgs_fr).to.equal(\"online_resource_root_qgs_fr\");\r",
-									"        pm.expect(responseJson.qgis_data_store_root_path).to.equal(\"qgis_data_store_root_path\");\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.user_list, 200)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
 									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
+									"}"
 								],
 								"type": "text/javascript"
 							}
@@ -3302,41 +496,33 @@
 							]
 						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/servers/{{put_delete_server_id}}",
+							"raw": "{{baseUrl}}/users",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"servers",
-								"{{put_delete_server_id}}"
+								"users"
 							]
-						},
-						"description": "Gets a specific Server Info"
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "Patch Server Info 1 (all fields)",
+					"name": "Post User",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"// Test the update worked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 201)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
 									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
+									"}"
 								],
 								"type": "text/javascript"
 							}
@@ -3353,16 +539,11 @@
 								}
 							]
 						},
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
+						"method": "POST",
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/admin_server_url\",\r\n    \"value\": \"admin_server_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/online_resource_root_qgs_en\",\r\n    \"value\": \"online_en_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/online_resource_root_qgs_fr\",\r\n    \"value\": \"online_fr_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/qgis_data_store_root_path\",\r\n    \"value\": \"qgis_data_2\"\r\n  },\r\n  {\r\n    \"op\": \"update\",\r\n    \"path\": \"/departments\",\r\n    \"value\": []\r\n  }\r\n]",
+							"raw": "{\r\n  \"username\": \"{{user_post}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -3370,103 +551,31 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/servers/{{put_delete_server_id}}",
+							"raw": "{{baseUrl}}/user",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"servers",
-								"{{put_delete_server_id}}"
+								"user"
 							]
-						},
-						"description": "Gets a specific Server Info"
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get Edited Server (all fields)",
+					"name": "Delete User",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
 									"// Validate status 200 and schema: token_revoked\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.server, 200)) {\r",
-									"\r",
-									"    pm.test(\"Schema content is valid\", () => {\r",
-									"\r",
-									"        // Parse the response JSON\r",
-									"        const responseJson = pm.response.json();\r",
-									"\r",
-									"        // Validate the response against the expected values\r",
-									"        pm.expect(responseJson.admin_server_url).to.equal(\"admin_server_2\");\r",
-									"        pm.expect(responseJson.admin_username).to.equal(\"admin_username\");\r",
-									"        pm.expect(responseJson.id).to.equal(pm.collectionVariables.get(\"put_delete_server_id\"));\r",
-									"        pm.expect(responseJson.online_resource_root_qgs_en).to.equal(\"online_en_2\");\r",
-									"        pm.expect(responseJson.online_resource_root_qgs_fr).to.equal(\"online_fr_2\");\r",
-									"        pm.expect(responseJson.qgis_data_store_root_path).to.equal(\"qgis_data_2\");\r",
-									"                \r",
-									"        // All valid\r",
-									"//        res = true;\r",
-									"    });\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/servers/{{put_delete_server_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"servers",
-								"{{put_delete_server_id}}"
-							]
-						},
-						"description": "Gets a specific Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Deletes a Server Info 1",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test the delete worked\r",
 									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
 									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
+									"}"
 								],
 								"type": "text/javascript"
 							}
@@ -3484,216 +593,29 @@
 							]
 						},
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
+						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/servers/{{put_delete_server_id}}",
+							"raw": "{{baseUrl}}/user/CocoLeClown",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"servers",
-								"{{put_delete_server_id}}"
+								"user",
+								"CocoLeClown"
 							]
-						},
-						"description": "Deletes a Server Info"
-					},
-					"response": []
-				},
-				{
-					"name": "Check Server Info 1 doesn't exist end",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test 404 was returned\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 404)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
 						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/servers/{{put_delete_server_id}}",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"servers",
-								"{{put_delete_server_id}}"
-							]
-						},
-						"description": "Gets a specific Server Info"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Logout",
-			"item": [
-				{
-					"name": "Logs out the User from the API",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test 204 was returned\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/logout",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"logout"
-							]
-						},
-						"description": "Logs out the User from the API"
-					},
-					"response": []
-				},
-				{
-					"name": "Logs out and validate token revoke",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 401 and schema: token_revoked\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.token_revoked, 401)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						},
-						{
-							"listen": "prerequest",
-							"script": {
-								"exec": [
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/logout",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"logout"
-							]
-						},
-						"description": "Logs out the User from the API"
 					},
 					"response": []
 				}
 			]
 		}
 	],
-	"auth": {
-		"type": "bearer",
-		"bearer": [
-			{
-				"key": "token",
-				"value": "{{bearerToken}}",
-				"type": "string"
-			}
-		]
-	},
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					"// Set the URL of the API Registry in the global environment variable",
-					"pm.globals.set(\"environment\", pm.globals.get(\"urlRegistry\"));",
-					"",
 					"// npm install ajv",
 					"var Ajv = require(\"ajv\");",
 					"",
@@ -3706,174 +628,124 @@
 					"        refresh_token: { type: \"string\" },",
 					"        refresh_expires_in: { type: \"number\" },",
 					"    },",
-					"    requires: [\"token_type\", \"access_token\", \"expires_in\", \"refresh_token\", \"refresh_expires_in\"]",
+					"    required: [\"token_type\", \"access_token\", \"expires_in\", \"refresh_token\", \"refresh_expires_in\"],",
 					"};",
 					"",
-					"SchemaDataset = {",
+					"SchemaCollection = {",
 					"    type: \"object\",",
 					"    properties: {",
-					"        core_subject_term: { type: [\"string\", \"null\"], nullable: true },",
-					"        department_id: { type: \"string\" },",
-					"        download_folder_name: { type: [\"string\", \"null\"], nullable: true },",
-					"        download_folder_path: { type: [\"string\", \"null\"], nullable: true },",
-					"        download_id: { type: [\"string\", \"null\"], nullable: true },",
-					"        id: { type: \"string\" },",
-					"        metadata_id: { type: [\"string\", \"null\"], nullable: true },",
-					"        thumbnail_image_file: { type: [\"string\", \"null\"], nullable: true },",
+					"        collection_name: { type: \"string\" },",
+					"        collection_title_en: { type: \"string\" },",
+					"        collection_title_fr: { type: \"string\" },",
+					"        metadata_identifier: { type: \"string\" },",
+					"        parent_uuid: { type: \"string\" }",
 					"    },",
-					"    required: [\"core_subject_term\", \"department_id\", \"download_folder_name\", \"download_folder_path\", \"download_id\",",
-					"               \"id\", \"metadata_id\", \"thumbnail_image_file\"]",
+					"    required: [\"collection_name\", \"collection_title_en\", \"collection_title_fr\", \"metadata_identifier\", \"parent_uuid\"],",
 					"};",
 					"",
+					"SchemaCollections = {",
+					"    type: \"array\",",
+					"    item: SchemaCollection",
+					"}",
 					"",
-					"SchemaTokenRevoked = {",
+					"SchemaLanguage = {",
 					"    type: \"object\",",
+					"    required: [\"en\", \"fr\"],",
 					"    properties: {",
-					"        detail: { type: \"string\" },",
-					"        detail_fr: { type: \"string\" },",
-					"        status: { type: \"number\" },",
-					"        title: { type: \"string\" },",
-					"    },",
-					"    required: [\"detail\", \"detail_fr\", \"status\", \"title\"]",
+					"        en: { type: \"string\"},",
+					"        fr: { type: \"string\"}",
+					"    }",
 					"};",
 					"",
-					"SchemaDepartment = {",
-					"    type: \"object\",",
-					"    properties: {",
-					"        id: { \"type\": \"string\"},",
-					"        name_en: { \"type\": \"string\"},",
-					"        name_fr: { \"type\": \"string\"},",
-					"        tbs_dept_acrn_en: { \"type\": \"string\"},",
-					"        tbs_dept_acrn_fr: { \"type\": \"string\"},",
-					"        default_qgis_server_id: { \"type\": \"string\"},",
-					"        default_download_id: { \"type\": \"string\"},",
-					"        qgis_data_store_root_subpath: { \"type\": \"string\"},",
-					"        download_root_subpath: { \"type\": \"string\"}",
-					"    },",
-					"    required: [\"id\", \"name_en\", \"name_fr\", \"tbs_dept_acrn_en\", \"tbs_dept_acrn_fr\", \"default_qgis_server_id\", ",
-					"               \"default_download_id\", \"qgis_data_store_root_subpath\", \"download_root_subpath\"]",
-					"};",
-					"",
-					"SchemaPublisher = {",
-					"    type: \"object\",",
-					"    properties: {",
-					"        ad_user_name: { \"type\": [ \"string\", \"null\" ] },",
-					"        admin: { \"type\": \"boolean\"},",
-					"        email: { \"type\": \"string\"},",
-					"        name: { \"type\": \"string\"}",
-					"    },",
-					"    required: [\"ad_user_name\", \"admin\", \"email\", \"name\"]",
-					"};",
-					"",
-					"SchemaServer = {",
-					"    type: \"object\",",
-					"    properties: {",
-					"        id: { \"type\": \"string\"},",
-					"        admin_server_url: { \"type\": \"string\"},",
-					"        admin_username: { \"type\": \"string\"},",
-					"        online_resource_root_qgs_en: { \"type\": \"string\"},",
-					"        online_resource_root_qgs_fr: { \"type\": \"string\"},",
-					"        qgis_data_store_root_path: { \"type\": \"string\"}",
-					"    },",
-					"     required: [\"id\", \"admin_server_url\", \"admin_username\", \"online_resource_root_qgs_en\",",
-					"                 \"online_resource_root_qgs_fr\", \"qgis_data_store_root_path\"],",
-					"};",
-					"",
-					"SchemaDownload = {",
+					"ShemaParent = {",
+					"  type: 'array',",
+					"  items: {",
 					"    type: 'object',",
 					"    properties: {",
-					"        download_root_path: { type: 'string' },",
-					"        id: { type: 'string' },",
-					"        online_resource_root_download_en: { type: 'string' },",
-					"        online_resource_root_download_fr: { type: 'string' },",
-					"        owner_username: { type: 'string' }",
+					"      parent_uuid: {type: 'string'},",
+					"      title: SchemaLanguage",
 					"    },",
-					"    required: ['download_root_path', 'id', 'online_resource_root_download_en', 'online_resource_root_download_fr', 'owner_username']",
-					"",
+					"    required: ['parent_uuid', 'title']",
+					"  }",
 					"};",
 					"",
-					"SchemaMapService = {",
-					"    type: \"object\",",
-					"    properties: {",
-					"        id: { \"type\": \"string\"},",
-					"        dataset_id: { \"type\": \"string\"},",
-					"        qgis_project_filename: { \"type\": \"string\"},",
-					"        qgis_server_id: { \"type\": \"string\"},",
-					"        service_data_path: { \"type\": \"string\"},",
-					"        service_folder: { \"type\": \"string\"},",
-					"        service_language: { \"type\": \"string\"},",
-					"        service_name: { \"type\": \"string\"}",
-					"    },",
-					"    required: [\"id\", \"dataset_id\", \"qgis_project_filename\", \"qgis_server_id\", \"service_data_path\", ",
-					"               \"service_folder\", \"service_language\", \"service_name\"]",
+					"SchemaParents = {",
+					"    type: 'array',",
+					"    items: {",
+					"        type: 'object',",
+					"        properties:{",
+					"            parents: ShemaParent,",
+					"            theme_uuid: {type: 'string'},",
+					"            title: SchemaLanguage",
+					"        },",
+					"        required: ['parents', 'theme_uuid', 'title']",
+					"    }",
 					"};",
+					"",
+					"SchemaThemeCzs = {",
+					"    type: 'array',",
+					"    items: {",
+					"        type: 'object',",
+					"        properties:{",
+					"            theme_uuid: { type: \"string\"},",
+					"            title: SchemaLanguage",
+					"        }",
+					"    }",
+					"};",
+					"",
+					"SchemaUser = {",
+					"  type: \"object\",",
+					"  properties: {",
+					"      role: {\"type\": \"integer\",},",
+					"      username: {\"type\": \"string\",",
+					"    }",
+					"  },",
+					"  required: [\"role\", \"username\"]",
+					"};",
+					"",
+					"SchemaUserList = {",
+					"    type: \"array\",",
+					"    items: SchemaUser",
+					"}",
 					"",
 					"Schemas = {",
-					"    token:  SchemaToken,",
-					"    token_revoked: SchemaTokenRevoked,",
-					"    department: SchemaDepartment,",
-					"    department_list: {",
-					"        type: \"array\",",
-					"        items: SchemaDepartment",
-					"    },",
-					"    publisher: SchemaPublisher,",
-					"    publisher_list: {",
-					"        type: \"array\",",
-					"        items: SchemaPublisher",
-					"    },",
-					"    server: SchemaServer,",
-					"    server_list: {",
-					"        type: \"array\",",
-					"        items: SchemaServer",
-					"    },",
-					"    download: SchemaDownload,",
-					"    download_list: {",
-					"        type: \"array\",",
-					"        items: SchemaDownload",
-					"    },",
-					"    map_service: SchemaMapService,",
-					"    map_service_list: {",
-					"        type: \"array\",",
-					"        items: SchemaMapService",
-					"    },",
-					"    dataset: SchemaDataset,",
-					"    dataset_list: {",
-					"        type: \"array\",",
-					"        items: SchemaDataset",
-					"    },",
-					"    list: {",
-					"        type: \"array\",",
-					"        items: {type: \"string\"}",
-					"    }",
+					"    token: SchemaToken,",
+					"    collection: SchemaCollection,",
+					"    collection_list: SchemaCollections,",
+					"    theme_czs_list: SchemaThemeCzs,",
+					"    parents_list: SchemaParents,",
+					"    user_list: SchemaUserList",
 					"};",
 					"",
 					"Utils = {",
 					"    // Loads Ajv which is used to enhance schema validations",
 					"    ajv: new Ajv({logger: console}),",
-					"    ",
-					"   ",
-					"        /**",
+					"",
+					"",
+					"    /**",
 					"     * Generic function to check for a 200 response with a given schema format",
 					"     */",
 					"    validateStatusAndSchema: function(pm, schema, status_code=200) {",
 					"        var res = false;",
 					"        pm.test(\"Status code is valid\", () => {",
 					"            pm.response.to.have.status(status_code);",
-					"            ",
-					"            // All valid",
-					"            res = true;",
+					"",
+					"            // All Valid",
+					"            res = true",
 					"            if (schema !== null) { ",
 					"            ",
 					"                pm.test(\"Schema is valid\", () => {",
-					"                     pm.response.to.have.jsonSchema(schema)",
-					"                    ",
+					"                    pm.response.to.have.jsonSchema(schema)",
+					"//                    pm.expect(Utils.ajv.validate(schema, pm.response.json())).to.be.true;",
+					"                ",
 					"                });",
 					"            };",
 					"        });",
 					"        return res;",
 					"    }",
-					"  ",
-					"};"
+					"    ",
+					"};",
+					""
 				]
 			}
 		},
@@ -3889,73 +761,17 @@
 	],
 	"variable": [
 		{
-			"key": "put_delete_server_id",
-			"value": "test_server_id",
-			"type": "default"
-		},
-		{
-			"key": "get_dataset_id",
-			"value": "e1a388f2-5318-4077-9482-d836b5f7c349",
-			"type": "default"
-		},
-		{
-			"key": "patch_dept_download_id_1",
-			"value": "DDR_DOWNLOAD1",
+			"key": "get_metadata_id",
+			"value": "62de5952-a5eb-4859-b086-22a8ba8024b8",
 			"type": "string"
 		},
 		{
-			"key": "patch_dept_download_id_2",
-			"value": "DDR_DOWNLOAD_Internal",
-			"type": "string"
+			"key": "parent_uuid_added",
+			"value": ""
 		},
 		{
-			"key": "patch_dept_dummy",
-			"value": "DEPT_DUMMY",
-			"type": "string"
-		},
-		{
-			"key": "patch_dept__server_id_1",
-			"value": "DDR_QGS1",
-			"type": "string"
-		},
-		{
-			"key": "patch_dept_server_id_2",
-			"value": "DDR_QGS_Internal",
-			"type": "string"
-		},
-		{
-			"key": "patch_publisher_email",
-			"value": "foo.bar@nrcan-rncan.gc.ca",
-			"type": "string"
-		},
-		{
-			"key": "patch_publisher_user_name",
-			"value": "geoffroy-houle",
-			"type": "string"
-		},
-		{
-			"key": "patch_publisher_dept_1",
-			"value": "NRCan",
-			"type": "string"
-		},
-		{
-			"key": "patch_publisher_dept_2",
-			"value": "StatCan",
-			"type": "string"
-		},
-		{
-			"key": "patch_dataset_meta_id",
-			"value": "0b393581-c249-480f-919a-e9f5f12c9ed7",
-			"type": "string"
-		},
-		{
-			"key": "patch_dataset_dept_1",
-			"value": "NRCan",
-			"type": "string"
-		},
-		{
-			"key": "patch_dataset_dept_2",
-			"value": "StatCan",
+			"key": "user_post",
+			"value": "CocoLeClown",
 			"type": "string"
 		},
 		{
@@ -3965,7 +781,7 @@
 		},
 		{
 			"key": "environment",
-			"value": "https://registry-api.ddr-stage.services.geo.ca/",
+			"value": "https://czs-api.ddr-stage.services.geo.ca",
 			"type": "string"
 		},
 		{
@@ -3977,23 +793,8 @@
 			"value": ""
 		},
 		{
-			"key": "get_id_department",
-			"value": "NRCan",
-			"type": "string"
-		},
-		{
-			"key": "patch_id_download",
-			"value": "ddr_tmp_download_99",
-			"type": "string"
-		},
-		{
-			"key": "get_publisher_email",
-			"value": "geoffroy.houle@nrcan-rncan.gc.ca",
-			"type": "string"
-		},
-		{
-			"key": "patch_id_map_service",
-			"value": "map_service_99",
+			"key": "collection_id",
+			"value": "cdem_mpi__major_projects_inventory_point",
 			"type": "string"
 		}
 	]
