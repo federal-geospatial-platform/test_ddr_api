@@ -155,12 +155,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/ddr_departments",
+							"raw": "{{baseUrl}}/ddr_registry_departments",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"ddr_departments"
+								"ddr_registry_departments"
 							]
 						}
 					},
@@ -199,12 +199,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/ddr_downloads",
+							"raw": "{{baseUrl}}/ddr_registry_downloads",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"ddr_downloads"
+								"ddr_registry_downloads"
 							]
 						}
 					},
@@ -243,12 +243,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/ddr_my_email",
+							"raw": "{{baseUrl}}/ddr_registry_my_publisher_email",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"ddr_my_email"
+								"ddr_registry_my_publisher_email"
 							]
 						}
 					},
@@ -287,12 +287,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/ddr_servers",
+							"raw": "{{baseUrl}}/ddr_registry_servers",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"ddr_servers"
+								"ddr_registry_servers"
 							]
 						}
 					},
@@ -403,7 +403,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
 								}
 							]
 						},
@@ -620,17 +620,17 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
+									"src": "/C:/DATA/DDR_GIT_HUB/test_ddr_api/newman/ddr_publish.zip"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{baseUrl}}/processes",
+							"raw": "{{baseUrl}}/publish",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"processes"
+								"publish"
 							]
 						}
 					},
@@ -908,17 +908,17 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
+									"src": "/C:/DATA/DDR_GIT_HUB/test_ddr_api/newman/ddr_publish.zip"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{baseUrl}}/processes",
+							"raw": "{{baseUrl}}/unpublish",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"processes"
+								"unpublish"
 							]
 						}
 					},
@@ -973,7 +973,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "{{publish_file_zip}}"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
 								}
 							]
 						},
@@ -1033,7 +1033,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
 								}
 							]
 						},
@@ -1093,7 +1093,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.13.0/ddr_publish.zip"
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
 								}
 							]
 						},
