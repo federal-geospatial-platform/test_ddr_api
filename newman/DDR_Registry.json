@@ -7,56 +7,6 @@
 	},
 	"item": [
 		{
-			"name": "Test No Login",
-			"item": [
-				{
-					"name": "List the Departements",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Test 401 was returned (Login not done)\r",
-									"Utils.validateStatusAndSchema(pm, null, 401)"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/departments",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Login",
 			"item": [
 				{
@@ -911,41 +861,6 @@
 							"path": [
 								"departments",
 								"{{get_id_department}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get Departments (One) Copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Department\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.department, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{baseUrl}}/departments/default_qgis_server_id",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"departments",
-								"default_qgis_server_id"
 							]
 						}
 					},
@@ -3016,14 +2931,14 @@
 			"name": "Test Server(Put/Patch/Delete)",
 			"item": [
 				{
-					"name": "Check Server Info 1 doesn't exist start",
+					"name": "Check Server Info 1 does not exist",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"// Validate the status and schema: no schema\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 404)) {\r",
+									"// Validate the status and schema: Server\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.server, 200)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
@@ -3964,7 +3879,7 @@
 		},
 		{
 			"key": "environment",
-			"value": "https://registry-api.ddr-stage.services.geo.ca/",
+			"value": "https://registry-api.ddr-stage.services.geo.ca",
 			"type": "string"
 		},
 		{
