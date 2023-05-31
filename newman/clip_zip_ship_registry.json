@@ -150,36 +150,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "xCollection",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"cov_data\": \"https://datacube-prod-data-public.s3.ca-central-1.amazonaws.com/store/eo4ce/landcover/landcover-2010-cog.tif\",\r\n  \"cov_format_name\": \"GTiff\",\r\n  \"crs\": 3978,\r\n  \"db_host\": \"10.68.130.179\",\r\n  \"db_name\": \"postgres\",\r\n  \"db_password\": \"password\",\r\n  \"db_port\": 5432,\r\n  \"db_user\": \"postgres\",\r\n  \"description_en\": \"coll_desc_en\",\r\n  \"description_fr\": \"coll_desc_fr\",\r\n  \"extent_bbox\": [\r\n    -141,\r\n    40.04,\r\n    -47.74,\r\n    86.46\r\n  ],\r\n  \"extent_crs\": \"http://www.opengis.net/def/crs/OGC/1.3/CRS84\",\r\n  \"extent_temporal_begin\": \"2022-06-14\",\r\n  \"extent_temporal_end\": \"2022-06-15\",\r\n  \"geom_crs\": 4617,\r\n  \"geom_wkt\": \"POLYGON((-113.43 53.51, -113.43 53.59, -113.22 53.59, -113.22 53.51, -113.43 53.51))\",\r\n  \"keywords_en\": [\r\n    \"Canada\",\r\n    \"National\"\r\n  ],\r\n  \"keywords_fr\": [\r\n    \"Canada\",\r\n    \"National\"\r\n  ],\r\n  \"metadata_uuid\": \"1a315e4d-76c2-4caa-951a-45d1d2051333\",\r\n  \"name\": \"coll_name\",\r\n  \"parent_uuid\": \"4e42c1bf-45b4-4526-a70c-e1bc931d80f1\",\r\n  \"table_id_field\": \"OBJECTID\",\r\n  \"table_name\": \"900a__coal-mines\",\r\n  \"table_queryables\": [\r\n    \"attribute_name_1\",\r\n    \"attribute_name_2\"\r\n  ],\r\n  \"table_schema\": \"nrcan\",\r\n  \"title_en\": \"coll_title_en\",\r\n  \"title_fr\": \"coll_title_fr\",\r\n  \"type\": \"feature\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -485,36 +455,6 @@
 							"path": [
 								"parents",
 								"{{parent_uuid_added}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "xPost Extent ()mettre une note",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "Coment - {{baseUrlCzs}}/extent/nrcan/900a__coal-mines/4326",
-							"host": [
-								"Coment - {{baseUrlCzs}}"
-							],
-							"path": [
-								"extent",
-								"nrcan",
-								"900a__coal-mines",
-								"4326"
 							]
 						}
 					},
