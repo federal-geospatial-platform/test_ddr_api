@@ -3,18 +3,19 @@
 
 # Introduction
 
-Ce programme a pour but d'exécuter les tests de fonctionnalités des appels aux différents API qui sont un des éléments de base de la 
+Le programme test_ddr_api a pour but d'exécuter les tests de fonctionnalités i.e. les appels aux différents API qui sont un des éléments de base de la 
 [Stratégie de tests logiciels de l'équipe du DDR.](https://github.com/federal-geospatial-platform/project_management/tree/main/testing_strategy)
 
 # Postman
 
-Lorsqu'un logiciel contient des point d'entrées pour une ou plusieurs interfaces de programmation d'application, 
-il est impératif de tester ces points d'entrées en utilisant la plateforme de tests 
-[Postman.](https://www.postman.com/).  Une fois la ou les collections terminées et opérationnelles dans Postman vous devez exporter 
-ces collections (*.json) et les copier dans le répertoire /newman. Vous devez par la suite mettre à jour
-le fichier de configuration YAML /python/config.yaml et recréer le fichier docker.
+Lorsqu'un logiciel contient des point d'entrées pour une ou plusieurs interfaces de programmation d'application (API), 
+il est impératif de créer le code qui permettra de tester ces points d'entrées en utilisant la plateforme de tests 
+[Postman.](https://www.postman.com/). Une fois les tests terminées et opérationnelles dans Postman vous devez exporter 
+ces collections (*.json) et les copier dans le répertoire /newman du [github](https://github.com/federal-geospatial-platform/project_management/tree/main/testing_strategy). 
+Vous devez par la suite mettre à jour le fichier de configuration YAML /python/config.yaml pour inclure cette nouvelle collection 
+et recréer le fichier docker.
 
-# Le fichier de configuration YAML
+# Fichier de configuration YAML
 
 Le programme /python/test_ddr_api.py est configurable via un fichier YAML. Cette section décrit le contenu de ce fichier.
 
