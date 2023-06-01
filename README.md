@@ -24,8 +24,6 @@ Le programme /python/test_ddr_api.py est configurable via un fichier YAML. Cette
     - from: L'adresse courriel de la personne qui envoie le courriel
     - to: Liste des adresses courriels qui vont recevoir le courriel
     - host: Le nom du host qui gère le serveur de courrriel
-    - user: Le nom de l'usager
-    - password: Le mot de passe de l'usager
     - port: Le numéro de port
     - timeout: Le nombre de secondes pour le timeout
     - tsl: Fanion True/False pour le protocole de sécurité
@@ -44,8 +42,6 @@ email:
   from: bergeronpilon@gmail.com 
   to: [bergeronpilon@gmail.com] 
   host: email-smtp.ca-central-1.amazonaws.com 
-  user: abc123 
-  password: abc123
   port: 587
   timeout: 10
   tls: True

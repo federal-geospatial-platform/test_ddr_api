@@ -66,6 +66,36 @@ class TestApi:
 
         return
 
+    def __get_aws_secret(self):
+
+        secret_name = "aws/email/credentials"
+        region_name = "ca-central-1"
+
+        # Create a Secrets Manager client
+        session = boto3.session.Session()
+        client = session.client(
+            service_name='secretsmanager',
+            region_name=region_name
+        )
+
+        try:
+            get_secret_value_response = client.get_secret_value(
+                SecretId=secret_name)
+
+            print(get_secret_value_response)
+        except ClientError as e:
+            # For a list of exceptions thrown, see
+            # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
+            raise e
+
+        # Decrypts secret using the associated KMS key.
+        secret = get_secret_value_response['SecretString']
+        json_secret = json.loads(secret)
+        self.aws_user_email = json_secret['aws_user_email']
+        self.aws_password_email = json_secret['aws_password_email']
+
+        return
+
     def __copy_json_documents(self):
         """
         Delete the content of the ./files diretory (content of the previous runs)
@@ -211,8 +241,8 @@ class TestApi:
                 "host":self.config_yaml["email"]["host"],
                 "port": self.config_yaml["email"]["port"],
                 "timeout": self.config_yaml["email"]["timeout"],
-                "user": self.config_yaml["email"]["user"],
-                "password": self.config_yaml["email"]["password"],
+                "user": self.aws_user_email,
+                "password": self.aws_password_email,
                 "tls": self.config_yaml["email"]["tls"]
             }
         )
@@ -257,6 +287,10 @@ class TestApi:
         :return:
         """
 
+        # Read the AWS secret messages
+        self.__get_aws_secret()
+
+
         # Read the YAML configuration file
         self.__read_yaml_file()
 
@@ -286,43 +320,5 @@ class TestApi:
         self.__email_results()
 
 
-# Use this code snippet in your app.
-# If you need more information about configurations
-# or implementing the sample code, visit the AWS docs:
-# https://aws.amazon.com/developer/language/python/
-
-import boto3
-from botocore.exceptions import ClientError
-
-
-def get_secret():
-
-    secret_name = "aws/email/credentials"
-    region_name = "ca-central-1"
-
-    # Create a Secrets Manager client
-    session = boto3.session.Session()
-    client = session.client(
-        service_name='secretsmanager',
-        region_name=region_name
-    )
-
-    try:
-        get_secret_value_response = client.get_secret_value(
-            SecretId=secret_name)
-
-        print (get_secret_value_response)
-        0/0
-    except ClientError as e:
-        # For a list of exceptions thrown, see
-        # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
-        raise e
-
-    # Decrypts secret using the associated KMS key.
-    secret = get_secret_value_response['SecretString']
-
-    # Your code goes here.
-
-get_secret()
 test_api = TestApi()
 test_api.manage_api_testing()
