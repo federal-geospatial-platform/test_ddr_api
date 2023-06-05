@@ -1093,7 +1093,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "{{publish_file_zip}}
+									"src": "{{publish_file_zip}}"
 								}
 							]
 						},
