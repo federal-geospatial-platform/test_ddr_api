@@ -2579,6 +2579,11 @@
 		{
 			"key": "refreshToken",
 			"value": ""
+		},
+        {
+			"key": "publish_file_zip",
+			"value": "ddr_publish.zip",
+			"type": "string"
 		}
 	]
 }
