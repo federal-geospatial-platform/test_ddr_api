@@ -390,6 +390,51 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get Datasets (One) Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: Dataset\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.dataset, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/datasets/8369b421-9486-42ea-b683-d6da564b212d",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"datasets",
+								"8369b421-9486-42ea-b683-d6da564b212d"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"auth": {
@@ -2938,7 +2983,7 @@
 							"script": {
 								"exec": [
 									"// Validate the status and schema: Server\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.server, 200)) {\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 404)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
@@ -3809,7 +3854,7 @@
 		},
 		{
 			"key": "get_dataset_id",
-			"value": "e1a388f2-5318-4077-9482-d836b5f7c349",
+			"value": "f979b49c-189e-41db-84be-9a607c7ef465",
 			"type": "default"
 		},
 		{

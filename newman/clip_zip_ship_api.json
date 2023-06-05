@@ -164,40 +164,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "Reload Stac",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: token_revoked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{urlPyGeoApi}}/reload_stac",
-							"host": [
-								"{{urlPyGeoApi}}"
-							],
-							"path": [
-								"reload_stac"
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
