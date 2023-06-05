@@ -403,7 +403,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+									"src": "{{publish_file_zip}}"
 								}
 							]
 						},
@@ -620,7 +620,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+									"src": "{{publish_file_zip}}"
 								}
 							]
 						},
@@ -696,7 +696,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+									"src": "{{publish_file_zip}}"
 								}
 							]
 						},
@@ -772,7 +772,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+									"src": "{{publish_file_zip}}"
 								}
 							]
 						},
@@ -848,7 +848,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+									"src": "{{publish_file_zip}}"
 								}
 							]
 						},
@@ -908,7 +908,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+									"src": "{{publish_file_zip}}"
 								}
 							]
 						},
@@ -973,7 +973,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+									"src": "{{publish_file_zip}}"
 								}
 							]
 						},
@@ -1033,7 +1033,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+									"src": "{{publish_file_zip}}"
 								}
 							]
 						},
@@ -1093,7 +1093,7 @@
 								{
 									"key": "zip_file",
 									"type": "file",
-									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+									"src": "{{publish_file_zip}}
 								}
 							]
 						},
@@ -2579,11 +2579,6 @@
 		{
 			"key": "refreshToken",
 			"value": ""
-		},
-		{
-			"key": "publish_file_zip",
-			"value": "ddr_publish.zip",
-			"type": "string"
 		}
 	]
 }
