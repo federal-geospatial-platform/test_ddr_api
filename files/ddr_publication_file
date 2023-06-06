@@ -28,334 +28,62 @@
     <div class="row">
         <div class="col-md-3">Collection</div><div class="col-md-9">ddr_publication</div>
         
-        <div class="col-md-3">Time</div><div class="col-md-9">Tue Jun 06 2023 16:30:25 GMT-0400 (Eastern Daylight Time)</div>
+        <div class="col-md-3">Time</div><div class="col-md-9">Tue Jun 06 2023 15:42:33 GMT-0400 (Eastern Daylight Time)</div>
         <div class="col-md-3">Exported with</div><div class="col-md-9">Newman v5.3.2</div>
         <div class="col-md-12">&nbsp;</div>
         <div class="col-md-4">&nbsp;</div><div class="col-md-4"><strong>Total</strong></div><div class="col-md-4"><strong>Failed</strong></div>
 
           <div class="col-md-4">Iterations</div><div class="col-md-4">1</div><div class="col-md-4">0</div>
-          <div class="col-md-4">Requests</div><div class="col-md-4">18</div><div class="col-md-4">0</div>
+          <div class="col-md-4">Requests</div><div class="col-md-4">18</div><div class="col-md-4">18</div>
           <div class="col-md-4">Prerequest Scripts</div><div class="col-md-4">18</div><div class="col-md-4">0</div>
-          <div class="col-md-4">Test Scripts</div><div class="col-md-4">36</div><div class="col-md-4">0</div>
-          <div class="col-md-4">Assertions</div><div class="col-md-4">26</div><div class="col-md-4">9</div>
+          <div class="col-md-4">Test Scripts</div><div class="col-md-4">36</div><div class="col-md-4">1</div>
+          <div class="col-md-4">Assertions</div><div class="col-md-4">18</div><div class="col-md-4">18</div>
 
         <div class="col-md-12">&nbsp;</div>
-        <div class="col-md-6">Total run duration</div><div class="col-md-6">6.6s</div>
-        <div class="col-md-6">Total data received</div><div class="col-md-6">5.87KB (approx)</div>
-        <div class="col-md-6">Average response time</div><div class="col-md-6">255ms</div>
+        <div class="col-md-6">Total run duration</div><div class="col-md-6">6m 20.4s</div>
+        <div class="col-md-6">Total data received</div><div class="col-md-6">0B (approx)</div>
+        <div class="col-md-6">Average response time</div><div class="col-md-6">0ms</div>
 
         <div class="col-md-12">&nbsp;</div>
-        <div class="col-md-3"><strong>Total Failures</strong></div><div class="col-md-6"><strong>9</strong></div>
+        <div class="col-md-3"><strong>Total Failures</strong></div><div class="col-md-6"><strong>37</strong></div>
     </div>
 
     <br/><h4>Requests</h4>
 
-        <div class="panel-group" id="collapse-folder-67d7eb1e-175b-45b8-ba41-e05344fbfd64" role="tablist" aria-multiselectable="true">
-            <div role="tab" id="folderHead-67d7eb1e-175b-45b8-ba41-e05344fbfd64">
-                <h4 style="font-size: 18px;" class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#folderData-67d7eb1e-175b-45b8-ba41-e05344fbfd64" aria-controls="collapseOne"><strong>Login</strong></a></h4>
+        <div class="panel-group" id="collapse-folder-accba82e-d992-4162-bdd5-23405f943737" role="tablist" aria-multiselectable="true">
+            <div role="tab" id="folderHead-accba82e-d992-4162-bdd5-23405f943737">
+                <h4 style="font-size: 18px;" class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#folderData-accba82e-d992-4162-bdd5-23405f943737" aria-controls="collapseOne"><strong>Login</strong></a></h4>
             </div>
             <br/>
-            <div id="folderData-67d7eb1e-175b-45b8-ba41-e05344fbfd64" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="folderHead-67d7eb1e-175b-45b8-ba41-e05344fbfd64">
-                    <div class="panel-group" id="collapse-request-2a92fafa-b801-43b1-a4f5-08838c6386cf" role="tablist" aria-multiselectable="true">
+            <div id="folderData-accba82e-d992-4162-bdd5-23405f943737" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="folderHead-accba82e-d992-4162-bdd5-23405f943737">
+                    <div class="panel-group" id="collapse-request-9d1a1630-97c9-4485-a773-5e6dcfe3e98a" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-2a92fafa-b801-43b1-a4f5-08838c6386cf">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-2a92fafa-b801-43b1-a4f5-08838c6386cf" aria-controls="collapseOne">Login</a></h4>
+                            <div class="panel-heading" role="tab" id="requestHead-9d1a1630-97c9-4485-a773-5e6dcfe3e98a">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-9d1a1630-97c9-4485-a773-5e6dcfe3e98a" aria-controls="collapseOne">Login</a></h4>
                             </div>
             
-                            <div id="requestData-2a92fafa-b801-43b1-a4f5-08838c6386cf" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-2a92fafa-b801-43b1-a4f5-08838c6386cf">
+                            <div id="requestData-9d1a1630-97c9-4485-a773-5e6dcfe3e98a" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-9d1a1630-97c9-4485-a773-5e6dcfe3e98a">
                                 <div class="panel-body">
                                             <div class="col-md-4">Description</div><div class="col-md-8" style="white-space: pre-wrap;">Generates a JWT for a given User</div>
                                             <div class="col-md-12">&nbsp;</div>
             
                                         <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/login" target="_blank">http://10.68.130.138:5031/api/login</a></div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/login" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/login</a></div>
             
                                     <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">303ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">811B</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">2</div>
-                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">0</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">200</div><br/>
-            
-                                        <div class="col-md-12">&nbsp;</div>
-                                        <div class="col-md-4">Tests</div>
-            
-                                        <div class="col-md-8">
-                                            <table class="table table-responsive table-condensed">
-                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
-                                                <tbody><tr><td>Schema is valid</td><td>1</td><td>0</td></tr><tr><td>Status code is valid</td><td>1</td><td>0</td></tr></tbody>
-                                            </table>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-        <div class="panel-group" id="collapse-folder-e13764a4-8ee9-460e-acd0-178e4bfd5ffb" role="tablist" aria-multiselectable="true">
-            <div role="tab" id="folderHead-e13764a4-8ee9-460e-acd0-178e4bfd5ffb">
-                <h4 style="font-size: 18px;" class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#folderData-e13764a4-8ee9-460e-acd0-178e4bfd5ffb" aria-controls="collapseOne"><strong>Services</strong></a></h4>
-            </div>
-            <br/>
-            <div id="folderData-e13764a4-8ee9-460e-acd0-178e4bfd5ffb" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="folderHead-e13764a4-8ee9-460e-acd0-178e4bfd5ffb">
-                    <div class="panel-group" id="collapse-request-3a2953fe-14be-4e9e-aeec-1821eacaa8cf" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-3a2953fe-14be-4e9e-aeec-1821eacaa8cf">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-3a2953fe-14be-4e9e-aeec-1821eacaa8cf" aria-controls="collapseOne">Get CZS Themes</a></h4>
-                            </div>
-            
-                            <div id="requestData-3a2953fe-14be-4e9e-aeec-1821eacaa8cf" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-3a2953fe-14be-4e9e-aeec-1821eacaa8cf">
-                                <div class="panel-body">
-            
-                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/czs_themes" target="_blank">http://10.68.130.138:5031/api/czs_themes</a></div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">351ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">1.79KB</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">2</div>
-                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">0</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">200</div><br/>
-            
-                                        <div class="col-md-12">&nbsp;</div>
-                                        <div class="col-md-4">Tests</div>
-            
-                                        <div class="col-md-8">
-                                            <table class="table table-responsive table-condensed">
-                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
-                                                <tbody><tr><td>Schema is valid</td><td>1</td><td>0</td></tr><tr><td>Status code is valid</td><td>1</td><td>0</td></tr></tbody>
-                                            </table>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-group" id="collapse-request-86212a5f-ca65-40d6-8776-2814282b82c2" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-86212a5f-ca65-40d6-8776-2814282b82c2">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-86212a5f-ca65-40d6-8776-2814282b82c2" aria-controls="collapseOne">Get Departments</a></h4>
-                            </div>
-            
-                            <div id="requestData-86212a5f-ca65-40d6-8776-2814282b82c2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-86212a5f-ca65-40d6-8776-2814282b82c2">
-                                <div class="panel-body">
-            
-                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/ddr_registry_departments" target="_blank">http://10.68.130.138:5031/api/ddr_registry_departments</a></div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">275ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">1.55KB</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">2</div>
-                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">0</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">200</div><br/>
-            
-                                        <div class="col-md-12">&nbsp;</div>
-                                        <div class="col-md-4">Tests</div>
-            
-                                        <div class="col-md-8">
-                                            <table class="table table-responsive table-condensed">
-                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
-                                                <tbody><tr><td>Schema is valid</td><td>1</td><td>0</td></tr><tr><td>Status code is valid</td><td>1</td><td>0</td></tr></tbody>
-                                            </table>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-group" id="collapse-request-c0e4589a-1161-4d5a-b694-cdab863ebdc2" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-c0e4589a-1161-4d5a-b694-cdab863ebdc2">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-c0e4589a-1161-4d5a-b694-cdab863ebdc2" aria-controls="collapseOne">Get Downloads</a></h4>
-                            </div>
-            
-                            <div id="requestData-c0e4589a-1161-4d5a-b694-cdab863ebdc2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-c0e4589a-1161-4d5a-b694-cdab863ebdc2">
-                                <div class="panel-body">
-            
-                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/ddr_registry_downloads" target="_blank">http://10.68.130.138:5031/api/ddr_registry_downloads</a></div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">729ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">114B</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">2</div>
-                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">0</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">200</div><br/>
-            
-                                        <div class="col-md-12">&nbsp;</div>
-                                        <div class="col-md-4">Tests</div>
-            
-                                        <div class="col-md-8">
-                                            <table class="table table-responsive table-condensed">
-                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
-                                                <tbody><tr><td>Schema is valid</td><td>1</td><td>0</td></tr><tr><td>Status code is valid</td><td>1</td><td>0</td></tr></tbody>
-                                            </table>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-group" id="collapse-request-e85d5fb6-64f6-43dc-b415-b15a892dd9e7" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-e85d5fb6-64f6-43dc-b415-b15a892dd9e7">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-e85d5fb6-64f6-43dc-b415-b15a892dd9e7" aria-controls="collapseOne">Get Email</a></h4>
-                            </div>
-            
-                            <div id="requestData-e85d5fb6-64f6-43dc-b415-b15a892dd9e7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-e85d5fb6-64f6-43dc-b415-b15a892dd9e7">
-                                <div class="panel-body">
-            
-                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/ddr_registry_my_publisher_email" target="_blank">http://10.68.130.138:5031/api/ddr_registry_my_publisher_email</a></div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">875ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">48B</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">2</div>
-                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">0</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">200</div><br/>
-            
-                                        <div class="col-md-12">&nbsp;</div>
-                                        <div class="col-md-4">Tests</div>
-            
-                                        <div class="col-md-8">
-                                            <table class="table table-responsive table-condensed">
-                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
-                                                <tbody><tr><td>Schema is valid</td><td>1</td><td>0</td></tr><tr><td>Status code is valid</td><td>1</td><td>0</td></tr></tbody>
-                                            </table>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-group" id="collapse-request-bcf4c523-445b-48e4-a776-4f98d93627d3" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-bcf4c523-445b-48e4-a776-4f98d93627d3">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-bcf4c523-445b-48e4-a776-4f98d93627d3" aria-controls="collapseOne">Get Servers</a></h4>
-                            </div>
-            
-                            <div id="requestData-bcf4c523-445b-48e4-a776-4f98d93627d3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-bcf4c523-445b-48e4-a776-4f98d93627d3">
-                                <div class="panel-body">
-            
-                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/ddr_registry_servers" target="_blank">http://10.68.130.138:5031/api/ddr_registry_servers</a></div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">851ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">71B</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">2</div>
-                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">0</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">200</div><br/>
-            
-                                        <div class="col-md-12">&nbsp;</div>
-                                        <div class="col-md-4">Tests</div>
-            
-                                        <div class="col-md-8">
-                                            <table class="table table-responsive table-condensed">
-                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
-                                                <tbody><tr><td>Schema is valid</td><td>1</td><td>0</td></tr><tr><td>Status code is valid</td><td>1</td><td>0</td></tr></tbody>
-                                            </table>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-group" id="collapse-request-758c4b04-84c7-49f9-9ad7-3b6ab01d3e0b" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-758c4b04-84c7-49f9-9ad7-3b6ab01d3e0b">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-758c4b04-84c7-49f9-9ad7-3b6ab01d3e0b" aria-controls="collapseOne">Get Services</a></h4>
-                            </div>
-            
-                            <div id="requestData-758c4b04-84c7-49f9-9ad7-3b6ab01d3e0b" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-758c4b04-84c7-49f9-9ad7-3b6ab01d3e0b">
-                                <div class="panel-body">
-            
-                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/services/nrcan" target="_blank">http://10.68.130.138:5031/api/services/nrcan</a></div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">783ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">744B</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">2</div>
-                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">0</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">200</div><br/>
-            
-                                        <div class="col-md-12">&nbsp;</div>
-                                        <div class="col-md-4">Tests</div>
-            
-                                        <div class="col-md-8">
-                                            <table class="table table-responsive table-condensed">
-                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
-                                                <tbody><tr><td>Schema is valid</td><td>1</td><td>0</td></tr><tr><td>Status code is valid</td><td>1</td><td>0</td></tr></tbody>
-                                            </table>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-group" id="collapse-request-6fe9ae23-a6f6-449e-8f5c-f854f6552829" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-6fe9ae23-a6f6-449e-8f5c-f854f6552829">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-6fe9ae23-a6f6-449e-8f5c-f854f6552829" aria-controls="collapseOne">Validate Serv (op&#x3D;publish)</a></h4>
-                            </div>
-            
-                            <div id="requestData-6fe9ae23-a6f6-449e-8f5c-f854f6552829" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-6fe9ae23-a6f6-449e-8f5c-f854f6552829">
-                                <div class="panel-body">
-            
-                                        <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/validate" target="_blank">http://10.68.130.138:5031/api/validate</a></div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">41ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
                                     <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
                                     <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
             
                                         <div class="col-md-12">&nbsp;</div>
                                         <div class="col-md-4">Tests</div>
@@ -370,30 +98,40 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel-group" id="collapse-request-6e0567da-d456-4cee-9f84-4608c44947a6" role="tablist" aria-multiselectable="true">
+            </div>
+        </div>
+        <div class="panel-group" id="collapse-folder-0cf82feb-089a-4315-b6f4-7f93d51fde21" role="tablist" aria-multiselectable="true">
+            <div role="tab" id="folderHead-0cf82feb-089a-4315-b6f4-7f93d51fde21">
+                <h4 style="font-size: 18px;" class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#folderData-0cf82feb-089a-4315-b6f4-7f93d51fde21" aria-controls="collapseOne"><strong>Services</strong></a></h4>
+            </div>
+            <br/>
+            <div id="folderData-0cf82feb-089a-4315-b6f4-7f93d51fde21" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="folderHead-0cf82feb-089a-4315-b6f4-7f93d51fde21">
+                    <div class="panel-group" id="collapse-request-f904f405-286d-4ad0-95ab-ef0bff8d1831" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-6e0567da-d456-4cee-9f84-4608c44947a6">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-6e0567da-d456-4cee-9f84-4608c44947a6" aria-controls="collapseOne">Validate Serv (op&#x3D;republish)</a></h4>
+                            <div class="panel-heading" role="tab" id="requestHead-f904f405-286d-4ad0-95ab-ef0bff8d1831">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-f904f405-286d-4ad0-95ab-ef0bff8d1831" aria-controls="collapseOne">Get CZS Themes</a></h4>
                             </div>
             
-                            <div id="requestData-6e0567da-d456-4cee-9f84-4608c44947a6" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-6e0567da-d456-4cee-9f84-4608c44947a6">
+                            <div id="requestData-f904f405-286d-4ad0-95ab-ef0bff8d1831" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-f904f405-286d-4ad0-95ab-ef0bff8d1831">
                                 <div class="panel-body">
             
-                                        <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/validate" target="_blank">http://10.68.130.138:5031/api/validate</a></div>
+                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/czs_themes" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/czs_themes</a></div>
             
                                     <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">42ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">1</div>
-                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">0</div><br/>
+                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
+                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
             
                                         <div class="col-md-12">&nbsp;</div>
                                         <div class="col-md-4">Tests</div>
@@ -401,37 +139,39 @@
                                         <div class="col-md-8">
                                             <table class="table table-responsive table-condensed">
                                                 <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
-                                                <tbody><tr><td>Status code is valid</td><td>1</td><td>0</td></tr></tbody>
+                                                <tbody><tr><td>Status code is valid</td><td>0</td><td>1</td></tr></tbody>
                                             </table>
                                         </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="panel-group" id="collapse-request-5cd7463e-51fc-49cd-ae2e-bd5b0b571372" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="collapse-request-ca4cfe44-8c82-4505-ac72-86f832e4857e" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-5cd7463e-51fc-49cd-ae2e-bd5b0b571372">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-5cd7463e-51fc-49cd-ae2e-bd5b0b571372" aria-controls="collapseOne">Validate Serv  (op&#x3D;unpublish)</a></h4>
+                            <div class="panel-heading" role="tab" id="requestHead-ca4cfe44-8c82-4505-ac72-86f832e4857e">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-ca4cfe44-8c82-4505-ac72-86f832e4857e" aria-controls="collapseOne">Get Departments</a></h4>
                             </div>
             
-                            <div id="requestData-5cd7463e-51fc-49cd-ae2e-bd5b0b571372" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-5cd7463e-51fc-49cd-ae2e-bd5b0b571372">
+                            <div id="requestData-ca4cfe44-8c82-4505-ac72-86f832e4857e" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-ca4cfe44-8c82-4505-ac72-86f832e4857e">
                                 <div class="panel-body">
             
-                                        <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/validate" target="_blank">http://10.68.130.138:5031/api/validate</a></div>
+                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/ddr_registry_departments" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/ddr_registry_departments</a></div>
             
                                     <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">44ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">1</div>
-                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">0</div><br/>
+                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
+                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
             
                                         <div class="col-md-12">&nbsp;</div>
                                         <div class="col-md-4">Tests</div>
@@ -439,7 +179,287 @@
                                         <div class="col-md-8">
                                             <table class="table table-responsive table-condensed">
                                                 <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
-                                                <tbody><tr><td>Status code is valid</td><td>1</td><td>0</td></tr></tbody>
+                                                <tbody><tr><td>Status code is valid</td><td>0</td><td>1</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group" id="collapse-request-0de7fbe8-a9a5-4174-8e58-9d5d574c8f37" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="requestHead-0de7fbe8-a9a5-4174-8e58-9d5d574c8f37">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-0de7fbe8-a9a5-4174-8e58-9d5d574c8f37" aria-controls="collapseOne">Get Downloads</a></h4>
+                            </div>
+            
+                            <div id="requestData-0de7fbe8-a9a5-4174-8e58-9d5d574c8f37" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-0de7fbe8-a9a5-4174-8e58-9d5d574c8f37">
+                                <div class="panel-body">
+            
+                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/ddr_registry_downloads" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/ddr_registry_downloads</a></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
+                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
+            
+                                        <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4">Tests</div>
+            
+                                        <div class="col-md-8">
+                                            <table class="table table-responsive table-condensed">
+                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
+                                                <tbody><tr><td>Status code is valid</td><td>0</td><td>1</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group" id="collapse-request-26520674-97bd-48d6-85db-a66ce40ff429" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="requestHead-26520674-97bd-48d6-85db-a66ce40ff429">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-26520674-97bd-48d6-85db-a66ce40ff429" aria-controls="collapseOne">Get Email</a></h4>
+                            </div>
+            
+                            <div id="requestData-26520674-97bd-48d6-85db-a66ce40ff429" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-26520674-97bd-48d6-85db-a66ce40ff429">
+                                <div class="panel-body">
+            
+                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/ddr_registry_my_publisher_email" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/ddr_registry_my_publisher_email</a></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
+                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
+            
+                                        <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4">Tests</div>
+            
+                                        <div class="col-md-8">
+                                            <table class="table table-responsive table-condensed">
+                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
+                                                <tbody><tr><td>Status code is valid</td><td>0</td><td>1</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group" id="collapse-request-78bef317-94af-40ad-9f3f-bf5b4a0f5b8a" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="requestHead-78bef317-94af-40ad-9f3f-bf5b4a0f5b8a">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-78bef317-94af-40ad-9f3f-bf5b4a0f5b8a" aria-controls="collapseOne">Get Servers</a></h4>
+                            </div>
+            
+                            <div id="requestData-78bef317-94af-40ad-9f3f-bf5b4a0f5b8a" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-78bef317-94af-40ad-9f3f-bf5b4a0f5b8a">
+                                <div class="panel-body">
+            
+                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/ddr_registry_servers" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/ddr_registry_servers</a></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
+                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
+            
+                                        <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4">Tests</div>
+            
+                                        <div class="col-md-8">
+                                            <table class="table table-responsive table-condensed">
+                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
+                                                <tbody><tr><td>Status code is valid</td><td>0</td><td>1</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group" id="collapse-request-42b1dba2-2d9b-48a4-a0f1-3c3c942e97a2" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="requestHead-42b1dba2-2d9b-48a4-a0f1-3c3c942e97a2">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-42b1dba2-2d9b-48a4-a0f1-3c3c942e97a2" aria-controls="collapseOne">Get Services</a></h4>
+                            </div>
+            
+                            <div id="requestData-42b1dba2-2d9b-48a4-a0f1-3c3c942e97a2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-42b1dba2-2d9b-48a4-a0f1-3c3c942e97a2">
+                                <div class="panel-body">
+            
+                                        <div class="col-md-4">Method</div><div class="col-md-8">GET</div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/services/nrcan" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/services/nrcan</a></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
+                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
+            
+                                        <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4">Tests</div>
+            
+                                        <div class="col-md-8">
+                                            <table class="table table-responsive table-condensed">
+                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
+                                                <tbody><tr><td>Status code is valid</td><td>0</td><td>1</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group" id="collapse-request-da100f10-6297-4191-b4de-29f922209d0e" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="requestHead-da100f10-6297-4191-b4de-29f922209d0e">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-da100f10-6297-4191-b4de-29f922209d0e" aria-controls="collapseOne">Validate Serv (op&#x3D;publish)</a></h4>
+                            </div>
+            
+                            <div id="requestData-da100f10-6297-4191-b4de-29f922209d0e" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-da100f10-6297-4191-b4de-29f922209d0e">
+                                <div class="panel-body">
+            
+                                        <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/validate" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/validate</a></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
+                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
+            
+                                        <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4">Tests</div>
+            
+                                        <div class="col-md-8">
+                                            <table class="table table-responsive table-condensed">
+                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
+                                                <tbody><tr><td>Status code is valid</td><td>0</td><td>1</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group" id="collapse-request-1e1b6b25-f8cc-4102-9d1d-ec0627006408" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="requestHead-1e1b6b25-f8cc-4102-9d1d-ec0627006408">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-1e1b6b25-f8cc-4102-9d1d-ec0627006408" aria-controls="collapseOne">Validate Serv (op&#x3D;republish)</a></h4>
+                            </div>
+            
+                            <div id="requestData-1e1b6b25-f8cc-4102-9d1d-ec0627006408" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-1e1b6b25-f8cc-4102-9d1d-ec0627006408">
+                                <div class="panel-body">
+            
+                                        <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/validate" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/validate</a></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
+                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
+            
+                                        <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4">Tests</div>
+            
+                                        <div class="col-md-8">
+                                            <table class="table table-responsive table-condensed">
+                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
+                                                <tbody><tr><td>Status code is valid</td><td>0</td><td>1</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group" id="collapse-request-b83d969f-846b-4785-a2a1-f75b4a63b559" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="requestHead-b83d969f-846b-4785-a2a1-f75b4a63b559">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-b83d969f-846b-4785-a2a1-f75b4a63b559" aria-controls="collapseOne">Validate Serv  (op&#x3D;unpublish)</a></h4>
+                            </div>
+            
+                            <div id="requestData-b83d969f-846b-4785-a2a1-f75b4a63b559" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-b83d969f-846b-4785-a2a1-f75b4a63b559">
+                                <div class="panel-body">
+            
+                                        <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/validate" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/validate</a></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
+                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
+            
+                                        <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4">Tests</div>
+            
+                                        <div class="col-md-8">
+                                            <table class="table table-responsive table-condensed">
+                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
+                                                <tbody><tr><td>Status code is valid</td><td>0</td><td>1</td></tr></tbody>
                                             </table>
                                         </div>
                                 </div>
@@ -448,36 +468,38 @@
                     </div>
             </div>
         </div>
-        <div class="panel-group" id="collapse-folder-02abc033-3a5c-4a8a-93bc-b7a2c7727226" role="tablist" aria-multiselectable="true">
-            <div role="tab" id="folderHead-02abc033-3a5c-4a8a-93bc-b7a2c7727226">
-                <h4 style="font-size: 18px;" class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#folderData-02abc033-3a5c-4a8a-93bc-b7a2c7727226" aria-controls="collapseOne"><strong>Process (Put/Delete)</strong></a></h4>
+        <div class="panel-group" id="collapse-folder-09a4aa2c-06ed-4c89-9e64-70f0da7bb766" role="tablist" aria-multiselectable="true">
+            <div role="tab" id="folderHead-09a4aa2c-06ed-4c89-9e64-70f0da7bb766">
+                <h4 style="font-size: 18px;" class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#folderData-09a4aa2c-06ed-4c89-9e64-70f0da7bb766" aria-controls="collapseOne"><strong>Process (Put/Delete)</strong></a></h4>
             </div>
             <br/>
-            <div id="folderData-02abc033-3a5c-4a8a-93bc-b7a2c7727226" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="folderHead-02abc033-3a5c-4a8a-93bc-b7a2c7727226">
-                    <div class="panel-group" id="collapse-request-874d76f9-700c-4b87-81cd-b74d1404eed2" role="tablist" aria-multiselectable="true">
+            <div id="folderData-09a4aa2c-06ed-4c89-9e64-70f0da7bb766" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="folderHead-09a4aa2c-06ed-4c89-9e64-70f0da7bb766">
+                    <div class="panel-group" id="collapse-request-62543beb-3322-41d1-accd-c0ce643a5065" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-874d76f9-700c-4b87-81cd-b74d1404eed2">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-874d76f9-700c-4b87-81cd-b74d1404eed2" aria-controls="collapseOne">Load Data</a></h4>
+                            <div class="panel-heading" role="tab" id="requestHead-62543beb-3322-41d1-accd-c0ce643a5065">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-62543beb-3322-41d1-accd-c0ce643a5065" aria-controls="collapseOne">Load Data</a></h4>
                             </div>
             
-                            <div id="requestData-874d76f9-700c-4b87-81cd-b74d1404eed2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-874d76f9-700c-4b87-81cd-b74d1404eed2">
+                            <div id="requestData-62543beb-3322-41d1-accd-c0ce643a5065" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-62543beb-3322-41d1-accd-c0ce643a5065">
                                 <div class="panel-body">
             
                                         <div class="col-md-4">Method</div><div class="col-md-8">PUT</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/publish" target="_blank">http://10.68.130.138:5031/api/publish</a></div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/publish" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/publish</a></div>
             
                                     <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">45ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
                                     <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
                                     <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
             
                                         <div class="col-md-12">&nbsp;</div>
                                         <div class="col-md-4">Tests</div>
@@ -492,68 +514,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel-group" id="collapse-request-ddc371d4-85ab-4e0b-beb9-30efed30e8f3" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="collapse-request-29e42845-d207-411a-8813-2bfdbd51eefc" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-ddc371d4-85ab-4e0b-beb9-30efed30e8f3">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-ddc371d4-85ab-4e0b-beb9-30efed30e8f3" aria-controls="collapseOne">Validate Proc (op&#x3D;publish)</a></h4>
+                            <div class="panel-heading" role="tab" id="requestHead-29e42845-d207-411a-8813-2bfdbd51eefc">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-29e42845-d207-411a-8813-2bfdbd51eefc" aria-controls="collapseOne">Validate Proc (op&#x3D;publish)</a></h4>
                             </div>
             
-                            <div id="requestData-ddc371d4-85ab-4e0b-beb9-30efed30e8f3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-ddc371d4-85ab-4e0b-beb9-30efed30e8f3">
+                            <div id="requestData-29e42845-d207-411a-8813-2bfdbd51eefc" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-29e42845-d207-411a-8813-2bfdbd51eefc">
                                 <div class="panel-body">
             
                                         <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/validate" target="_blank">http://10.68.130.138:5031/api/validate</a></div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/validate" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/validate</a></div>
             
                                     <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">34ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">1</div>
-                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
-            
-                                        <div class="col-md-12">&nbsp;</div>
-                                        <div class="col-md-4">Tests</div>
-            
-                                        <div class="col-md-8">
-                                            <table class="table table-responsive table-condensed">
-                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
-                                                <tbody><tr><td>Schema is valid</td><td>0</td><td>1</td></tr><tr><td>Status code is valid</td><td>1</td><td>0</td></tr></tbody>
-                                            </table>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-group" id="collapse-request-8cf55d23-02ec-4f6f-80d6-2798aec4cb5e" role="tablist" aria-multiselectable="true">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-8cf55d23-02ec-4f6f-80d6-2798aec4cb5e">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-8cf55d23-02ec-4f6f-80d6-2798aec4cb5e" aria-controls="collapseOne">Validate Proc (op&#x3D;republish)</a></h4>
-                            </div>
-            
-                            <div id="requestData-8cf55d23-02ec-4f6f-80d6-2798aec4cb5e" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-8cf55d23-02ec-4f6f-80d6-2798aec4cb5e">
-                                <div class="panel-body">
-            
-                                        <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/validate" target="_blank">http://10.68.130.138:5031/api/validate</a></div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-            
-                                    <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">39ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
                                     <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
                                     <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
             
                                         <div class="col-md-12">&nbsp;</div>
                                         <div class="col-md-4">Tests</div>
@@ -568,30 +554,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel-group" id="collapse-request-88118291-80e1-4bbc-96d4-70c2683360df" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="collapse-request-79cf6fd0-8fb1-4188-b630-e85546343667" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-88118291-80e1-4bbc-96d4-70c2683360df">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-88118291-80e1-4bbc-96d4-70c2683360df" aria-controls="collapseOne">Validate Proc (op&#x3D;unpublish)</a></h4>
+                            <div class="panel-heading" role="tab" id="requestHead-79cf6fd0-8fb1-4188-b630-e85546343667">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-79cf6fd0-8fb1-4188-b630-e85546343667" aria-controls="collapseOne">Validate Proc (op&#x3D;republish)</a></h4>
                             </div>
             
-                            <div id="requestData-88118291-80e1-4bbc-96d4-70c2683360df" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-88118291-80e1-4bbc-96d4-70c2683360df">
+                            <div id="requestData-79cf6fd0-8fb1-4188-b630-e85546343667" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-79cf6fd0-8fb1-4188-b630-e85546343667">
                                 <div class="panel-body">
             
                                         <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/validate" target="_blank">http://10.68.130.138:5031/api/validate</a></div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/validate" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/validate</a></div>
             
                                     <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">41ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
                                     <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
                                     <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
             
                                         <div class="col-md-12">&nbsp;</div>
                                         <div class="col-md-4">Tests</div>
@@ -606,30 +594,72 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel-group" id="collapse-request-b45082af-a6b5-4fa7-88bb-9b9e0935d126" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="collapse-request-67c93c03-4f53-4177-9fe2-fd87d7b474de" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-b45082af-a6b5-4fa7-88bb-9b9e0935d126">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-b45082af-a6b5-4fa7-88bb-9b9e0935d126" aria-controls="collapseOne">Delete</a></h4>
+                            <div class="panel-heading" role="tab" id="requestHead-67c93c03-4f53-4177-9fe2-fd87d7b474de">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-67c93c03-4f53-4177-9fe2-fd87d7b474de" aria-controls="collapseOne">Validate Proc (op&#x3D;unpublish)</a></h4>
                             </div>
             
-                            <div id="requestData-b45082af-a6b5-4fa7-88bb-9b9e0935d126" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-b45082af-a6b5-4fa7-88bb-9b9e0935d126">
+                            <div id="requestData-67c93c03-4f53-4177-9fe2-fd87d7b474de" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-67c93c03-4f53-4177-9fe2-fd87d7b474de">
+                                <div class="panel-body">
+            
+                                        <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/validate" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/validate</a></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
+                                    <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
+            
+                                    <div class="col-md-12">&nbsp;</div>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
+            
+                                        <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4">Tests</div>
+            
+                                        <div class="col-md-8">
+                                            <table class="table table-responsive table-condensed">
+                                                <thead><tr><th>Name</th><th>Pass count</th><th>Fail count</th></tr></thead>
+                                                <tbody><tr><td>Status code is valid</td><td>0</td><td>1</td></tr></tbody>
+                                            </table>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group" id="collapse-request-8856173f-5cfa-4532-b20d-3172679224f7" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="requestHead-8856173f-5cfa-4532-b20d-3172679224f7">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-8856173f-5cfa-4532-b20d-3172679224f7" aria-controls="collapseOne">Delete</a></h4>
+                            </div>
+            
+                            <div id="requestData-8856173f-5cfa-4532-b20d-3172679224f7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-8856173f-5cfa-4532-b20d-3172679224f7">
                                 <div class="panel-body">
             
                                         <div class="col-md-4">Method</div><div class="col-md-8">DELETE</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/unpublish" target="_blank">http://10.68.130.138:5031/api/unpublish</a></div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/unpublish" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/unpublish</a></div>
             
                                     <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">39ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
                                     <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
                                     <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
             
                                         <div class="col-md-12">&nbsp;</div>
                                         <div class="col-md-4">Tests</div>
@@ -646,36 +676,38 @@
                     </div>
             </div>
         </div>
-        <div class="panel-group" id="collapse-folder-bae5f759-be2c-407d-8627-20a496bb3bd8" role="tablist" aria-multiselectable="true">
-            <div role="tab" id="folderHead-bae5f759-be2c-407d-8627-20a496bb3bd8">
-                <h4 style="font-size: 18px;" class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#folderData-bae5f759-be2c-407d-8627-20a496bb3bd8" aria-controls="collapseOne"><strong>Process (Compare)</strong></a></h4>
+        <div class="panel-group" id="collapse-folder-e1c3e79d-6dcf-4d2c-80e5-37de97d8aedc" role="tablist" aria-multiselectable="true">
+            <div role="tab" id="folderHead-e1c3e79d-6dcf-4d2c-80e5-37de97d8aedc">
+                <h4 style="font-size: 18px;" class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#folderData-e1c3e79d-6dcf-4d2c-80e5-37de97d8aedc" aria-controls="collapseOne"><strong>Process (Compare)</strong></a></h4>
             </div>
             <br/>
-            <div id="folderData-bae5f759-be2c-407d-8627-20a496bb3bd8" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="folderHead-bae5f759-be2c-407d-8627-20a496bb3bd8">
-                    <div class="panel-group" id="collapse-request-ab5d9a16-71f8-4857-a63d-336fd02ca2b7" role="tablist" aria-multiselectable="true">
+            <div id="folderData-e1c3e79d-6dcf-4d2c-80e5-37de97d8aedc" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="folderHead-e1c3e79d-6dcf-4d2c-80e5-37de97d8aedc">
+                    <div class="panel-group" id="collapse-request-f13f1823-c560-4e40-9e33-b882dcda6424" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-ab5d9a16-71f8-4857-a63d-336fd02ca2b7">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-ab5d9a16-71f8-4857-a63d-336fd02ca2b7" aria-controls="collapseOne">Load Data</a></h4>
+                            <div class="panel-heading" role="tab" id="requestHead-f13f1823-c560-4e40-9e33-b882dcda6424">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-f13f1823-c560-4e40-9e33-b882dcda6424" aria-controls="collapseOne">Load Data</a></h4>
                             </div>
             
-                            <div id="requestData-ab5d9a16-71f8-4857-a63d-336fd02ca2b7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-ab5d9a16-71f8-4857-a63d-336fd02ca2b7">
+                            <div id="requestData-f13f1823-c560-4e40-9e33-b882dcda6424" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-f13f1823-c560-4e40-9e33-b882dcda6424">
                                 <div class="panel-body">
             
                                         <div class="col-md-4">Method</div><div class="col-md-8">PUT</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/processes" target="_blank">http://10.68.130.138:5031/api/processes</a></div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/processes" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/processes</a></div>
             
                                     <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">41ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
                                     <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
                                     <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
             
                                         <div class="col-md-12">&nbsp;</div>
                                         <div class="col-md-4">Tests</div>
@@ -690,30 +722,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel-group" id="collapse-request-8c1f22e7-be51-46df-a721-2d001d49913d" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="collapse-request-542f5d1c-80de-49a2-9c4f-563e42caf426" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-8c1f22e7-be51-46df-a721-2d001d49913d">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-8c1f22e7-be51-46df-a721-2d001d49913d" aria-controls="collapseOne">Compare</a></h4>
+                            <div class="panel-heading" role="tab" id="requestHead-542f5d1c-80de-49a2-9c4f-563e42caf426">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-542f5d1c-80de-49a2-9c4f-563e42caf426" aria-controls="collapseOne">Compare</a></h4>
                             </div>
             
-                            <div id="requestData-8c1f22e7-be51-46df-a721-2d001d49913d" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-8c1f22e7-be51-46df-a721-2d001d49913d">
+                            <div id="requestData-542f5d1c-80de-49a2-9c4f-563e42caf426" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-542f5d1c-80de-49a2-9c4f-563e42caf426">
                                 <div class="panel-body">
             
                                         <div class="col-md-4">Method</div><div class="col-md-8">POST</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/compare" target="_blank">http://10.68.130.138:5031/api/compare</a></div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/compare" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/compare</a></div>
             
                                     <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">33ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
                                     <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
                                     <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
             
                                         <div class="col-md-12">&nbsp;</div>
                                         <div class="col-md-4">Tests</div>
@@ -728,30 +762,32 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel-group" id="collapse-request-49ddac44-9cae-435d-bcdc-b47046010e79" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="collapse-request-90658950-4422-4fe9-833d-d054f385464a" role="tablist" aria-multiselectable="true">
                         <div class="panel panel-default">
-                            <div class="panel-heading" role="tab" id="requestHead-49ddac44-9cae-435d-bcdc-b47046010e79">
-                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-49ddac44-9cae-435d-bcdc-b47046010e79" aria-controls="collapseOne">Delete</a></h4>
+                            <div class="panel-heading" role="tab" id="requestHead-90658950-4422-4fe9-833d-d054f385464a">
+                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#requestData-90658950-4422-4fe9-833d-d054f385464a" aria-controls="collapseOne">Delete</a></h4>
                             </div>
             
-                            <div id="requestData-49ddac44-9cae-435d-bcdc-b47046010e79" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-49ddac44-9cae-435d-bcdc-b47046010e79">
+                            <div id="requestData-90658950-4422-4fe9-833d-d054f385464a" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="requestHead-90658950-4422-4fe9-833d-d054f385464a">
                                 <div class="panel-body">
             
                                         <div class="col-md-4">Method</div><div class="col-md-8">DELETE</div>
-                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="http://10.68.130.138:5031/api/processes" target="_blank">http://10.68.130.138:5031/api/processes</a></div>
+                                        <div class="col-md-4">URL</div><div class="col-md-8"><a href="https://qgis.ddr-stage.services.geo.ca/api/processes" target="_blank">https://qgis.ddr-stage.services.geo.ca/api/processes</a></div>
             
                                     <div class="col-md-12">&nbsp;</div>
+                                        <div class="col-md-4"><b>Error</b></div><div class="col-md-8"><b>There was an error sending this request</b></div>
+                                        <div class="col-md-4"><b>Error code</b></div><div class="col-md-8"><b>ETIMEDOUT</b></div>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">32ms</div><br/>
-                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">73B</div><br/>
+                                    <div class="col-md-4">Mean time per request</div><div class="col-md-8">0ms</div><br/>
+                                    <div class="col-md-4">Mean size per request</div><div class="col-md-8">0B</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
                                     <br/><div class="col-md-4">Total passed tests</div><div class="col-md-8">0</div>
                                     <div class="col-md-4">Total failed tests</div><div class="col-md-8">1</div><br/>
             
                                     <div class="col-md-12">&nbsp;</div>
-                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8">500</div><br/>
+                                    <br/><div class="col-md-4">Status code</div><div class="col-md-8"></div><br/>
             
                                         <div class="col-md-12">&nbsp;</div>
                                         <div class="col-md-4">Tests</div>
@@ -776,7 +812,7 @@
                     <div class="panel-heading" role="tab" id="failureHead-0">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#failureData-0" aria-controls="collapseOne">
-                                AssertionError: Status code is valid
+                                Error: connect ETIMEDOUT 15.156.25.72:443
                             </a>
                         </h4>
                     </div>
@@ -784,11 +820,10 @@
                     <div id="failureData-0" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-0">
                         <div class="panel-body">
                             <div class="col-md-12">&nbsp;</div>
-                                <div class="col-md-4">Description</div><div class="col-md-8">expected response to have status code 200 but got 500</div><br/>
 
-                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
                             <div class="col-md-4">Request</div><div class="col-md-8">
-                                <a href="#collapse-request-6fe9ae23-a6f6-449e-8f5c-f854f6552829">Validate Serv (op&#x3D;publish)</a>
+                                <a href="#collapse-request-9d1a1630-97c9-4485-a773-5e6dcfe3e98a">Login</a>
                             </div>
                         </div>
                     </div>
@@ -807,11 +842,11 @@
                     <div id="failureData-1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-1">
                         <div class="panel-body">
                             <div class="col-md-12">&nbsp;</div>
-                                <div class="col-md-4">Description</div><div class="col-md-8">expected response to have status code 204 but got 500</div><br/>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
 
                             <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
                             <div class="col-md-4">Request</div><div class="col-md-8">
-                                <a href="#collapse-request-874d76f9-700c-4b87-81cd-b74d1404eed2">Load Data</a>
+                                <a href="#collapse-request-9d1a1630-97c9-4485-a773-5e6dcfe3e98a">Login</a>
                             </div>
                         </div>
                     </div>
@@ -822,7 +857,7 @@
                     <div class="panel-heading" role="tab" id="failureHead-2">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#failureData-2" aria-controls="collapseOne">
-                                AssertionError: Schema is valid
+                                JSONError: Unexpected token u in JSON at position 0
                             </a>
                         </h4>
                     </div>
@@ -830,12 +865,10 @@
                     <div id="failureData-2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-2">
                         <div class="panel-body">
                             <div class="col-md-12">&nbsp;</div>
-                                <div class="col-md-4">Description</div><div class="col-md-8">expected data to satisfy schema but found following errors: 
-data should have required property &#x27;detail_fr&#x27;</div><br/>
 
-                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:1 in test-script</div><br/>
+                            <div class="col-md-4">Location</div><div class="col-md-8">test-script</div><br/>
                             <div class="col-md-4">Request</div><div class="col-md-8">
-                                <a href="#collapse-request-ddc371d4-85ab-4e0b-beb9-30efed30e8f3">Validate Proc (op&#x3D;publish)</a>
+                                <a href="#collapse-request-9d1a1630-97c9-4485-a773-5e6dcfe3e98a">Login</a>
                             </div>
                         </div>
                     </div>
@@ -846,7 +879,7 @@ data should have required property &#x27;detail_fr&#x27;</div><br/>
                     <div class="panel-heading" role="tab" id="failureHead-3">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#failureData-3" aria-controls="collapseOne">
-                                AssertionError: Status code is valid
+                                Error: connect ETIMEDOUT 15.156.25.72:443
                             </a>
                         </h4>
                     </div>
@@ -854,11 +887,10 @@ data should have required property &#x27;detail_fr&#x27;</div><br/>
                     <div id="failureData-3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-3">
                         <div class="panel-body">
                             <div class="col-md-12">&nbsp;</div>
-                                <div class="col-md-4">Description</div><div class="col-md-8">expected response to have status code 200 but got 500</div><br/>
 
-                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
                             <div class="col-md-4">Request</div><div class="col-md-8">
-                                <a href="#collapse-request-8cf55d23-02ec-4f6f-80d6-2798aec4cb5e">Validate Proc (op&#x3D;republish)</a>
+                                <a href="#collapse-request-f904f405-286d-4ad0-95ab-ef0bff8d1831">Get CZS Themes</a>
                             </div>
                         </div>
                     </div>
@@ -877,11 +909,11 @@ data should have required property &#x27;detail_fr&#x27;</div><br/>
                     <div id="failureData-4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-4">
                         <div class="panel-body">
                             <div class="col-md-12">&nbsp;</div>
-                                <div class="col-md-4">Description</div><div class="col-md-8">expected response to have status code 200 but got 500</div><br/>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
 
                             <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
                             <div class="col-md-4">Request</div><div class="col-md-8">
-                                <a href="#collapse-request-88118291-80e1-4bbc-96d4-70c2683360df">Validate Proc (op&#x3D;unpublish)</a>
+                                <a href="#collapse-request-f904f405-286d-4ad0-95ab-ef0bff8d1831">Get CZS Themes</a>
                             </div>
                         </div>
                     </div>
@@ -892,7 +924,7 @@ data should have required property &#x27;detail_fr&#x27;</div><br/>
                     <div class="panel-heading" role="tab" id="failureHead-5">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#failureData-5" aria-controls="collapseOne">
-                                AssertionError: Status code is valid
+                                Error: connect ETIMEDOUT 15.156.25.72:443
                             </a>
                         </h4>
                     </div>
@@ -900,11 +932,10 @@ data should have required property &#x27;detail_fr&#x27;</div><br/>
                     <div id="failureData-5" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-5">
                         <div class="panel-body">
                             <div class="col-md-12">&nbsp;</div>
-                                <div class="col-md-4">Description</div><div class="col-md-8">expected response to have status code 204 but got 500</div><br/>
 
-                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
                             <div class="col-md-4">Request</div><div class="col-md-8">
-                                <a href="#collapse-request-b45082af-a6b5-4fa7-88bb-9b9e0935d126">Delete</a>
+                                <a href="#collapse-request-ca4cfe44-8c82-4505-ac72-86f832e4857e">Get Departments</a>
                             </div>
                         </div>
                     </div>
@@ -923,11 +954,11 @@ data should have required property &#x27;detail_fr&#x27;</div><br/>
                     <div id="failureData-6" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-6">
                         <div class="panel-body">
                             <div class="col-md-12">&nbsp;</div>
-                                <div class="col-md-4">Description</div><div class="col-md-8">expected response to have status code 204 but got 500</div><br/>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
 
                             <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
                             <div class="col-md-4">Request</div><div class="col-md-8">
-                                <a href="#collapse-request-ab5d9a16-71f8-4857-a63d-336fd02ca2b7">Load Data</a>
+                                <a href="#collapse-request-ca4cfe44-8c82-4505-ac72-86f832e4857e">Get Departments</a>
                             </div>
                         </div>
                     </div>
@@ -938,7 +969,7 @@ data should have required property &#x27;detail_fr&#x27;</div><br/>
                     <div class="panel-heading" role="tab" id="failureHead-7">
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion" href="#failureData-7" aria-controls="collapseOne">
-                                AssertionError: Status code is valid
+                                Error: connect ETIMEDOUT 3.96.36.167:443
                             </a>
                         </h4>
                     </div>
@@ -946,11 +977,10 @@ data should have required property &#x27;detail_fr&#x27;</div><br/>
                     <div id="failureData-7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-7">
                         <div class="panel-body">
                             <div class="col-md-12">&nbsp;</div>
-                                <div class="col-md-4">Description</div><div class="col-md-8">expected response to have status code 200 but got 500</div><br/>
 
-                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
                             <div class="col-md-4">Request</div><div class="col-md-8">
-                                <a href="#collapse-request-8c1f22e7-be51-46df-a721-2d001d49913d">Compare</a>
+                                <a href="#collapse-request-0de7fbe8-a9a5-4174-8e58-9d5d574c8f37">Get Downloads</a>
                             </div>
                         </div>
                     </div>
@@ -969,11 +999,641 @@ data should have required property &#x27;detail_fr&#x27;</div><br/>
                     <div id="failureData-8" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-8">
                         <div class="panel-body">
                             <div class="col-md-12">&nbsp;</div>
-                                <div class="col-md-4">Description</div><div class="col-md-8">expected response to have status code 204 but got 500</div><br/>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
 
                             <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
                             <div class="col-md-4">Request</div><div class="col-md-8">
-                                <a href="#collapse-request-49ddac44-9cae-435d-bcdc-b47046010e79">Delete</a>
+                                <a href="#collapse-request-0de7fbe8-a9a5-4174-8e58-9d5d574c8f37">Get Downloads</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-9" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-9">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-9" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 3.96.36.167:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-9" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-9">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-26520674-97bd-48d6-85db-a66ce40ff429">Get Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-10" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-10">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-10" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-10" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-10">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-26520674-97bd-48d6-85db-a66ce40ff429">Get Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-11" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-11">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-11" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 3.96.36.167:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-11" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-11">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-78bef317-94af-40ad-9f3f-bf5b4a0f5b8a">Get Servers</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-12" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-12">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-12" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-12" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-12">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-78bef317-94af-40ad-9f3f-bf5b4a0f5b8a">Get Servers</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-13" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-13">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-13" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 15.156.25.72:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-13" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-13">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-42b1dba2-2d9b-48a4-a0f1-3c3c942e97a2">Get Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-14" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-14">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-14" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-14" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-14">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-42b1dba2-2d9b-48a4-a0f1-3c3c942e97a2">Get Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-15" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-15">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-15" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 15.156.25.72:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-15" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-15">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-da100f10-6297-4191-b4de-29f922209d0e">Validate Serv (op&#x3D;publish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-16" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-16">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-16" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-16" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-16">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-da100f10-6297-4191-b4de-29f922209d0e">Validate Serv (op&#x3D;publish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-17" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-17">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-17" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 15.156.25.72:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-17" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-17">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-1e1b6b25-f8cc-4102-9d1d-ec0627006408">Validate Serv (op&#x3D;republish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-18" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-18">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-18" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-18" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-18">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-1e1b6b25-f8cc-4102-9d1d-ec0627006408">Validate Serv (op&#x3D;republish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-19" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-19">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-19" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 15.156.25.72:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-19" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-19">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-b83d969f-846b-4785-a2a1-f75b4a63b559">Validate Serv  (op&#x3D;unpublish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-20" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-20">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-20" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-20" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-20">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-b83d969f-846b-4785-a2a1-f75b4a63b559">Validate Serv  (op&#x3D;unpublish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-21" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-21">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-21" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 15.156.25.72:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-21" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-21">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-62543beb-3322-41d1-accd-c0ce643a5065">Load Data</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-22" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-22">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-22" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-22" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-22">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-62543beb-3322-41d1-accd-c0ce643a5065">Load Data</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-23" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-23">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-23" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 15.156.25.72:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-23" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-23">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-29e42845-d207-411a-8813-2bfdbd51eefc">Validate Proc (op&#x3D;publish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-24" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-24">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-24" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-24" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-24">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-29e42845-d207-411a-8813-2bfdbd51eefc">Validate Proc (op&#x3D;publish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-25" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-25">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-25" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 3.96.36.167:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-25" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-25">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-79cf6fd0-8fb1-4188-b630-e85546343667">Validate Proc (op&#x3D;republish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-26" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-26">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-26" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-26" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-26">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-79cf6fd0-8fb1-4188-b630-e85546343667">Validate Proc (op&#x3D;republish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-27" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-27">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-27" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 3.96.36.167:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-27" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-27">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-67c93c03-4f53-4177-9fe2-fd87d7b474de">Validate Proc (op&#x3D;unpublish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-28" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-28">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-28" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-28" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-28">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-67c93c03-4f53-4177-9fe2-fd87d7b474de">Validate Proc (op&#x3D;unpublish)</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-29" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-29">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-29" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 3.96.36.167:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-29" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-29">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-8856173f-5cfa-4532-b20d-3172679224f7">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-30" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-30">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-30" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-30" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-30">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-8856173f-5cfa-4532-b20d-3172679224f7">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-31" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-31">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-31" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 3.96.36.167:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-31" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-31">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-f13f1823-c560-4e40-9e33-b882dcda6424">Load Data</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-32" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-32">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-32" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-32" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-32">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-f13f1823-c560-4e40-9e33-b882dcda6424">Load Data</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-33" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-33">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-33" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 3.96.36.167:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-33" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-33">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-542f5d1c-80de-49a2-9c4f-563e42caf426">Compare</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-34" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-34">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-34" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-34" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-34">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-542f5d1c-80de-49a2-9c4f-563e42caf426">Compare</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-35" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-35">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-35" aria-controls="collapseOne">
+                                Error: connect ETIMEDOUT 3.96.36.167:443
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-35" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-35">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">request</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-90658950-4422-4fe9-833d-d054f385464a">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group" id="collapse-failure-36" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="failureHead-36">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#failureData-36" aria-controls="collapseOne">
+                                AssertionError: Status code is valid
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="failureData-36" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="failureHead-36">
+                        <div class="panel-body">
+                            <div class="col-md-12">&nbsp;</div>
+                                <div class="col-md-4">Description</div><div class="col-md-8">expected { Object (id, _details, ...) } to have property &#x27;code&#x27;</div><br/>
+
+                            <div class="col-md-4">Location</div><div class="col-md-8">assertion:0 in test-script</div><br/>
+                            <div class="col-md-4">Request</div><div class="col-md-8">
+                                <a href="#collapse-request-90658950-4422-4fe9-833d-d054f385464a">Delete</a>
                             </div>
                         </div>
                     </div>
