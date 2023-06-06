@@ -1,0 +1,2589 @@
+{
+	"info": {
+		"_postman_id": "e7ac9e5f-0169-4ead-b204-f738b214defa",
+		"name": "ddr_publication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26746003"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: Token\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.token, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}\r",
+									"\r",
+									"// Store the token in the Collection variables\r",
+									"pm.collectionVariables.set(\"bearerToken\", pm.response.json().access_token);\r",
+									"pm.collectionVariables.set(\"refreshToken\", pm.response.json().refresh_token);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"{{username}}\",\r\n  \"password\": \"{{password}}\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "Generates a JWT for a given User"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Get CZS Themes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.theme_czs_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/czs_themes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"czs_themes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Departments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.department_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ddr_registry_departments",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ddr_registry_departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Downloads",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.download_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ddr_registry_downloads",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ddr_registry_downloads"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.email, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ddr_registry_my_publisher_email",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ddr_registry_my_publisher_email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Servers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.download_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ddr_registry_servers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ddr_registry_servers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Services",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.servers, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/services/nrcan",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"services",
+								"nrcan"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Serv (op=publish)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operation",
+									"value": "publish",
+									"type": "text"
+								},
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/validate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Serv (op=republish)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 500: Cannot republish a file that is not published\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 500)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operation",
+									"value": "republish",
+									"type": "text"
+								},
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "{{publish_file_zip}}"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/validate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Serv  (op=unpublish)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 500: Cannot unpublish a file that is not published\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 500)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operation",
+									"value": "unpublish",
+									"type": "text"
+								},
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "{{publish_file_zip}}"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/validate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Process (Put/Delete)",
+			"item": [
+				{
+					"name": "Load Data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/publish",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"publish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Proc (op=publish)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 500: Cannot publish a file that is published\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.error_500, 500)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operation",
+									"value": "publish",
+									"type": "text"
+								},
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/validate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Proc (op=republish)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200: Can republish a file that is published\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.validation, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operation",
+									"value": "update",
+									"type": "text"
+								},
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/validate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Proc (op=unpublish)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200: Can unpublish a file that is published\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.validation, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "charset",
+								"value": "utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "operation",
+									"value": "unpublish",
+									"type": "text"
+								},
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/validate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"validate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/unpublish",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"unpublish"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Process (Compare)",
+			"item": [
+				{
+					"name": "Load Data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/processes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"processes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compare",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.compare, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/compare",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"compare"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "/C:/Users/dpilon/AppData/Local/Postman/app-10.14.2/ddr_publish.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/processes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"processes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// npm install ajv",
+					"var Ajv = require(\"ajv\");",
+					"",
+					"SchemaToken = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        token_type: { type: \"string\" },",
+					"        access_token: { type: \"string\" },",
+					"        expires_in: { type: \"number\" },",
+					"        refresh_token: { type: \"string\" },",
+					"        refresh_expires_in: { type: \"number\" },",
+					"    }",
+					"};",
+					"",
+					"SchemaLanguage = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        en: { type: \"string\"},",
+					"        fr: { type: \"string\"}",
+					"    },",
+					"    required: [\"en\", \"fr\"]",
+					"};",
+					"SchemaThemeCzs = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        theme_uuid: { type: \"string\"},",
+					"        title: SchemaLanguage",
+					"    },",
+					"    required: [\"theme_uuid\", \"title\"]",
+					"};",
+					"",
+					"SchemaDepartment = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        id: { \"type\": \"string\"},",
+					"        name_en: { \"type\": \"string\"},",
+					"        name_fr: { \"type\": \"string\"},",
+					"        tbs_dept_acrn_en: { \"type\": \"string\"},",
+					"        tbs_dept_acrn_fr: { \"type\": \"string\"},",
+					"        default_qgis_server_id: { \"type\": \"string\"},",
+					"        default_download_id: { \"type\": \"string\"},",
+					"        qgis_data_store_root_subpath: { \"type\": \"string\"},",
+					"        download_root_subpath: { \"type\": \"string\"}",
+					"    },",
+					"    required:[\"id\", \"name_en\", \"name_fr\", \"tbs_dept_acrn_en\", \"tbs_dept_acrn_fr\", \"default_qgis_server_id\", \"default_download_id\",",
+					"              \"qgis_data_store_root_subpath\", \"download_root_subpath\"]",
+					"};",
+					"",
+					"SchemaDownload = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        id: { \"type\": \"string\"},",
+					"    },",
+					"    required: [\"id\"]",
+					"};",
+					"",
+					"SchemaEmail = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        email: { \"type\": \"string\"},",
+					"    },",
+					"    required: [\"email\"]",
+					"};",
+					"",
+					"SchemaServer = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        id: { \"type\": \"string\"},",
+					"    },",
+					"    required: [\"id\"]",
+					"};",
+					"",
+					"SchemaServers = {",
+					"  type: \"object\",",
+					"  properties: {",
+					"    results: {",
+					"      type: \"array\",",
+					"      items: {type: \"string\"}",
+					"    }",
+					"  },",
+					"  required: [\"results\"]",
+					"};",
+					"",
+					"",
+					"SchemaValidation = {",
+					"  \"type\": \"object\",",
+					"  \"properties\": {",
+					"    \"results\": {",
+					"      \"type\": \"array\",",
+					"      \"items\": [",
+					"        {",
+					"          \"type\": \"array\",",
+					"          \"items\": [",
+					"            {",
+					"              \"type\": \"object\",",
+					"              \"properties\": {",
+					"                \"abstract\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"crs\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"data_exists_in_database\": {",
+					"                  \"type\": \"boolean\"",
+					"                },",
+					"                \"extent\": {",
+					"                  \"type\": \"object\",",
+					"                  \"properties\": {",
+					"                    \"xMaximum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"xMinimum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"yMaximum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"yMinimum\": {",
+					"                      \"type\": \"number\"",
+					"                    }",
+					"                  },",
+					"                  \"required\": [",
+					"                    \"xMaximum\",",
+					"                    \"xMinimum\",",
+					"                    \"yMaximum\",",
+					"                    \"yMinimum\"",
+					"                  ]",
+					"                },",
+					"                \"extent4326\": {",
+					"                  \"type\": \"object\",",
+					"                  \"properties\": {",
+					"                    \"xMaximum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"xMinimum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"yMaximum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"yMinimum\": {",
+					"                      \"type\": \"number\"",
+					"                    }",
+					"                  },",
+					"                  \"required\": [",
+					"                    \"xMaximum\",",
+					"                    \"xMinimum\",",
+					"                    \"yMaximum\",",
+					"                    \"yMinimum\"",
+					"                  ]",
+					"                },",
+					"                \"feature_count\": {",
+					"                  \"type\": \"integer\"",
+					"                },",
+					"                \"fields\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": [",
+					"                    {",
+					"                      \"type\": \"string\"",
+					"                    },",
+					"                    {",
+					"                      \"type\": \"string\"",
+					"                    }",
+					"                  ]",
+					"                },",
+					"                \"fields_id_valid\": {",
+					"                  \"type\": \"boolean\"",
+					"                },",
+					"                \"fields_ids\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": [",
+					"                    {",
+					"                      \"type\": \"string\"",
+					"                    }",
+					"                  ]",
+					"                },",
+					"                \"geom_type\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"is_geopackage\": {",
+					"                  \"type\": \"boolean\"",
+					"                },",
+					"                \"is_geopackage_in_input\": {",
+					"                  \"type\": \"boolean\"",
+					"                },",
+					"                \"is_valid\": {",
+					"                  \"type\": \"boolean\"",
+					"                },",
+					"                \"keywords\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": {}",
+					"                },",
+					"                \"name\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"name_short\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"name_table\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"name_valid\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"style_exists_in_database\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"styles\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": [",
+					"                    {",
+					"                      \"type\": \"string\"",
+					"                    },",
+					"                    {",
+					"                      \"type\": \"string\"",
+					"                    }",
+					"                  ]",
+					"                },",
+					"                \"temporal\": {",
+					"                  \"type\": \"object\",",
+					"                  \"properties\": {",
+					"                    \"begin\": {",
+					"                      \"type\": \"null\"",
+					"                    },",
+					"                    \"end\": {",
+					"                      \"type\": \"null\"",
+					"                    },",
+					"                    \"isActive\": {",
+					"                      \"type\": \"boolean\"",
+					"                    }",
+					"                  },",
+					"                  \"required\": [",
+					"                    \"begin\",",
+					"                    \"end\",",
+					"                    \"isActive\"",
+					"                  ]",
+					"                },",
+					"                \"type\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"uri\": {",
+					"                  \"type\": \"object\",",
+					"                  \"properties\": {",
+					"                    \"layerId\": {",
+					"                      \"type\": \"string\"",
+					"                    },",
+					"                    \"layerName\": {",
+					"                      \"type\": \"string\"",
+					"                    },",
+					"                    \"path\": {",
+					"                      \"type\": \"string\"",
+					"                    }",
+					"                  },",
+					"                  \"required\": [",
+					"                    \"layerId\",",
+					"                    \"layerName\",",
+					"                    \"path\"",
+					"                  ]",
+					"                }",
+					"              },",
+					"              \"required\": [",
+					"                \"abstract\",",
+					"                \"crs\",",
+					"                \"data_exists_in_database\",",
+					"                \"extent\",",
+					"                \"extent4326\",",
+					"                \"feature_count\",",
+					"                \"fields\",",
+					"                \"fields_id_valid\",",
+					"                \"fields_ids\",",
+					"                \"geom_type\",",
+					"                \"is_geopackage\",",
+					"                \"is_geopackage_in_input\",",
+					"                \"is_valid\",",
+					"                \"keywords\",",
+					"                \"name\",",
+					"                \"name_short\",",
+					"                \"name_table\",",
+					"                \"name_valid\",",
+					"                \"style_exists_in_database\",",
+					"                \"styles\",",
+					"                \"temporal\",",
+					"                \"type\",",
+					"                \"uri\"",
+					"              ]",
+					"            }",
+					"          ]",
+					"        },",
+					"        {",
+					"          \"type\": \"array\",",
+					"          \"items\": [",
+					"            {",
+					"              \"type\": \"object\",",
+					"              \"properties\": {",
+					"                \"abstract\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"crs\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"data_exists_in_database\": {",
+					"                  \"type\": \"boolean\"",
+					"                },",
+					"                \"extent\": {",
+					"                  \"type\": \"object\",",
+					"                  \"properties\": {",
+					"                    \"xMaximum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"xMinimum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"yMaximum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"yMinimum\": {",
+					"                      \"type\": \"number\"",
+					"                    }",
+					"                  },",
+					"                  \"required\": [",
+					"                    \"xMaximum\",",
+					"                    \"xMinimum\",",
+					"                    \"yMaximum\",",
+					"                    \"yMinimum\"",
+					"                  ]",
+					"                },",
+					"                \"extent4326\": {",
+					"                  \"type\": \"object\",",
+					"                  \"properties\": {",
+					"                    \"xMaximum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"xMinimum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"yMaximum\": {",
+					"                      \"type\": \"number\"",
+					"                    },",
+					"                    \"yMinimum\": {",
+					"                      \"type\": \"number\"",
+					"                    }",
+					"                  },",
+					"                  \"required\": [",
+					"                    \"xMaximum\",",
+					"                    \"xMinimum\",",
+					"                    \"yMaximum\",",
+					"                    \"yMinimum\"",
+					"                  ]",
+					"                },",
+					"                \"feature_count\": {",
+					"                  \"type\": \"integer\"",
+					"                },",
+					"                \"fields\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": [",
+					"                    {",
+					"                      \"type\": \"string\"",
+					"                    },",
+					"                    {",
+					"                      \"type\": \"string\"",
+					"                    }",
+					"                  ]",
+					"                },",
+					"                \"fields_id_valid\": {",
+					"                  \"type\": \"boolean\"",
+					"                },",
+					"                \"fields_ids\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": [",
+					"                    {",
+					"                      \"type\": \"string\"",
+					"                    }",
+					"                  ]",
+					"                },",
+					"                \"geom_type\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"is_geopackage\": {",
+					"                  \"type\": \"boolean\"",
+					"                },",
+					"                \"is_geopackage_in_input\": {",
+					"                  \"type\": \"boolean\"",
+					"                },",
+					"                \"is_valid\": {",
+					"                  \"type\": \"boolean\"",
+					"                },",
+					"                \"keywords\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": {}",
+					"                },",
+					"                \"name\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"name_short\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"name_table\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"name_valid\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"style_exists_in_database\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"styles\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": [",
+					"                    {",
+					"                      \"type\": \"string\"",
+					"                    },",
+					"                    {",
+					"                      \"type\": \"string\"",
+					"                    }",
+					"                  ]",
+					"                },",
+					"                \"temporal\": {",
+					"                  \"type\": \"object\",",
+					"                  \"properties\": {",
+					"                    \"begin\": {",
+					"                      \"type\": \"null\"",
+					"                    },",
+					"                    \"end\": {",
+					"                      \"type\": \"null\"",
+					"                    },",
+					"                    \"isActive\": {",
+					"                      \"type\": \"boolean\"",
+					"                    }",
+					"                  },",
+					"                  \"required\": [",
+					"                    \"begin\",",
+					"                    \"end\",",
+					"                    \"isActive\"",
+					"                  ]",
+					"                },",
+					"                \"type\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"uri\": {",
+					"                  \"type\": \"object\",",
+					"                  \"properties\": {",
+					"                    \"layerId\": {",
+					"                      \"type\": \"string\"",
+					"                    },",
+					"                    \"layerName\": {",
+					"                      \"type\": \"string\"",
+					"                    },",
+					"                    \"path\": {",
+					"                      \"type\": \"string\"",
+					"                    }",
+					"                  },",
+					"                  \"required\": [",
+					"                    \"layerId\",",
+					"                    \"layerName\",",
+					"                    \"path\"",
+					"                  ]",
+					"                }",
+					"              },",
+					"              \"required\": [",
+					"                \"abstract\",",
+					"                \"crs\",",
+					"                \"data_exists_in_database\",",
+					"                \"extent\",",
+					"                \"extent4326\",",
+					"                \"feature_count\",",
+					"                \"fields\",",
+					"                \"fields_id_valid\",",
+					"                \"fields_ids\",",
+					"                \"geom_type\",",
+					"                \"is_geopackage\",",
+					"                \"is_geopackage_in_input\",",
+					"                \"is_valid\",",
+					"                \"keywords\",",
+					"                \"name\",",
+					"                \"name_short\",",
+					"                \"name_table\",",
+					"                \"name_valid\",",
+					"                \"style_exists_in_database\",",
+					"                \"styles\",",
+					"                \"temporal\",",
+					"                \"type\",",
+					"                \"uri\"",
+					"              ]",
+					"            }",
+					"          ]",
+					"        }",
+					"      ]",
+					"    }",
+					"  },",
+					"  \"required\": [",
+					"    \"results\"",
+					"  ]",
+					"};",
+					"",
+					"// Schema Generated by https://www.liquid-technologies.com/online-json-to-schema-converter",
+					"SchemaCompare = {",
+					"  \"type\": \"object\",",
+					"  \"properties\": {",
+					"    \"results\": {",
+					"      \"type\": \"array\",",
+					"      \"items\": [",
+					"        {",
+					"          \"type\": \"object\",",
+					"          \"properties\": {",
+					"            \"existing\": {",
+					"              \"type\": \"object\",",
+					"              \"properties\": {",
+					"                \"crs\": {\"type\": \"string\"},",
+					"                \"layers\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": [",
+					"                    {",
+					"                      \"type\": \"object\",",
+					"                      \"properties\": {",
+					"                        \"abstract\": {\"type\": \"string\"},",
+					"                        \"crs\": {\"type\": \"string\"},",
+					"                        \"data_exists_in_database\": {\"type\": \"boolean\"},",
+					"                        \"extent\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"xMaximum\": {\"type\": \"number\"},",
+					"                            \"xMinimum\": {\"type\": \"number\"},",
+					"                            \"yMaximum\": {\"type\": \"number\"},",
+					"                            \"yMinimum\": {\"type\": \"number\"}",
+					"                          },",
+					"                          \"required\": [\"xMaximum\",\"xMinimum\",\"yMaximum\",\"yMinimum\"]",
+					"                        },",
+					"                        \"extent4326\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"xMaximum\": {\"type\": \"number\"},",
+					"                            \"xMinimum\": {\"type\": \"number\"},",
+					"                            \"yMaximum\": {\"type\": \"number\"},",
+					"                            \"yMinimum\": {\"type\": \"number\"}",
+					"                          },",
+					"                          \"required\": [\"xMaximum\",\"xMinimum\",\"yMaximum\",\"yMinimum\"]",
+					"                        },",
+					"                        \"feature_count\": {",
+					"                          \"type\": \"integer\"",
+					"                        },",
+					"                        \"fields\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {\"type\": \"string\"},",
+					"                            {\"type\": \"string\"}",
+					"                          ]",
+					"                        },",
+					"                        \"fields_id_valid\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"fields_ids\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {\"type\": \"string\"}",
+					"                          ]",
+					"                        },",
+					"                        \"geom_type\": {\"type\": \"string\"},",
+					"                        \"is_geopackage\": {\"type\": \"boolean\"},",
+					"                        \"is_geopackage_in_input\": {\"type\": \"boolean\"},",
+					"                        \"is_valid\": {\"type\": \"boolean\"},",
+					"                        \"keywords\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": {}",
+					"                        },",
+					"                        \"name\": {\"type\": \"string\"},",
+					"                        \"name_short\": {\"type\": \"string\"},",
+					"                        \"name_table\": {\"type\": \"string\"},",
+					"                        \"name_valid\": {\"type\": \"string\"},",
+					"                        \"style_exists_in_database\": {\"type\": \"string\"},",
+					"                        \"styles\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {\"type\": \"string\"",
+					"                            },",
+					"                            {\"type\": \"string\"}",
+					"                          ]",
+					"                        },",
+					"                        \"temporal\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"begin\": {\"type\": \"null\"},",
+					"                            \"end\": {\"type\": \"null\"",
+					"                            },",
+					"                            \"isActive\": {\"type\": \"boolean\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [\"begin\",\"end\",\"isActive\"]",
+					"                        },",
+					"                        \"type\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"uri\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"dbname\": {\"type\": \"string\"},",
+					"                            \"estimatedmetadata\": {\"type\": \"string\"},",
+					"                            \"geometrycolumn\": {\"type\": \"string\"},",
+					"                            \"host\": {\"type\": \"string\"},",
+					"                            \"key\": {\"type\": \"string\"},",
+					"                            \"port\": {\"type\": \"string\"},",
+					"                            \"schema\": {\"type\": \"string\"},",
+					"                            \"srid\": {\"type\": \"string\"},",
+					"                            \"sslmode\": {\"type\": \"string\"},",
+					"                            \"table\": {\"type\": \"string\"},",
+					"                            \"username\": {\"type\": \"string\"}",
+					"                          },",
+					"                          \"required\": [\"dbname\",\"estimatedmetadata\",\"geometrycolumn\",\"host\",\"key\",\"port\",",
+					"                                       \"schema\",\"srid\",\"sslmode\",\"table\",\"username\"]",
+					"                        }",
+					"                      },",
+					"                      \"required\": [",
+					"                        \"abstract\",",
+					"                        \"crs\",",
+					"                        \"data_exists_in_database\",",
+					"                        \"extent\",",
+					"                        \"extent4326\",",
+					"                        \"feature_count\",",
+					"                        \"fields\",",
+					"                        \"fields_id_valid\",",
+					"                        \"fields_ids\",",
+					"                        \"geom_type\",",
+					"                        \"is_geopackage\",",
+					"                        \"is_geopackage_in_input\",",
+					"                        \"is_valid\",",
+					"                        \"keywords\",",
+					"                        \"name\",",
+					"                        \"name_short\",",
+					"                        \"name_table\",",
+					"                        \"name_valid\",",
+					"                        \"style_exists_in_database\",",
+					"                        \"styles\",",
+					"                        \"temporal\",",
+					"                        \"type\",",
+					"                        \"uri\"]",
+					"                    }",
+					"                  ]",
+					"                },",
+					"                \"project\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"qgis_version\": {",
+					"                  \"type\": \"string\"",
+					"                }",
+					"              },",
+					"              \"required\": [",
+					"                \"crs\",",
+					"                \"layers\",",
+					"                \"project\",",
+					"                \"qgis_version\"",
+					"              ]",
+					"            },",
+					"            \"new\": {",
+					"              \"type\": \"object\",",
+					"              \"properties\": {",
+					"                \"crs\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"layers\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": [",
+					"                    {",
+					"                      \"type\": \"object\",",
+					"                      \"properties\": {",
+					"                        \"abstract\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"crs\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"data_exists_in_database\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"extent\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"xMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"xMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"xMaximum\",",
+					"                            \"xMinimum\",",
+					"                            \"yMaximum\",",
+					"                            \"yMinimum\"",
+					"                          ]",
+					"                        },",
+					"                        \"extent4326\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"xMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"xMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"xMaximum\",",
+					"                            \"xMinimum\",",
+					"                            \"yMaximum\",",
+					"                            \"yMinimum\"",
+					"                          ]",
+					"                        },",
+					"                        \"feature_count\": {",
+					"                          \"type\": \"integer\"",
+					"                        },",
+					"                        \"fields\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          ]",
+					"                        },",
+					"                        \"fields_id_valid\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"fields_ids\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          ]",
+					"                        },",
+					"                        \"geom_type\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"is_geopackage\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"is_geopackage_in_input\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"is_valid\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"keywords\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": {}",
+					"                        },",
+					"                        \"name\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"name_short\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"name_table\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"name_valid\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"style_exists_in_database\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"styles\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          ]",
+					"                        },",
+					"                        \"temporal\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"begin\": {",
+					"                              \"type\": \"null\"",
+					"                            },",
+					"                            \"end\": {",
+					"                              \"type\": \"null\"",
+					"                            },",
+					"                            \"isActive\": {",
+					"                              \"type\": \"boolean\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"begin\",",
+					"                            \"end\",",
+					"                            \"isActive\"",
+					"                          ]",
+					"                        },",
+					"                        \"type\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"uri\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"layerId\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"layerName\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"path\": {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"layerId\",",
+					"                            \"layerName\",",
+					"                            \"path\"",
+					"                          ]",
+					"                        }",
+					"                      },",
+					"                      \"required\": [",
+					"                        \"abstract\",",
+					"                        \"crs\",",
+					"                        \"data_exists_in_database\",",
+					"                        \"extent\",",
+					"                        \"extent4326\",",
+					"                        \"feature_count\",",
+					"                        \"fields\",",
+					"                        \"fields_id_valid\",",
+					"                        \"fields_ids\",",
+					"                        \"geom_type\",",
+					"                        \"is_geopackage\",",
+					"                        \"is_geopackage_in_input\",",
+					"                        \"is_valid\",",
+					"                        \"keywords\",",
+					"                        \"name\",",
+					"                        \"name_short\",",
+					"                        \"name_table\",",
+					"                        \"name_valid\",",
+					"                        \"style_exists_in_database\",",
+					"                        \"styles\",",
+					"                        \"temporal\",",
+					"                        \"type\",",
+					"                        \"uri\"",
+					"                      ]",
+					"                    }",
+					"                  ]",
+					"                },",
+					"                \"project\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"qgis_version\": {",
+					"                  \"type\": \"string\"",
+					"                }",
+					"              },",
+					"              \"required\": [",
+					"                \"crs\",",
+					"                \"layers\",",
+					"                \"project\",",
+					"                \"qgis_version\"",
+					"              ]",
+					"            }",
+					"          },",
+					"          \"required\": [",
+					"            \"existing\",",
+					"            \"new\"",
+					"          ]",
+					"        },",
+					"        {",
+					"          \"type\": \"object\",",
+					"          \"properties\": {",
+					"            \"existing\": {",
+					"              \"type\": \"object\",",
+					"              \"properties\": {",
+					"                \"crs\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"layers\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": [",
+					"                    {",
+					"                      \"type\": \"object\",",
+					"                      \"properties\": {",
+					"                        \"abstract\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"crs\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"data_exists_in_database\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"extent\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"xMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"xMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"xMaximum\",",
+					"                            \"xMinimum\",",
+					"                            \"yMaximum\",",
+					"                            \"yMinimum\"",
+					"                          ]",
+					"                        },",
+					"                        \"extent4326\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"xMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"xMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"xMaximum\",",
+					"                            \"xMinimum\",",
+					"                            \"yMaximum\",",
+					"                            \"yMinimum\"",
+					"                          ]",
+					"                        },",
+					"                        \"feature_count\": {",
+					"                          \"type\": \"integer\"",
+					"                        },",
+					"                        \"fields\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          ]",
+					"                        },",
+					"                        \"fields_id_valid\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"fields_ids\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          ]",
+					"                        },",
+					"                        \"geom_type\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"is_geopackage\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"is_geopackage_in_input\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"is_valid\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"keywords\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": {}",
+					"                        },",
+					"                        \"name\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"name_short\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"name_table\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"name_valid\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"style_exists_in_database\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"styles\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          ]",
+					"                        },",
+					"                        \"temporal\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"begin\": {",
+					"                              \"type\": \"null\"",
+					"                            },",
+					"                            \"end\": {",
+					"                              \"type\": \"null\"",
+					"                            },",
+					"                            \"isActive\": {",
+					"                              \"type\": \"boolean\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"begin\",",
+					"                            \"end\",",
+					"                            \"isActive\"",
+					"                          ]",
+					"                        },",
+					"                        \"type\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"uri\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"dbname\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"estimatedmetadata\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"geometrycolumn\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"host\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"key\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"port\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"schema\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"srid\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"sslmode\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"table\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"username\": {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"dbname\",",
+					"                            \"estimatedmetadata\",",
+					"                            \"geometrycolumn\",",
+					"                            \"host\",",
+					"                            \"key\",",
+					"                            \"port\",",
+					"                            \"schema\",",
+					"                            \"srid\",",
+					"                            \"sslmode\",",
+					"                            \"table\",",
+					"                            \"username\"",
+					"                          ]",
+					"                        }",
+					"                      },",
+					"                      \"required\": [",
+					"                        \"abstract\",",
+					"                        \"crs\",",
+					"                        \"data_exists_in_database\",",
+					"                        \"extent\",",
+					"                        \"extent4326\",",
+					"                        \"feature_count\",",
+					"                        \"fields\",",
+					"                        \"fields_id_valid\",",
+					"                        \"fields_ids\",",
+					"                        \"geom_type\",",
+					"                        \"is_geopackage\",",
+					"                        \"is_geopackage_in_input\",",
+					"                        \"is_valid\",",
+					"                        \"keywords\",",
+					"                        \"name\",",
+					"                        \"name_short\",",
+					"                        \"name_table\",",
+					"                        \"name_valid\",",
+					"                        \"style_exists_in_database\",",
+					"                        \"styles\",",
+					"                        \"temporal\",",
+					"                        \"type\",",
+					"                        \"uri\"",
+					"                      ]",
+					"                    }",
+					"                  ]",
+					"                },",
+					"                \"project\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"qgis_version\": {",
+					"                  \"type\": \"string\"",
+					"                }",
+					"              },",
+					"              \"required\": [",
+					"                \"crs\",",
+					"                \"layers\",",
+					"                \"project\",",
+					"                \"qgis_version\"",
+					"              ]",
+					"            },",
+					"            \"new\": {",
+					"              \"type\": \"object\",",
+					"              \"properties\": {",
+					"                \"crs\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"layers\": {",
+					"                  \"type\": \"array\",",
+					"                  \"items\": [",
+					"                    {",
+					"                      \"type\": \"object\",",
+					"                      \"properties\": {",
+					"                        \"abstract\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"crs\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"data_exists_in_database\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"extent\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"xMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"xMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"xMaximum\",",
+					"                            \"xMinimum\",",
+					"                            \"yMaximum\",",
+					"                            \"yMinimum\"",
+					"                          ]",
+					"                        },",
+					"                        \"extent4326\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"xMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"xMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMaximum\": {",
+					"                              \"type\": \"number\"",
+					"                            },",
+					"                            \"yMinimum\": {",
+					"                              \"type\": \"number\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"xMaximum\",",
+					"                            \"xMinimum\",",
+					"                            \"yMaximum\",",
+					"                            \"yMinimum\"",
+					"                          ]",
+					"                        },",
+					"                        \"feature_count\": {",
+					"                          \"type\": \"integer\"",
+					"                        },",
+					"                        \"fields\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          ]",
+					"                        },",
+					"                        \"fields_id_valid\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"fields_ids\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          ]",
+					"                        },",
+					"                        \"geom_type\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"is_geopackage\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"is_geopackage_in_input\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"is_valid\": {",
+					"                          \"type\": \"boolean\"",
+					"                        },",
+					"                        \"keywords\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": {}",
+					"                        },",
+					"                        \"name\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"name_short\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"name_table\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"name_valid\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"style_exists_in_database\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"styles\": {",
+					"                          \"type\": \"array\",",
+					"                          \"items\": [",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          ]",
+					"                        },",
+					"                        \"temporal\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"begin\": {",
+					"                              \"type\": \"null\"",
+					"                            },",
+					"                            \"end\": {",
+					"                              \"type\": \"null\"",
+					"                            },",
+					"                            \"isActive\": {",
+					"                              \"type\": \"boolean\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"begin\",",
+					"                            \"end\",",
+					"                            \"isActive\"",
+					"                          ]",
+					"                        },",
+					"                        \"type\": {",
+					"                          \"type\": \"string\"",
+					"                        },",
+					"                        \"uri\": {",
+					"                          \"type\": \"object\",",
+					"                          \"properties\": {",
+					"                            \"layerId\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"layerName\": {",
+					"                              \"type\": \"string\"",
+					"                            },",
+					"                            \"path\": {",
+					"                              \"type\": \"string\"",
+					"                            }",
+					"                          },",
+					"                          \"required\": [",
+					"                            \"layerId\",",
+					"                            \"layerName\",",
+					"                            \"path\"",
+					"                          ]",
+					"                        }",
+					"                      },",
+					"                      \"required\": [",
+					"                        \"abstract\",",
+					"                        \"crs\",",
+					"                        \"data_exists_in_database\",",
+					"                        \"extent\",",
+					"                        \"extent4326\",",
+					"                        \"feature_count\",",
+					"                        \"fields\",",
+					"                        \"fields_id_valid\",",
+					"                        \"fields_ids\",",
+					"                        \"geom_type\",",
+					"                        \"is_geopackage\",",
+					"                        \"is_geopackage_in_input\",",
+					"                        \"is_valid\",",
+					"                        \"keywords\",",
+					"                        \"name\",",
+					"                        \"name_short\",",
+					"                        \"name_table\",",
+					"                        \"name_valid\",",
+					"                        \"style_exists_in_database\",",
+					"                        \"styles\",",
+					"                        \"temporal\",",
+					"                        \"type\",",
+					"                        \"uri\"",
+					"                      ]",
+					"                    }",
+					"                  ]",
+					"                },",
+					"                \"project\": {",
+					"                  \"type\": \"string\"",
+					"                },",
+					"                \"qgis_version\": {",
+					"                  \"type\": \"string\"",
+					"                }",
+					"              },",
+					"              \"required\": [",
+					"                \"crs\",",
+					"                \"layers\",",
+					"                \"project\",",
+					"                \"qgis_version\"",
+					"              ]",
+					"            }",
+					"          },",
+					"          \"required\": [",
+					"            \"existing\",",
+					"            \"new\"",
+					"          ]",
+					"        }",
+					"      ]",
+					"    }",
+					"  },",
+					"  \"required\": [",
+					"    \"results\"",
+					"  ]",
+					"}",
+					"",
+					"SchemaError500 = {",
+					"  type: \"object\",",
+					"  properties: {",
+					"    detail: {\"type\": \"string\"},",
+					"    detail_fr: {\"type\": \"string\"},",
+					"    status: {\"type\": \"integer\"},",
+					"    title: {\"type\": \"string\"}",
+					"  },",
+					"  required: [\"detail\",\"detail_fr\",\"status\",\"title\"]",
+					"}",
+					"",
+					"Schemas = {",
+					"    token:  SchemaToken,",
+					"//    token_revoked: SchemaTokenRevoked,",
+					"        department: SchemaDepartment,",
+					"    department_list: {",
+					"        type: \"array\",",
+					"        items: SchemaDepartment",
+					"    },",
+					"    theme_czs: SchemaThemeCzs,",
+					"    theme_czs_list: {",
+					"        type: \"array\",",
+					"        items: SchemaThemeCzs",
+					"    },",
+					"    download: SchemaDownload,",
+					"    download_list: {",
+					"        type: \"array\",",
+					"        items: SchemaDownload",
+					"    },",
+					"    email: SchemaEmail,",
+					"    servers: SchemaServers,",
+					"    server: SchemaServer,",
+					"    server_list: {",
+					"        type: \"array\",",
+					"        items: SchemaServer",
+					"    },",
+					"    validation: SchemaValidation,",
+					"    error_500:SchemaError500,",
+					"    compare: SchemaCompare",
+					"",
+					"};",
+					"",
+					"Utils = {",
+					"    // Loads Ajv which is used to enhance schema validations",
+					"    ajv: new Ajv({logger: console}),",
+					"",
+					"",
+					"    /**",
+					"     * Generic function to check for a 200 response with a given schema format",
+					"     */",
+					"    validateStatusAndSchema: function(pm, schema, status_code=200) {",
+					"        var res = false;",
+					"        pm.test(\"Status code is valid\", () => {",
+					"            pm.response.to.have.status(status_code);",
+					"",
+					"            // All Valid",
+					"            res = true",
+					"            if (schema !== null) { ",
+					"            ",
+					"                pm.test(\"Schema is valid\", () => {",
+					"                    pm.response.to.have.jsonSchema(schema)",
+					"//                    pm.expect(Utils.ajv.validate(schema, pm.response.json())).to.be.true;",
+					"                ",
+					"                });",
+					"            };",
+					"        });",
+					"        return res;",
+					"    }",
+					"    ",
+					"};"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "environment",
+			"value": "https://qgis.ddr-stage.services.geo.ca",
+			"type": "string"
+		},
+		{
+			"key": "baseUrl",
+			"value": "{{environment}}/api",
+			"type": "string"
+		},
+		{
+			"key": "bearerToken",
+			"value": ""
+		},
+		{
+			"key": "refreshToken",
+			"value": ""
+		},
+		{
+			"key": "publish_file_zip",
+			"value": "ddr_publish.zip",
+			"type": "string"
+		}
+	]
+}
