@@ -25,6 +25,6 @@ collections:
 #    var_url: environment
 #    url_internal:  http://10.68.130.138:5031
   ddr_publication:
-    request: newman run newman_path::ddr_publication.json -k -r html,json-summary
+    request: newman run newman_path::ddr_publication.json -k -r html,json-summary --env-var "publish_file_zip=../newman/ddr_publish.zip"
     var_url: environment
     url_internal:  http://10.68.130.138:5031
