@@ -20,7 +20,11 @@ collections:
 #    request: newman run newman_path::ddr_registry.json -k -r html,json-summary
 #    var_url: environment
 #    url_internal:  http://10.68.130.138:5021
+#  ddr_publication:
+#    request: newman run newman_path::ddr_publication.json -k -r html,json-summary --env-var "publish_file_zip=C:\\GitHub\\test_ddr_api\\python\\ddr_publish1.zip"
+#    var_url: environment
+#    url_internal:  http://10.68.130.138:5031
   ddr_publication:
-    request: newman run newman_path::ddr_publication.json --env-var "publish_file_zip=../newman/ddr_publish.zip" -k -r html,json-summary
+    request: newman run newman_path::ddr_publication.json -k -r html,json-summary
     var_url: environment
     url_internal:  http://10.68.130.138:5031
