@@ -68,7 +68,6 @@ class TestApi:
 
     def __get_aws_secret(self):
 
-        secret_name = "aws/email/credentials"
         region_name = "ca-central-1"
 
         # Create a Secrets Manager client
@@ -78,11 +77,10 @@ class TestApi:
             region_name=region_name
         )
 
+        # Extract the credentials for the AWS email
         try:
-            get_secret_value_response = client.get_secret_value(
-                SecretId=secret_name)
-
-            print(get_secret_value_response)
+            secret_name = "aws/email/credentials"
+            get_secret_value_response = client.get_secret_value(SecretId=secret_name)
         except ClientError as e:
             # For a list of exceptions thrown, see
             # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
@@ -93,6 +91,21 @@ class TestApi:
         json_secret = json.loads(secret)
         self.aws_user_email = json_secret['aws_user_email']
         self.aws_password_email = json_secret['aws_password_email']
+
+        # Extract the credentials for the API DB
+        try:
+            secret_name = "test/api/db"
+            get_secret_value_response = client.get_secret_value(SecretId=secret_name)
+        except ClientError as e:
+            # For a list of exceptions thrown, see
+            # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
+            raise e
+
+        # Decrypts secret using the associated KMS key.
+        secret = get_secret_value_response['SecretString']
+        json_secret = json.loads(secret)
+        self.db_test_api_user = json_secret['db_test_api_user']
+        self.db_test_api_password = json_secret['db_test_api_password']
 
         return
 
@@ -143,6 +156,7 @@ class TestApi:
         url_internal = collection["url_internal"]
 
         export_files = f"--reporter-summary-json-export ../files/{json_file} --reporter-html-export ../files/{html_file} "
+        ddr_api_db = f' --env-var "username={self.db_test_api_user}" --env-var "password={self.db_test_api_password}"'
 
         if self.config_yaml["mode"] == "url_internal":  # IP address
             # Change the URL for URL of th ip address
@@ -150,7 +164,7 @@ class TestApi:
         else:
             var_collection = ""
 
-        command = request + " " + export_files + var_collection
+        command = request + " " + export_files + var_collection + ddr_api_db
 
         # Adjust the the file paths
         command = command.replace("newman_path::", self.newman_path)
