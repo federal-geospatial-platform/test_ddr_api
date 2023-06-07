@@ -14,9 +14,6 @@ import logging
 import boto3
 from botocore.exceptions import ClientError
 
-
-
-
 # Application modules
 
 class Result:
@@ -61,8 +58,6 @@ class TestApi:
         else:
             self.newman_path = "../newman/"
             self.log_path = "../log/"
-
-        print ("path: ", self.newman_path)
 
         return
 
@@ -168,9 +163,13 @@ class TestApi:
 
         # Adjust the the file paths
         command = command.replace("newman_path::", self.newman_path)
-        logging.info(command)
-        print (command)
         ret = os.system(command)
+
+        # Remove the username and password from the command before logging the command
+        command = command.replace(self.db_test_api_user, "???")
+        command = command.replace(self.db_test_api_password, "???")
+        logging.info(command)
+        print(command)
 
         # Store the name of the html and json files
         self.html_files.append(f"../files/{html_file}")  # Add the name of the attached file
