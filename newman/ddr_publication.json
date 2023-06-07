@@ -2582,8 +2582,7 @@
 		},
 		{
 			"key": "publish_file_zip",
-			"value": "ddr_publish.zip",
-			"type": "string"
+			"value": "ddr_publish.zip"
 		}
 	]
 }
