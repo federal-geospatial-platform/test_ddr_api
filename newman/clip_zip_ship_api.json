@@ -32,9 +32,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/?f=json&lang=en-US",
+							"raw": "{{environment}}/?f=json&lang=en-US",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								""
@@ -76,9 +76,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/conformance?f=json&lang=en-US",
+							"raw": "{{environment}}/conformance?f=json&lang=en-US",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"conformance"
@@ -120,9 +120,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/openapi",
+							"raw": "{{environment}}/openapi",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"openapi"
@@ -154,9 +154,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/reload_resources",
+							"raw": "{{environment}}/reload_resources",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"reload_resources"
@@ -193,9 +193,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/collections",
+							"raw": "{{environment}}/collections",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"collections"
@@ -240,9 +240,9 @@
 							"raw": "{\r\n  \"bbox\": [\r\n    -113.43,\r\n    53.51,\r\n    -113.22,\r\n    53.59\r\n  ],\r\n  \"bboxcrs\": 4617,\r\n  \"geom\": \"POLYGON ((-113.43 53.51, -113.43 53.59, -113.22 53.59, -113.22 53.51, -113.43 53.51))\",\r\n  \"geomcrs\": 4617\r\n}"
 						},
 						"url": {
-							"raw": "{{urlPyGeoApi}}/collections?f=json&lang=en-US",
+							"raw": "{{environment}}/collections?f=json&lang=en-US",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"collections"
@@ -284,9 +284,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/collections/{{id_feature}}",
+							"raw": "{{environment}}/collections/{{id_feature}}",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"collections",
@@ -319,9 +319,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/collections/major_projects___major_projects_inventory_line/items?f=json&lang=en-US&bbox=-113.43,53.51,-113.22,53.59&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617&limit=10&skipGeometry=false&offset=0",
+							"raw": "{{environment}}/collections/major_projects___major_projects_inventory_line/items?f=json&lang=en-US&bbox=-113.43,53.51,-113.22,53.59&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617&limit=10&skipGeometry=false&offset=0",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"collections",
@@ -389,9 +389,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/collections/{{id_feature}}/items/1?f=json&lang=en-US&bbox=-113.43,53.51,-113.22,53.59&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617&limit=10&skipGeometry=false&offset=0",
+							"raw": "{{environment}}/collections/{{id_feature}}/items/1?f=json&lang=en-US&bbox=-113.43,53.51,-113.22,53.59&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617&limit=10&skipGeometry=false&offset=0",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"collections",
@@ -460,9 +460,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/collections/{{id_feature}}/queryables?f=json&lang=en-US",
+							"raw": "{{environment}}/collections/{{id_feature}}/queryables?f=json&lang=en-US",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"collections",
@@ -506,9 +506,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/collections/{{id_coverage}}/coverage?f=json&lang=en-US&bbox=-113.423,53.515,-113.42,53.52&bbox-crs=4617&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617",
+							"raw": "{{environment}}/collections/{{id_coverage}}/coverage?f=json&lang=en-US&bbox=-113.423,53.515,-113.42,53.52&bbox-crs=4617&geom=POLYGON%20%28%28-113.43%2053.51%2C%20-113.43%2053.59%2C%20-113.22%2053.59%2C%20-113.22%2053.51%2C%20-113.43%2053.51%29%29&geom-crs=4617",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"collections",
@@ -568,9 +568,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/collections/{{id_coverage}}/coverage/domainset",
+							"raw": "{{environment}}/collections/{{id_coverage}}/coverage/domainset",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"collections",
@@ -605,9 +605,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlPyGeoApi}}/collections/{{id_coverage}}/coverage/rangetype",
+							"raw": "{{environment}}/collections/{{id_coverage}}/coverage/rangetype",
 							"host": [
-								"{{urlPyGeoApi}}"
+								"{{environment}}"
 							],
 							"path": [
 								"collections",
@@ -3607,7 +3607,7 @@
 	],
 	"variable": [
 		{
-			"key": "urlPyGeoApi",
+			"key": "environment",
 			"value": "https://czs-pygeoapi.ddr-stage.services.geo.ca",
 			"type": "string"
 		},
