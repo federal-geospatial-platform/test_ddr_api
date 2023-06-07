@@ -15,6 +15,17 @@ ces collections (*.json) et les copier dans le répertoire /newman du [github](h
 Vous devez par la suite mettre à jour le fichier de configuration YAML /python/config.yaml pour inclure cette nouvelle collection 
 et recréer le fichier docker.
 
+Si vous devez mettre à jour une collection de points d'entrées, vous devrez importez le ou les fichiers *.son dans Postman. 
+Ajouter et/ou mettre à jour les nouveaux points d'entrées et exporter de nouveau le fichier *.json dans le répertoire 
+/newman
+
+Pour pouvoir être exécuter dans l'environnement Postman la majorité des points d'entrées nécessitent une autentification.
+Cette dernière est privé à la personne qui développe et est emmagasiné dans l'environnement Globals de Postman. Deux
+variables *username* et *password* doivent être créés pour contenir les informations permettant de se connecter sur la
+de données (voir image ci-dessous).
+
+![img.png](img.png)
+
 # Fichier de configuration YAML
 
 Le programme /python/test_ddr_api.py est configurable via un fichier YAML. Cette section décrit le contenu de ce fichier.
