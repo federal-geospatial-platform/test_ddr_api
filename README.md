@@ -22,7 +22,10 @@ Ajouter et/ou mettre à jour les nouveaux points d'entrées et exporter de nouve
 Pour pouvoir être exécuter dans l'environnement Postman la majorité des points d'entrées nécessitent une autentification.
 Cette dernière est privé à la personne qui développe et est emmagasiné dans l'environnement Globals de Postman. Deux
 variables *username* et *password* doivent être créés pour contenir les informations permettant de se connecter sur la
-de données (voir image ci-dessous).
+de données (voir image ci-dessous).  
+
+**Note importante:** Le fichier Globals contant l'autentification pour la base de données ne doit pas être transféré dans
+GitHub car il contient des informations sensibles.
 
 ![img.png](img.png)
 
