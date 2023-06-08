@@ -1,4 +1,5 @@
 mode: url_internal
+var_url: environment
 email:
   from: ddr.fgpservices-servicespgf.rdd@aws.nrcan-rncan.cloud
   to: [bergeronpilon@gmail.com]
@@ -10,17 +11,13 @@ log: log_path::API_test.log
 collections:
   clip_zip_ship_api:
     request: newman run newman_path::clip_zip_ship_api.json -k -r html,json-summary
-    var_url: environment
     url_internal: http://10.68.130.138:5000
   clip_zip_ship_registry:
     request: newman run newman_path::clip_zip_ship_registry.json -k -r html,json-summary
-    var_url: environment
     url_internal: http://10.68.130.138:5001
   ddr_registry:
     request: newman run newman_path::ddr_registry.json -k -r html,json-summary
-    var_url: environment
     url_internal:  http://10.68.130.138:5021
   ddr_publication:
     request: newman run newman_path::ddr_publication.json -k -r html,json-summary --env-var "publish_file_zip=newman_path::ddr_publisher.zip"
-    var_url: environment
     url_internal:  http://10.68.130.138:5031

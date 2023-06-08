@@ -73,21 +73,6 @@ class TestApi:
         )
 
         # Extract the credentials for the AWS email
-#        try:
-        secret_name = "test/api/db"
-        get_secret_value_response = client.get_secret_value(SecretId=secret_name)
-#        except ClientError as e:
-            # For a list of exceptions thrown, see
-            # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
-#            raise e
-
-        # Decrypts secret using the associated KMS key.
-        secret = get_secret_value_response['SecretString']
-        json_secret = json.loads(secret)
-        self.aws_user_email = json_secret['aws_user_email']
-        self.aws_password_email = json_secret['aws_password_email']
-
-        # Extract the credentials for the API DB
         try:
             secret_name = "test/api/db"
             get_secret_value_response = client.get_secret_value(SecretId=secret_name)
@@ -98,9 +83,9 @@ class TestApi:
 
         # Decrypts secret using the associated KMS key.
         secret = get_secret_value_response['SecretString']
-        json_secret = json.loads(secret)
-        self.db_test_api_user = json_secret['db_test_api_user']
-        self.db_test_api_password = json_secret['db_test_api_password']
+
+        # store the secret as a JSON properties
+        self.aws_secret_json = json.loads(secret)
 
         return
 
@@ -127,6 +112,29 @@ class TestApi:
 
         return
 
+    def __extract_db_credentials(self, collection_name):
+        """
+        This method reafd the DB credetials according to the name of the collection.
+
+        If the username/password is null the value "dummy" is placed instead.
+
+        :param collection_name: Name of the collection
+        :return: String containing the username and password to be used.
+        """
+
+        # Read the username and password in the AWS secret
+        credentials = self.aws_secret_json[collection_name]
+        username = credentials["user"]
+        password = credentials["pass"]
+
+        if username is None:
+            username = "dummy"
+
+        if password is None:
+            password = "dummy"
+
+        return (username, password)
+
     def __execute_api_call(self, collection_name, mode):
         """
         This method executes the call the one request API call
@@ -147,11 +155,15 @@ class TestApi:
         request = collection["request"]
 
         # Extract the name
-        var_url = collection["var_url"]
-        url_internal = collection["url_internal"]
+        var_url = self.config_yaml["var_url"]  # Name of the environment variable containing the prefix of the request
+        url_internal = collection["url_internal"]  # Flag indicating if it's an IP address or a regular address
 
         export_files = f"--reporter-summary-json-export ../files/{json_file} --reporter-html-export ../files/{html_file} "
-        ddr_api_db = f' --env-var "username={self.db_test_api_user}" --env-var "password={self.db_test_api_password}"'
+
+        # Extract the database credentials
+        (username,password) = self.__extract_db_credentials(collection_name)
+
+        ddr_api_db = f' --env-var "username={username}" --env-var "password={password}"'
 
         if self.config_yaml["mode"] == "url_internal":  # IP address
             # Change the URL for URL of th ip address
@@ -166,8 +178,8 @@ class TestApi:
         ret = os.system(command)
 
         # Remove the username and password from the command before logging the command
-        command = command.replace(self.db_test_api_user, "???")
-        command = command.replace(self.db_test_api_password, "???")
+        command = command.replace(username, "???")
+        command = command.replace(password, "???")
         logging.info(command)
         print(command)
 
@@ -240,7 +252,7 @@ class TestApi:
         self.__build_email_body_text()
 
         # Prepare the email
-        message = emails.html(html=self.body, subject=self.subject, mail_from=self.config_yaml["email"]["from"])
+        message = emails.html(html=self.body, subject=self.subject, mail_from=self.aws_secret_json["email"]["from"])
 
         for html_file in self.html_files:
             message.attach(data=open(html_file, "rb"), filename=html_file)
@@ -251,12 +263,12 @@ class TestApi:
         r = message.send(
             to=self.config_yaml["email"]["to"],
             smtp={
-                "host":self.config_yaml["email"]["host"],
-                "port": self.config_yaml["email"]["port"],
-                "timeout": self.config_yaml["email"]["timeout"],
-                "user": self.aws_user_email,
-                "password": self.aws_password_email,
-                "tls": self.config_yaml["email"]["tls"]
+                "host":self.aws_secret_json["email"]["host"],
+                "port": self.aws_secret_json["email"]["port"],
+                "timeout": self.aws_secret_json["email"]["timeout"],
+                "user": self.aws_secret_json["email"]["user"],
+                "password": self.aws_secret_json["email"]["pass"],
+                "tls": self.aws_secret_json["email"]["tls"]
             }
         )
 
