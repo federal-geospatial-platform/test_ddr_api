@@ -3,7 +3,7 @@
 
 # Introduction
 
-Le programme test_ddr_api a pour but d'exécuter les tests de fonctionnalités i.e. les appels aux différents API qui sont un des éléments de base de la 
+Le programme *test_ddr_api* a pour but d'exécuter les tests de fonctionnalités i.e. les appels aux différents API qui sont un des éléments de base de la 
 [Stratégie de tests logiciels de l'équipe du DDR.](https://github.com/federal-geospatial-platform/project_management/tree/main/testing_strategy)
 
 # Postman
@@ -11,21 +11,22 @@ Le programme test_ddr_api a pour but d'exécuter les tests de fonctionnalités i
 Lorsqu'un logiciel contient des point d'entrées pour une ou plusieurs interfaces de programmation d'application (API), 
 il est impératif de créer le code qui permettra de tester ces points d'entrées en utilisant la plateforme de tests 
 [Postman.](https://www.postman.com/). Une fois les tests terminées et opérationnelles dans Postman vous devez exporter 
-ces collections (*.json) et les copier dans le répertoire /newman du [github](https://github.com/federal-geospatial-platform/project_management/tree/main/testing_strategy). 
-Vous devez par la suite mettre à jour le fichier de configuration YAML /python/config.yaml pour inclure cette nouvelle collection 
+ces collections (*.json) et les copier dans le répertoire /newman du répertoire [github](https://github.com/federal-geospatial-platform/project_management/tree/main/testing_strategy). 
+Vous devez au besoin mettre à jour le fichier de configuration YAML /python/config.yaml pour inclure cette nouvelle collection 
 et recréer le fichier docker.
 
-Si vous devez mettre à jour une collection de points d'entrées, vous devrez importez le ou les fichiers *.son dans Postman. 
+Si vous devez mettre à jour une collection de points d'entrées existentes, vous devrez importer le ou les fichiers *.json dans Postman. 
 Ajouter et/ou mettre à jour les nouveaux points d'entrées et exporter de nouveau le fichier *.json dans le répertoire 
-/newman
+/newman de [github](https://github.com/federal-geospatial-platform/project_management/tree/main/testing_strategy).  
 
-Pour pouvoir être exécuter dans l'environnement Postman la majorité des points d'entrées nécessitent une autentification.
-Cette dernière est privé à la personne qui développe et est emmagasiné dans l'environnement Globals de Postman. Deux
-variables *username* et *password* doivent être créés pour contenir les informations permettant de se connecter sur la
-de données (voir image ci-dessous).  
+Pour pouvoir être exécuter dans l'environnement Postman la majorité des points d'entrées nécessitent une autentification 
+i.e. un nonm d'usager et un mot de passe vers la base de données du DDR. Ces informations sont privés à la personne qui 
+développe et sont emmagasinés dans l'environnement des variables Globals de Postman. Deux variables *username* et 
+*password* doivent être créés pour contenir les informations permettant de se connecter er d'exécuter les différents 
+points d'entrées (voir image ci-dessous).  
 
-**Note importante:** Le fichier Globals contant l'autentification pour la base de données ne doit pas être transféré dans
-GitHub car il contient des informations sensibles.
+**Note importante: Le fichier Globals contant l'autentification pour la base de données ne doit jamais être transféré dans
+GitHub car il contient des informations sensibles.**
 
 ![img.png](img.png)
 
