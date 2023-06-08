@@ -16,6 +16,7 @@ from botocore.exceptions import ClientError
 
 # Application modules
 
+
 class Result:
     """
     Class containing the result statistics of one collections.
@@ -32,6 +33,7 @@ class Result:
         # Initialize the logger
 
         return
+
 
 class TestApi:
     """
@@ -135,7 +137,7 @@ class TestApi:
 
         return (username, password)
 
-    def __execute_api_call(self, collection_name, mode):
+    def __execute_api_call(self, collection_name):
         """
         This method executes the call the one request API call
 
@@ -147,7 +149,7 @@ class TestApi:
         # Extract the collection to process
         collection = self.config_yaml["collections"][collection_name]
 
-        #Define file names
+        # Define file names
         json_file = f"{collection_name}_file.json"
         html_file = f"{collection_name}_file.html"
 
@@ -221,20 +223,15 @@ class TestApi:
         if self.test_success:
             status_fr = "Succès"
             status_en = "Success"
-#            color = "green"  # Color of the Welcome message in the email body
         else:
             status_fr = "Échec"
             status_en = "Failure"
-#            color = "red"  # Color of the Welcome message in the email body
 
         # Build the email body
         self.body = ""
         self.body += "<b>DDR API Test</b> <br><br>"
         self.body += "(English message follows) <br><br>"
         self.body += "Bonjour,<br><br>"
-#        self.body += f'<p style="color: {color}"><b><font size="+2">'  # Set the color of the title according to Success or Failure
-#        self.body += f"{status_fr} des tests de fonctionnalités de l'API / {status_en} of the API fonctionality TEST <br>"
-#        self.body += '<p style="color: black"></b>'  # Reset color to black
         self.body += "Voici les résultats détaillés des tests: <br>"
         self.body += detailed_stats
 
@@ -261,9 +258,9 @@ class TestApi:
 
         # Send the email
         r = message.send(
-            to=self.config_yaml["email"]["to"],
+            to=self.config_yaml["to"],
             smtp={
-                "host":self.aws_secret_json["email"]["host"],
+                "host": self.aws_secret_json["email"]["host"],
                 "port": self.aws_secret_json["email"]["port"],
                 "timeout": self.aws_secret_json["email"]["timeout"],
                 "user": self.aws_secret_json["email"]["user"],
@@ -334,8 +331,7 @@ class TestApi:
         collections = self.config_yaml["collections"]
         for collection_name in collections:
             # Execute the API call using the newman application
-            mode = None
-            self.__execute_api_call(collection_name, mode)
+            self.__execute_api_call(collection_name)
 
             # Extract the statistics of the files
             result = self.__extract_stats(collection_name)
@@ -343,7 +339,6 @@ class TestApi:
 
         # Send
         self.__email_results()
-
 
 test_api = TestApi()
 test_api.manage_api_testing()

@@ -1,12 +1,6 @@
 mode: url_internal
 var_url: environment
-email:
-  from: ddr.fgpservices-servicespgf.rdd@aws.nrcan-rncan.cloud
-  to: [bergeronpilon@gmail.com]
-  host: email-smtp.ca-central-1.amazonaws.com
-  port: 587
-  timeout: 10
-  tls: True
+to: [bergeronpilon@gmail.com]
 log: log_path::API_test.log
 collections:
   clip_zip_ship_api:
