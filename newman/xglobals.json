@@ -1,0 +1,87 @@
+{
+	"id": "coco",
+	"values": [
+		{
+			"key": "environment",
+			"value": "https://registry-api.ddr-stage.services.geo.ca",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "baseUrl",
+			"value": "{{environment}}/api",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "username",
+			"value": "daniel-pilon",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "password",
+			"value": "rPNRM&*qMN4E2io3",
+			"type": "secret",
+			"enabled": true
+		},
+		{
+			"key": "bearerToken",
+			"value": "TO SET IT, RUN LOGIN",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "variable_key",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "refreshToken",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "urlPublisher",
+			"value": "https://qgis.ddr-stage.services.geo.ca",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "urlRegistry",
+			"value": "https://registry-api.ddr-stage.services.geo.ca/",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "baseUrlRegistry",
+			"value": "{{urlRegistry}}/api",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "baseUrlCzs",
+			"value": "{{urlCzs}}/api",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "urlCzs",
+			"value": "https://czs-api.ddr-stage.services.geo.ca",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "baseUrlPublisher",
+			"value": "{{urlPublisher}}/api",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"name": "globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2023-04-25T14:38:33.180Z",
+	"_postman_exported_using": "Postman/10.13.4"
+}
