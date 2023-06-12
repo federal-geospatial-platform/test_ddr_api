@@ -34,15 +34,15 @@ GitHub car il contient des informations sensibles.**
 
 Le programme /python/test_ddr_api.py est configurable via un fichier YAML. Cette section décrit le contenu de ce fichier.
 
- - mode: **url_internal** or **url_external** : Utilisation des adresses internes (adresses IP ex.: 10.192.124.185) ou externes pour les appels http;
- - var_url: Le nom de la variable d'environnement Postman contenant la racine de l'adresse URL;
- - to: Liste d'adresses courriel qui vont recevoir les résultats des requêtes *newman*;
- - log: Le nom du répertoire où sera écrit le fichier le fichier (adresse relative ou absolue);
+ - *mode*: **url_internal** or **url_external** : Utilisation des adresses internes (adresses IP ex.: 10.192.124.185) ou externes pour les appels http;
+ - *var_url*: Le nom de la variable d'environnement Postman contenant la racine de l'adresse URL;
+ - *to*: Liste d'adresses courriel qui vont recevoir les résultats des requêtes *newman*;
+ - *log*: Le nom du répertoire où sera écrit le fichier le fichier (adresse relative ou absolue);
  - collection
      - *nom de la collection*: Le nom du fichier JSON de la collection Postman (sans l'extension .json)
-       - request: Requête newman qui sera exécutée
-       - var_url: Nom de la variable de collection contenant url des requêtes (défini dans la partie collection)
-       - url_internal: Url de la requête interne
+       - *request*: Requête newman qui sera exécutée
+       - *var_url*: Nom de la variable de collection contenant url des requêtes (défini dans la partie collection)
+       - *url_internal*: Url de la requête interne
     
 Vous trouverez ci-dessous un exemple de fichier de configuration YAML
 
@@ -74,18 +74,18 @@ La configuration du serveur de courriels est contenu dans un document JSON inscr
 
 Voici les étapes nécessaires pour exécuter interactivement les tests de fonctionnalités de l'API dans l'environnement Windows:
 
- - se connecter sur une machine Windows AWS (il est possible d'exécuter le programme sur un ordinateur
+ - Se connecter sur une machine Windows AWS (il est possible d'exécuter le programme sur un ordinateur
 de RNCan mais aucun courriel ne pourra être envoyé)
- - cloner l'environnement github: `git clone https://github.com/federal-geospatial-platform/test_ddr_api.git`
- - installer les environnemnts Javascript et Newman nécessaires à l'exécution:
-   - télécharger et installer [Node.js](https://nodejs.org/en/download)
-   - installer [Newman](https://github.com/postmanlabs/newman): `npm install -g newman`
+ - Cloner l'environnement github: `git clone https://github.com/federal-geospatial-platform/test_ddr_api.git`
+ - Installer les environnemnts Javascript et Newman nécessaires à l'exécution:
+   - Télécharger et installer [Node.js](https://nodejs.org/en/download)
+   - Installer [Newman](https://github.com/postmanlabs/newman): `npm install -g newman`
    - Installer [Newman Reporter HTML](https://www.npmjs.com/package/newman-reporter-html): `npm install -g newman-reporter-html`
-   - installer [Newman Reporter Summary](https://www.npmjs.com/package/newman-reporter-json-summary): `npm install -g newman-reporter-json-summary`
-   - se placer dans le répertoire `./python`
-   - exécuter la commande `python test_ddr_api.py`
+   - Installer [Newman Reporter Summary](https://www.npmjs.com/package/newman-reporter-json-summary): `npm install -g newman-reporter-json-summary`
+   - Se placer dans le répertoire `./python`
+   - Exécuter la commande `python test_ddr_api.py`
 
-## Exécution Docker
+## Exécution avec Docker
 
 Voici les étapes nécessaires pour créer le fichier docker des tests de fonctionnalités de l'API dans l'environnement Windows et ou Linux:
 
