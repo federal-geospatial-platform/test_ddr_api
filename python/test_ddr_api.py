@@ -312,14 +312,20 @@ class TestApi:
         # Read the AWS secret messages
         self.__get_aws_secret()
 
-
         # Read the YAML configuration file
         self.__read_yaml_file()
 
+        # If the folder doesn't exist, create it
+        if not os.path.exists(self.log_path):
+            os.makedirs(self.log_path)
+
         # Create the logger
         log_file = self.config_yaml["log"]
+
         # Adjust file path
         log_file = log_file.replace("log_path::", self.log_path)
+
+        # Set the logging
         logging.basicConfig(filename=log_file, filemode='a',
                             level=logging.INFO,
                             format='%(asctime)s - %(levelname)s - %(message)s',
