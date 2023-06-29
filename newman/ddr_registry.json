@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "adf11e00-511e-4b21-8ba9-c36e4d218149",
+		"_postman_id": "2e7ec2c9-9b79-4a38-b280-8051712ca935",
 		"name": "ddr_registry",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26746003"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -1074,8 +1073,8 @@
 									"        // Validate the response against the expected values\r",
 									"        pm.expect(responseJson.tbs_dept_acrn_en).to.equal(\"DEPT_DUMMY\");\r",
 									"        pm.expect(responseJson.tbs_dept_acrn_fr).to.equal(\"DUMMY_FR\");\r",
-									"        pm.expect(responseJson.default_qgis_server_id).to.equal(\"DDR_QGS1\");\r",
-									"        pm.expect(responseJson.default_download_id).to.equal(\"DDR_DOWNLOAD1\");\r",
+									"        pm.expect(responseJson.default_qgis_server_id).to.equal(pm.variables.get('patch_dept_server_id_1'));\r",
+									"        pm.expect(responseJson.default_download_id).to.equal(pm.variables.get('patch_dept_download_id_1'));\r",
 									"        pm.expect(responseJson.download_root_subpath).to.equal(\"download\\\\root\\\\path\\\\\");\r",
 									"        pm.expect(responseJson.name_en).to.equal(\"name_en_val_1\");\r",
 									"        pm.expect(responseJson.name_fr).to.equal(\"Ministère fantôche du Canada\");\r",
@@ -1229,8 +1228,8 @@
 									"        // Validate the response against the expected values\r",
 									"        pm.expect(responseJson.tbs_dept_acrn_en).to.equal(\"DEPT_DUMMY\");\r",
 									"        pm.expect(responseJson.tbs_dept_acrn_fr).to.equal(\"acrn_fr_val\");\r",
-									"        pm.expect(responseJson.default_qgis_server_id).to.equal(\"DDR_QGS_Internal\");\r",
-									"        pm.expect(responseJson.default_download_id).to.equal(\"DDR_DOWNLOAD_Internal\");\r",
+									"        pm.expect(responseJson.default_qgis_server_id).to.equal(pm.variables.get('patch_dept_server_id_2'));\r",
+									"        pm.expect(responseJson.default_download_id).to.equal(pm.variables.get('patch_dept_download_id_2'));\r",
 									"        pm.expect(responseJson.download_root_subpath).to.equal(\"download_root_val\");\r",
 									"        pm.expect(responseJson.name_en).to.equal(\"name_en_val_2\");\r",
 									"        pm.expect(responseJson.name_fr).to.equal(\"name_fr_val\");\r",
@@ -1914,59 +1913,6 @@
 							"path": [
 								"publishers",
 								"{{get_publisher_email}}"
-							]
-						},
-						"description": "Lists the Publishers in the system and their roles"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Publishers - Department",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Validate status 200 and schema: Download Infos\r",
-									"if (Utils.validateStatusAndSchema(pm, Schemas.list, 200)) {\r",
-									"    console.log(\"GOOD\");\r",
-									"}\r",
-									"else {\r",
-									"    console.log(\"BAD\");\r",
-									"}\r",
-									""
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{bearerToken}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Accept",
-								"value": "application/json"
-							}
-						],
-						"url": {
-							"raw": "{{baseUrl}}/publishers/{{get_publisher_email}}/departments",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"publishers",
-								"{{get_publisher_email}}",
-								"departments"
 							]
 						},
 						"description": "Lists the Publishers in the system and their roles"
@@ -2912,13 +2858,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/servers/{{patch_dept__server_id_1}}",
+							"raw": "{{baseUrl}}/servers/{{patch_dept_server_id_1}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"servers",
-								"{{patch_dept__server_id_1}}"
+								"{{patch_dept_server_id_1}}"
 							]
 						},
 						"description": "Lists the Publishers in the system and their roles"
@@ -3804,7 +3750,7 @@
 	"variable": [
 		{
 			"key": "put_delete_server_id",
-			"value": "test_server_id",
+			"value": "TEST_SERVER_ID",
 			"type": "default"
 		},
 		{
@@ -3819,7 +3765,7 @@
 		},
 		{
 			"key": "patch_dept_download_id_2",
-			"value": "DDR_DOWNLOAD_Internal",
+			"value": "DDR_DOWNLOAD_INTERNAL",
 			"type": "string"
 		},
 		{
@@ -3828,13 +3774,13 @@
 			"type": "string"
 		},
 		{
-			"key": "patch_dept__server_id_1",
+			"key": "patch_dept_server_id_1",
 			"value": "DDR_QGS1",
 			"type": "string"
 		},
 		{
 			"key": "patch_dept_server_id_2",
-			"value": "DDR_QGS_Internal",
+			"value": "DDR_QGS_INTERNAL",
 			"type": "string"
 		},
 		{
@@ -3897,7 +3843,7 @@
 		},
 		{
 			"key": "patch_id_download",
-			"value": "ddr_tmp_download_99",
+			"value": "DDR_TMP_DOWNLOAD_99",
 			"type": "string"
 		},
 		{
