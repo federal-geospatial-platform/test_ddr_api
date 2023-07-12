@@ -1,9 +1,8 @@
 {
 	"info": {
-		"_postman_id": "e7ac9e5f-0169-4ead-b204-f738b214defa",
+		"_postman_id": "763c5bd6-fd78-43b4-a98f-bb6551bf7ae5",
 		"name": "ddr_publication",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "26746003"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -473,7 +472,7 @@
 							"formdata": [
 								{
 									"key": "operation",
-									"value": "republish",
+									"value": "update",
 									"type": "text"
 								},
 								{
@@ -978,12 +977,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{baseUrl}}/processes",
+							"raw": "{{baseUrl}}/publish",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"processes"
+								"publish"
 							]
 						}
 					},
@@ -1098,12 +1097,442 @@
 							]
 						},
 						"url": {
-							"raw": "{{baseUrl}}/processes",
+							"raw": "{{baseUrl}}/unpublish",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"processes"
+								"unpublish"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Process Package 1",
+			"item": [
+				{
+					"name": "Load Data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 204\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "{{publish_file_services_package_zip}}"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/publish",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"publish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 204\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "{{publish_file_services_package_zip}}"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 204\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "{{publish_file_services_package_zip}}"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/unpublish",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"unpublish"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Process Package 2",
+			"item": [
+				{
+					"name": "Load Data Services only",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 204\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "{{publish_file_services_only_zip}}"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/publish",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"publish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Load Data Package only",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 204\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "{{publish_file_package_only_zip}}"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/publish",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"publish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Services and Package",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 204\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "{{publish_file_services_package_zip}}"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/update",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Services and Package",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 204\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "zip_file",
+									"type": "file",
+									"src": "{{publish_file_services_package_zip}}"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/unpublish",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"unpublish"
 							]
 						}
 					},
@@ -2582,7 +3011,19 @@
 		},
 		{
 			"key": "publish_file_zip",
-			"value": "ddr_publish.zip"
+			"value": "ddr_publisher.zip"
+		},
+		{
+			"key": "publish_file_services_package_zip",
+			"value": "ddr_publisher_alex_with_package.zip"
+		},
+		{
+			"key": "publish_file_services_only_zip",
+			"value": "ddr_publisher_alex_no_package.zip"
+		},
+		{
+			"key": "publish_file_package_only_zip",
+			"value": "ddr_publisher_alex_only_package.zip"
 		}
 	]
 }

@@ -13,5 +13,5 @@ collections:
     request: newman run newman_path::ddr_registry.json -k -r html,json-summary
     url_internal:  http://10.68.130.138:5021
   ddr_publication:
-    request: newman run newman_path::ddr_publication.json -k -r html,json-summary --env-var "publish_file_zip=newman_path::ddr_publisher.zip"
+    request: newman run newman_path::ddr_publication.json -k -r html,json-summary --env-var "publish_file_zip=newman_path::ddr_publisher.zip" --env-var "publish_file_services_package_zip=newman_path::ddr_publisher_alex_with_package.zip" --env-var "publish_file_services_only_zip=newman_path::ddr_publisher_alex_no_package.zip" --env-var "publish_file_package_only_zip=newman_path::ddr_publisher_alex_only_package.zip"
     url_internal:  http://10.68.130.138:5031
