@@ -293,6 +293,62 @@
 					"response": []
 				},
 				{
+					"name": "Get Parents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/parents",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"parents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Put Parents",
 					"event": [
 						{
@@ -358,20 +414,20 @@
 							"script": {
 								"exec": [
 									"// Validate status 200 and schema: token_revoked\r",
-									"if (Utils.validateStatusAndSchema(pm, null, 200)) {\r",
+									"pm.response.to.have.jsonSchema(Schemas.parent);\r",
+									"//if (Utils.validateStatusAndSchema(pm, Schemas.parent, 200)) {\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.parent, 200)) {\r",
 									"    console.log(\"GOOD\");\r",
 									"}\r",
 									"else {\r",
 									"    console.log(\"BAD\");\r",
-									"}"
+									"}\r",
+									""
 								],
 								"type": "text/javascript"
 							}
 						}
 					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -385,22 +441,14 @@
 						},
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "{{baseUrl}}/parents",
+							"raw": "{{baseUrl}}/parents/{{parent_uuid_added}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
-								"parents"
+								"parents",
+								"{{parent_uuid_added}}"
 							]
 						}
 					},
@@ -595,13 +643,13 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/user/CocoLeClown",
+							"raw": "{{baseUrl}}/user/{{user_post}}",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"user",
-								"CocoLeClown"
+								"{{user_post}}"
 							]
 						}
 					},
@@ -682,6 +730,20 @@
 					"    }",
 					"};",
 					"",
+					"SchemaParentRecord = {",
+					"    type: 'object',",
+					"    properties: {",
+					"      parent_uuid: {type: 'string'},",
+					"      theme_uuid: {type: 'string'},",
+					"      name_en: {type: 'string'},",
+					"      name_fr: {type: 'string'},",
+					"      title_en: {type: 'string'},",
+					"      title_fr: {type: 'string'},",
+					"      org_schema: {type: 'string'}",
+					"    },",
+					"    required: ['parent_uuid', 'theme_uuid', 'name_en', 'name_fr', 'title_en', 'title_fr']",
+					"};",
+					"",
 					"SchemaThemeCzs = {",
 					"    type: 'array',",
 					"    items: {",
@@ -714,6 +776,7 @@
 					"    collection_list: SchemaCollections,",
 					"    theme_czs_list: SchemaThemeCzs,",
 					"    parents_list: SchemaParents,",
+					"    parent: SchemaParentRecord,",
 					"    user_list: SchemaUserList",
 					"};",
 					"",
