@@ -573,6 +573,153 @@
 			]
 		},
 		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.user_list, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"{{user_post}}\",\r\n  \"admin_flag\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, null, 204)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/user/{{user_post}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user",
+								"{{user_post}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Process (Put/Delete)",
 			"item": [
 				{
@@ -2918,6 +3065,21 @@
 					"  required: [\"detail\",\"detail_fr\",\"status\",\"title\"]",
 					"}",
 					"",
+					"SchemaUser = {",
+					"  type: \"object\",",
+					"  properties: {",
+					"      role: {\"type\": \"integer\",},",
+					"      username: {\"type\": \"string\",",
+					"    }",
+					"  },",
+					"  required: [\"role\", \"username\"]",
+					"};",
+					"",
+					"SchemaUserList = {",
+					"    type: \"array\",",
+					"    items: SchemaUser",
+					"}",
+					"",
 					"Schemas = {",
 					"    token:  SchemaToken,",
 					"//    token_revoked: SchemaTokenRevoked,",
@@ -2945,8 +3107,8 @@
 					"    },",
 					"    validation: SchemaValidation,",
 					"    error_500:SchemaError500,",
-					"    compare: SchemaCompare",
-					"",
+					"    compare: SchemaCompare,",
+					"    user_list: SchemaUserList",
 					"};",
 					"",
 					"Utils = {",
@@ -3024,6 +3186,11 @@
 		{
 			"key": "publish_file_package_only_zip",
 			"value": "ddr_publisher_alex_only_package.zip"
+		},
+		{
+			"key": "user_post",
+			"value": "CocoLeClown",
+			"type": "default"
 		}
 	]
 }
