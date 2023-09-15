@@ -166,6 +166,51 @@
 					"response": []
 				},
 				{
+					"name": "Get Datasets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Validate status 200 and schema: token_revoked\r",
+									"if (Utils.validateStatusAndSchema(pm, Schemas.dataset_info, 200)) {\r",
+									"    console.log(\"GOOD\");\r",
+									"}\r",
+									"else {\r",
+									"    console.log(\"BAD\");\r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{bearerToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/ddr_registry_datasets/{{metadata_id_get}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ddr_registry_datasets",
+								"{{metadata_id_get}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get Downloads",
 					"event": [
 						{
@@ -3052,7 +3097,7 @@
 					"  \"required\": [",
 					"    \"results\"",
 					"  ]",
-					"}",
+					"};",
 					"",
 					"SchemaError500 = {",
 					"  type: \"object\",",
@@ -3063,7 +3108,7 @@
 					"    title: {\"type\": \"string\"}",
 					"  },",
 					"  required: [\"detail\",\"detail_fr\",\"status\",\"title\"]",
-					"}",
+					"};",
 					"",
 					"SchemaUser = {",
 					"  type: \"object\",",
@@ -3078,7 +3123,25 @@
 					"SchemaUserList = {",
 					"    type: \"array\",",
 					"    items: SchemaUser",
-					"}",
+					"};",
+					"",
+					"SchemaDataset = {",
+					"    type: \"object\",",
+					"    properties: {",
+					"        core_subject_term: {\"type\": \"string\"},",
+					"        download_folder_name: {\"type\": \"string\"},",
+					"        metadata_id: {\"type\": \"string\"},",
+					"        thumbnail_image_file: {\"type\": \"string\"}",
+					"    }",
+					"};",
+					"",
+					"SchemaDatasetInfo = {",
+					"    dataset: SchemaDataset,",
+					"    map_services: {",
+					"        type: \"array\",",
+					"        items: Object",
+					"    }",
+					"};",
 					"",
 					"Schemas = {",
 					"    token:  SchemaToken,",
@@ -3108,13 +3171,13 @@
 					"    validation: SchemaValidation,",
 					"    error_500:SchemaError500,",
 					"    compare: SchemaCompare,",
-					"    user_list: SchemaUserList",
+					"    user_list: SchemaUserList,",
+					"    dataset_info: SchemaDatasetInfo",
 					"};",
 					"",
 					"Utils = {",
 					"    // Loads Ajv which is used to enhance schema validations",
 					"    ajv: new Ajv({logger: console}),",
-					"",
 					"",
 					"    /**",
 					"     * Generic function to check for a 200 response with a given schema format",
@@ -3137,8 +3200,8 @@
 					"        });",
 					"        return res;",
 					"    }",
-					"    ",
-					"};"
+					"};",
+					""
 				]
 			}
 		},
@@ -3191,6 +3254,11 @@
 			"key": "user_post",
 			"value": "CocoLeClown",
 			"type": "default"
+		},
+		{
+			"key": "metadata_id_get",
+			"value": "f0ff2a6f-c65c-48b5-85e6-185386130277",
+			"type": "string"
 		}
 	]
 }
